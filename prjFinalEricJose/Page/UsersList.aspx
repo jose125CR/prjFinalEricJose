@@ -7,10 +7,10 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="hero-ct">
-					<h1>celebrity listing - list</h1>
+					<h1>Administrar Usuarios</h1>
 					<ul class="breadcumb">
-						<li class="active"><a href="#">Home</a></li>
-						<li> <span class="ion-ios-arrow-right"></span> celebrity listing</li>
+						<li class="active"><a href="#">Usuarios</a></li>
+						<li> <span class="ion-ios-arrow-right"></span>Administrar Usuarios</li>
 					</ul>
 				</div>
 			</div>
@@ -39,9 +39,9 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="row">
-							<div class="col-md-3 float-end">
-								<button class="btn-red" type="submit" value="save">Agregar nuevo usuario</button>
-							</div>
+                            <div class="col-md-3 float-end">
+                                <button class="btn-red" type="submit" value="save">Agregar nuevo usuario</button>
+                            </div>
 						</div>	
 						<table class="personal-table-dark mt-4" style="width:100%">
 							<tr>

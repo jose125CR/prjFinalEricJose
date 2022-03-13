@@ -18,7 +18,7 @@ input[type="checkbox"] {
 .btn-red {
     font-family: 'Dosis', sans-serif;
     font-size: 14px;
-    color: #ffffff;
+    color: white;
     font-weight: bold;
     text-transform: uppercase;
     background: #dd003f;
@@ -49,4 +49,79 @@ td {
     background-color: transparent;
     border: none;
     padding: 0;
+}
+
+.mv-item-infor {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .mv-item-infor .btn-actions-movies {
+        justify-content: flex-end;
+        display: flex;
+    }
+}
+
+.mv-item-infor .yellow-btn, .mv-item-infor .remove-btn, .mv-item-infor .blue-btn {
+    font-family: 'Dosis', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    width: max-content;
+    border-radius: 8px;
+    height: 40px;
+    border: none;
+    margin: 7px;
+    padding: 8px;
+}
+
+.mv-item-infor .yellow-btn {
+    color: black;
+    background: #dcf836;
+}
+
+.mv-item-infor .remove-btn {
+    color: white;
+    background: #dd003f;
+}
+
+.mv-item-infor .blue-btn {
+    color: white;
+    background: #4280bf;
+}
+
+.screen {
+    background-color: #fff;
+    width: 100%;
+    height: 300px;
+    max-width: 400px;
+    margin: auto;
+    transform: rotateX(-45deg);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+}
+
+.seat {
+    background-color: #444451;
+    height: 27px;
+    width: 30px;
+    margin: 3px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.seat.occupied {
+    background-color: #fff;
+}
+
+.seats-row {
+    display: flex;
+}
+
+.seats-container {
+    width: 300px;
+    margin: auto;
+}
+
+.seat-center-group {
+    display: flex;
+    margin: 0 60px;
 }

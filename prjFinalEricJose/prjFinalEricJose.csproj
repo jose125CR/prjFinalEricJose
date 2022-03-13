@@ -68,8 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Page\AddMovie.aspx" />
+    <Content Include="Page\AddUser.aspx" />
     <Content Include="Page\Index.aspx" />
     <Content Include="Page\MoviesList.aspx" />
+    <Content Include="Page\SelectTicket.aspx" />
     <Content Include="Page\UsersList.aspx" />
     <Content Include="Sources\css\ajax-loader.html" />
     <Content Include="Sources\css\bootstrap.css" />
@@ -303,6 +305,13 @@
     <Compile Include="Page\AddMovie.aspx.designer.cs">
       <DependentUpon>AddMovie.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Page\AddUser.aspx.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\AddUser.aspx.designer.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Page\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -316,6 +325,13 @@
     </Compile>
     <Compile Include="Page\MoviesList.aspx.designer.cs">
       <DependentUpon>MoviesList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\SelectTicket.aspx.cs">
+      <DependentUpon>SelectTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\SelectTicket.aspx.designer.cs">
+      <DependentUpon>SelectTicket.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\UsersList.aspx.cs">
       <DependentUpon>UsersList.aspx</DependentUpon>
