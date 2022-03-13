@@ -1,0 +1,382 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5A5118F0-A5C0-4F59-8287-D0C12B49469E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>prjFinalEricJose</RootNamespace>
+    <AssemblyName>prjFinalEricJose</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44379</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Page\AddMovie.aspx" />
+    <Content Include="Page\Index.aspx" />
+    <Content Include="Page\MoviesList.aspx" />
+    <Content Include="Page\UsersList.aspx" />
+    <Content Include="Sources\css\ajax-loader.html" />
+    <Content Include="Sources\css\bootstrap.css" />
+    <Content Include="Sources\css\fonts\slick-2.html" />
+    <Content Include="Sources\css\fonts\slick-3.html" />
+    <Content Include="Sources\css\fonts\slick-4.html" />
+    <Content Include="Sources\css\fonts\slick.html" />
+    <Content Include="Sources\css\fonts\slickd41d.html" />
+    <Content Include="Sources\css\personal.css" />
+    <Content Include="Sources\css\plugins.css" />
+    <Content Include="Sources\css\style.css" />
+    <Content Include="Sources\fonts\fontawesome-webfont93e3.svg" />
+    <Content Include="Sources\images\blank.html" />
+    <Content Include="Sources\images\fancybox_loading%402x.gif" />
+    <Content Include="Sources\images\fancybox_loading.gif" />
+    <Content Include="Sources\images\fancybox_overlay.png" />
+    <Content Include="Sources\images\fancybox_sprite%402x.png" />
+    <Content Include="Sources\images\fancybox_sprite.png" />
+    <Content Include="Sources\images\logo1.png" />
+    <Content Include="Sources\images\logo2.png" />
+    <Content Include="Sources\images\nivo\close%402x.png" />
+    <Content Include="Sources\images\nivo\close.png" />
+    <Content Include="Sources\images\nivo\loading%402x.gif" />
+    <Content Include="Sources\images\nivo\loading.gif" />
+    <Content Include="Sources\images\nivo\next%402x.png" />
+    <Content Include="Sources\images\nivo\next.png" />
+    <Content Include="Sources\images\nivo\prev%402x.png" />
+    <Content Include="Sources\images\nivo\prev.png" />
+    <Content Include="Sources\images\uploads\ads1.png" />
+    <Content Include="Sources\images\uploads\ads2.png" />
+    <Content Include="Sources\images\uploads\author.png" />
+    <Content Include="Sources\images\uploads\author2.png" />
+    <Content Include="Sources\images\uploads\author3.png" />
+    <Content Include="Sources\images\uploads\author4.png" />
+    <Content Include="Sources\images\uploads\ava1.jpg" />
+    <Content Include="Sources\images\uploads\ava2.jpg" />
+    <Content Include="Sources\images\uploads\ava3.jpg" />
+    <Content Include="Sources\images\uploads\ava4.jpg" />
+    <Content Include="Sources\images\uploads\blog-detail.jpg" />
+    <Content Include="Sources\images\uploads\blog-detail2.jpg" />
+    <Content Include="Sources\images\uploads\blog-it1.jpg" />
+    <Content Include="Sources\images\uploads\blog-it2.jpg" />
+    <Content Include="Sources\images\uploads\blog26.jpg" />
+    <Content Include="Sources\images\uploads\blog27.jpg" />
+    <Content Include="Sources\images\uploads\blog29.jpg" />
+    <Content Include="Sources\images\uploads\bloglist-it1.jpg" />
+    <Content Include="Sources\images\uploads\bloglist-it2.jpg" />
+    <Content Include="Sources\images\uploads\bloglist-it3.jpg" />
+    <Content Include="Sources\images\uploads\bloglist-it4.jpg" />
+    <Content Include="Sources\images\uploads\bloglist-it5.jpg" />
+    <Content Include="Sources\images\uploads\bloglist-it6.jpg" />
+    <Content Include="Sources\images\uploads\blogv21.jpg" />
+    <Content Include="Sources\images\uploads\blogv22.jpg" />
+    <Content Include="Sources\images\uploads\blogv23.jpg" />
+    <Content Include="Sources\images\uploads\blogv24.jpg" />
+    <Content Include="Sources\images\uploads\blogv25.jpg" />
+    <Content Include="Sources\images\uploads\blogv29.jpg" />
+    <Content Include="Sources\images\uploads\cast1.jpg" />
+    <Content Include="Sources\images\uploads\cast2.jpg" />
+    <Content Include="Sources\images\uploads\cast3.jpg" />
+    <Content Include="Sources\images\uploads\cast4.jpg" />
+    <Content Include="Sources\images\uploads\cast5.jpg" />
+    <Content Include="Sources\images\uploads\cast6.jpg" />
+    <Content Include="Sources\images\uploads\cast7.jpg" />
+    <Content Include="Sources\images\uploads\cast9.jpg" />
+    <Content Include="Sources\images\uploads\ceb1.jpg" />
+    <Content Include="Sources\images\uploads\ceb2.jpg" />
+    <Content Include="Sources\images\uploads\ceb21.jpg" />
+    <Content Include="Sources\images\uploads\ceb22.jpg" />
+    <Content Include="Sources\images\uploads\ceb23.jpg" />
+    <Content Include="Sources\images\uploads\ceb24.jpg" />
+    <Content Include="Sources\images\uploads\ceb25.jpg" />
+    <Content Include="Sources\images\uploads\ceb26.jpg" />
+    <Content Include="Sources\images\uploads\ceb27.jpg" />
+    <Content Include="Sources\images\uploads\ceb28.jpg" />
+    <Content Include="Sources\images\uploads\ceb29.jpg" />
+    <Content Include="Sources\images\uploads\ceb3.jpg" />
+    <Content Include="Sources\images\uploads\ceb4.jpg" />
+    <Content Include="Sources\images\uploads\ceb5.jpg" />
+    <Content Include="Sources\images\uploads\ceb6.jpg" />
+    <Content Include="Sources\images\uploads\ceb7.jpg" />
+    <Content Include="Sources\images\uploads\ceb8.jpg" />
+    <Content Include="Sources\images\uploads\ceb9.jpg" />
+    <Content Include="Sources\images\uploads\ceblist1.jpg" />
+    <Content Include="Sources\images\uploads\ceblist2.jpg" />
+    <Content Include="Sources\images\uploads\ceblist3.jpg" />
+    <Content Include="Sources\images\uploads\ceblist4.jpg" />
+    <Content Include="Sources\images\uploads\ceblist5.jpg" />
+    <Content Include="Sources\images\uploads\ceblist6.jpg" />
+    <Content Include="Sources\images\uploads\ceblist7.jpg" />
+    <Content Include="Sources\images\uploads\ceblist8.jpg" />
+    <Content Include="Sources\images\uploads\cebsingle2.png" />
+    <Content Include="Sources\images\uploads\celeb-hero-single.jpg" />
+    <Content Include="Sources\images\uploads\cm-img.png" />
+    <Content Include="Sources\images\uploads\drop-icon.png" />
+    <Content Include="Sources\images\uploads\err-img.png" />
+    <Content Include="Sources\images\uploads\error-bg.jpg" />
+    <Content Include="Sources\images\uploads\film1.jpg" />
+    <Content Include="Sources\images\uploads\film2.jpg" />
+    <Content Include="Sources\images\uploads\film3.jpg" />
+    <Content Include="Sources\images\uploads\film4.jpg" />
+    <Content Include="Sources\images\uploads\film5.jpg" />
+    <Content Include="Sources\images\uploads\film6.jpg" />
+    <Content Include="Sources\images\uploads\film7.jpg" />
+    <Content Include="Sources\images\uploads\film8.jpg" />
+    <Content Include="Sources\images\uploads\ft-bg.jpg" />
+    <Content Include="Sources\images\uploads\hero-bg.jpg" />
+    <Content Include="Sources\images\uploads\image1-1.jpg" />
+    <Content Include="Sources\images\uploads\image1.jpg" />
+    <Content Include="Sources\images\uploads\image10.jpg" />
+    <Content Include="Sources\images\uploads\image101.jpg" />
+    <Content Include="Sources\images\uploads\image11.jpg" />
+    <Content Include="Sources\images\uploads\image111.jpg" />
+    <Content Include="Sources\images\uploads\image12.jpg" />
+    <Content Include="Sources\images\uploads\image121.jpg" />
+    <Content Include="Sources\images\uploads\image13.jpg" />
+    <Content Include="Sources\images\uploads\image131.jpg" />
+    <Content Include="Sources\images\uploads\image14.jpg" />
+    <Content Include="Sources\images\uploads\image141.jpg" />
+    <Content Include="Sources\images\uploads\image15.jpg" />
+    <Content Include="Sources\images\uploads\image151.jpg" />
+    <Content Include="Sources\images\uploads\image16.jpg" />
+    <Content Include="Sources\images\uploads\image161.jpg" />
+    <Content Include="Sources\images\uploads\image17.jpg" />
+    <Content Include="Sources\images\uploads\image171.jpg" />
+    <Content Include="Sources\images\uploads\image18.jpg" />
+    <Content Include="Sources\images\uploads\image181.jpg" />
+    <Content Include="Sources\images\uploads\image19.jpg" />
+    <Content Include="Sources\images\uploads\image191.jpg" />
+    <Content Include="Sources\images\uploads\image2-1.jpg" />
+    <Content Include="Sources\images\uploads\image2.jpg" />
+    <Content Include="Sources\images\uploads\image20.jpg" />
+    <Content Include="Sources\images\uploads\image201.jpg" />
+    <Content Include="Sources\images\uploads\image21.jpg" />
+    <Content Include="Sources\images\uploads\image211.jpg" />
+    <Content Include="Sources\images\uploads\image3.jpg" />
+    <Content Include="Sources\images\uploads\image31.jpg" />
+    <Content Include="Sources\images\uploads\image4.jpg" />
+    <Content Include="Sources\images\uploads\image41.jpg" />
+    <Content Include="Sources\images\uploads\image5.jpg" />
+    <Content Include="Sources\images\uploads\image51.jpg" />
+    <Content Include="Sources\images\uploads\image6.jpg" />
+    <Content Include="Sources\images\uploads\image61.jpg" />
+    <Content Include="Sources\images\uploads\image7.jpg" />
+    <Content Include="Sources\images\uploads\image71.jpg" />
+    <Content Include="Sources\images\uploads\image8.jpg" />
+    <Content Include="Sources\images\uploads\image81.jpg" />
+    <Content Include="Sources\images\uploads\image9.jpg" />
+    <Content Include="Sources\images\uploads\image91.jpg" />
+    <Content Include="Sources\images\uploads\landing-dark-version.png" />
+    <Content Include="Sources\images\uploads\landing-light-version.png" />
+    <Content Include="Sources\images\uploads\movie-single.jpg" />
+    <Content Include="Sources\images\uploads\mv-it1.jpg" />
+    <Content Include="Sources\images\uploads\mv-it10.jpg" />
+    <Content Include="Sources\images\uploads\mv-it11.jpg" />
+    <Content Include="Sources\images\uploads\mv-it12.jpg" />
+    <Content Include="Sources\images\uploads\mv-it2.jpg" />
+    <Content Include="Sources\images\uploads\mv-it3.jpg" />
+    <Content Include="Sources\images\uploads\mv-it4.jpg" />
+    <Content Include="Sources\images\uploads\mv-it5.jpg" />
+    <Content Include="Sources\images\uploads\mv-it6.jpg" />
+    <Content Include="Sources\images\uploads\mv-it7.jpg" />
+    <Content Include="Sources\images\uploads\mv-it8.jpg" />
+    <Content Include="Sources\images\uploads\mv-it9.jpg" />
+    <Content Include="Sources\images\uploads\mv-item1.jpg" />
+    <Content Include="Sources\images\uploads\mv-item10.jpg" />
+    <Content Include="Sources\images\uploads\mv-item11.jpg" />
+    <Content Include="Sources\images\uploads\mv-item12.jpg" />
+    <Content Include="Sources\images\uploads\mv-item2.jpg" />
+    <Content Include="Sources\images\uploads\mv-item3.jpg" />
+    <Content Include="Sources\images\uploads\mv-item4.jpg" />
+    <Content Include="Sources\images\uploads\mv-item5.jpg" />
+    <Content Include="Sources\images\uploads\mv-item6.jpg" />
+    <Content Include="Sources\images\uploads\mv-item7.jpg" />
+    <Content Include="Sources\images\uploads\mv-item8.jpg" />
+    <Content Include="Sources\images\uploads\mv-item9.jpg" />
+    <Content Include="Sources\images\uploads\mv1.jpg" />
+    <Content Include="Sources\images\uploads\mv2.jpg" />
+    <Content Include="Sources\images\uploads\mv3.jpg" />
+    <Content Include="Sources\images\uploads\mv4.jpg" />
+    <Content Include="Sources\images\uploads\mv5.jpg" />
+    <Content Include="Sources\images\uploads\play-vd.png" />
+    <Content Include="Sources\images\uploads\poster1.jpg" />
+    <Content Include="Sources\images\uploads\search-bg.png" />
+    <Content Include="Sources\images\uploads\search-bgsb.png" />
+    <Content Include="Sources\images\uploads\season.jpg" />
+    <Content Include="Sources\images\uploads\series-img.jpg" />
+    <Content Include="Sources\images\uploads\slider-bg.jpg" />
+    <Content Include="Sources\images\uploads\slider-bg2.jpg" />
+    <Content Include="Sources\images\uploads\slider1.jpg" />
+    <Content Include="Sources\images\uploads\slider2.jpg" />
+    <Content Include="Sources\images\uploads\slider3.jpg" />
+    <Content Include="Sources\images\uploads\slider4.jpg" />
+    <Content Include="Sources\images\uploads\sr-single.jpg" />
+    <Content Include="Sources\images\uploads\topsearch.png" />
+    <Content Include="Sources\images\uploads\trailer2.jpg" />
+    <Content Include="Sources\images\uploads\trailer3.png" />
+    <Content Include="Sources\images\uploads\trailer4.png" />
+    <Content Include="Sources\images\uploads\trailer5.jpg" />
+    <Content Include="Sources\images\uploads\trailer6.jpg" />
+    <Content Include="Sources\images\uploads\trailer7.jpg" />
+    <Content Include="Sources\images\uploads\user-hero-bg.jpg" />
+    <Content Include="Sources\images\uploads\user-img.png" />
+    <Content Include="Sources\images\uploads\userava1.jpg" />
+    <Content Include="Sources\images\uploads\userava2.jpg" />
+    <Content Include="Sources\images\uploads\userava3.jpg" />
+    <Content Include="Sources\images\uploads\userava4.jpg" />
+    <Content Include="Sources\images\uploads\userava5.jpg" />
+    <Content Include="Sources\images\uploads\vd-item1.jpg" />
+    <Content Include="Sources\images\uploads\vd-item2.jpg" />
+    <Content Include="Sources\images\uploads\vd-item3.jpg" />
+    <Content Include="Sources\images\uploads\vd-item4.jpg" />
+    <Content Include="Sources\js\custom.js" />
+    <Content Include="Sources\js\jquery.js" />
+    <Content Include="Sources\js\plugins.js" />
+    <Content Include="Sources\js\plugins2.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Masters\Menu.Master.cs">
+      <DependentUpon>Menu.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\Menu.Master.designer.cs">
+      <DependentUpon>Menu.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Page\AddMovie.aspx.cs">
+      <DependentUpon>AddMovie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\AddMovie.aspx.designer.cs">
+      <DependentUpon>AddMovie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\MoviesList.aspx.cs">
+      <DependentUpon>MoviesList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\MoviesList.aspx.designer.cs">
+      <DependentUpon>MoviesList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\UsersList.aspx.cs">
+      <DependentUpon>UsersList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\UsersList.aspx.designer.cs">
+      <DependentUpon>UsersList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Masters\Menu.Master" />
+    <None Include="packages.config" />
+    <Content Include="Sources\fonts\fontawesome-webfont93e3.eot" />
+    <Content Include="Sources\fonts\fontawesome-webfont93e3.ttf" />
+    <Content Include="Sources\fonts\fontawesome-webfont93e3.woff" />
+    <Content Include="Sources\fonts\fontawesome-webfont93e3.woff2" />
+    <Content Include="Sources\fonts\fontawesome-webfontd41d.eot" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52863</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44379/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
