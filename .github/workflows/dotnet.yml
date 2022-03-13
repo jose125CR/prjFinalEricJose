@@ -13,5 +13,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
     - name: setup-msbuild
       uses: microsoft/setup-msbuild@v1.1
+      
+    - name: Setup NuGet.exe for use with actions
+    # You may pin to the exact commit or the version.
+    # uses: NuGet/setup-nuget@04b0c2b8d1b97922f67eca497d7cf0bf17b8ffe1
+      uses: NuGet/setup-nuget@v1.0.5
+      
+    - name: Restore Nuget Pacjages
+      run: nuget restore prjFinalEricJose.sln
+      
+    - name: Build the solution
+      run: msbuild prjFinalEricJose.sln
