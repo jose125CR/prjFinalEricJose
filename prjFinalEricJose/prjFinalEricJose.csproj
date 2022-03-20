@@ -291,6 +291,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connection\clsConnection.cs" />
+    <Compile Include="Data\clsUsuario.cs" />
+    <Compile Include="Logic\blUsuario.cs" />
     <Compile Include="Masters\Menu.Master.cs">
       <DependentUpon>Menu.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
