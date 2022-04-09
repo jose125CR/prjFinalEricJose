@@ -7548,7 +7548,7 @@ ul {
         margin-bottom: 10px;
     }
 
-    .form-style-1 input:not(input[type="checkbox"]),
+    .form-style-1 input:not(input[type="submit"]),
     .form-style-1 select {
         font-family: 'Nunito', sans-serif;
         font-size: 12px;

@@ -81,4 +81,22 @@
 		</div>
 	</div>
 </div>
+<div class="row">
+	<div class="col-md-12">
+		<div class="row">
+            <div class="col-md-3 float-end">
+                <button class="btn-red" type="submit" value="save">Agregar nuevo usuario</button>
+            </div>
+		</div>	
+		<asp:GridView ID="grdUsuarios" runat="server" AutoGenerateColumns="false" PageSize="20" CssClass="col-md-12 mt-4">
+			<Columns>
+				<asp:BoundField DataField="dni_Prop" HeaderText="Identificación" />
+				<asp:BoundField DataField="nombre1_Prop" HeaderText="Nombre y apellidos" />
+				<asp:BoundField DataField="fecha_creacion_Prop" HeaderText="Fecha de Registro" />
+				<asp:BoundField DataField="role_Prop" HeaderText="Role" />
+				<asp:CommandField ShowSelectButton="true" HeaderStyle-Width="60px" ControlStyle-ForeColor="Black" />
+			</Columns>
+		</asp:GridView>
+	</div>
+</div>
 </asp:Content>

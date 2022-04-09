@@ -45,6 +45,10 @@
 								<label>Fecha de Estreno</label>
 								<input type="date" value="2018-07-22" >
 							</div>
+							<div class="col-md-2 form-it">
+								<label>Fecha de Estreno</label>
+								<input type="date" value="2018-07-22" >
+							</div>
 							<div class="col-md-4 form-it">
 								<label>Salas donde se presentara la película</label>
 								<div class="row form-it m-auto">
@@ -64,7 +68,7 @@
 									<label for="sala3"> Sala 6 IMAX</label>
 								</div>
 							</div>
-							<div class="col-md-6 form-it">
+							<div class="col-md-4 form-it">
 								<label>Categoría de Edad</label>
 								<select>
 								  <option value="1">Todo Público</option>

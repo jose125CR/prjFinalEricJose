@@ -7,12 +7,20 @@ namespace prjFinalEricJose.Data
 {
     public class clsUsuario
     {
-        private int dni;
+        private String dni_persona;
 
-        public int dni_Prop
+        public String dni_persona_Prop
         {
-            get { return dni; }
-            set { dni = value; }
+            get { return dni_persona; }
+            set { dni_persona = value; }
+        }
+
+        private int id_rol;
+
+        public int id_rol_Prop
+        {
+            get { return id_rol; }
+            set { id_rol = value; }
         }
 
         private string nombre1;
@@ -47,6 +55,30 @@ namespace prjFinalEricJose.Data
             set { apellido2 = value; }
         }
 
+        private string correo;
+
+        public string correo_Prop
+        {
+            get { return correo; }
+            set { correo = value; }
+        }
+
+        private DateTime fecha_nac;
+
+        public DateTime fecha_nac_Prop
+        {
+            get { return fecha_nac; }
+            set { fecha_nac = value; }
+        }
+
+        private string telefono;
+
+        public string telefono_Prop
+        {
+            get { return telefono; }
+            set { telefono = value; }
+        }
+
         private string usuario;
 
         public string usuario_Prop
@@ -61,14 +93,6 @@ namespace prjFinalEricJose.Data
         {
             get { return contrasena; }
             set { contrasena = value; }
-        }
-
-        private string role;
-
-        public string role_Prop
-        {
-            get { return role; }
-            set { role = value; }
         }
 
         private int puntos;
@@ -93,6 +117,14 @@ namespace prjFinalEricJose.Data
         {
             get { return fecha_creacion; }
             set { fecha_creacion = value; }
+        }
+
+        private Boolean preferencial;
+
+        public Boolean preferencial_Prop
+        {
+            get { return preferencial; }
+            set { preferencial = value; }
         }
     }
 }

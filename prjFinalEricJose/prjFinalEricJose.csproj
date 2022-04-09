@@ -70,6 +70,7 @@
     <Content Include="Page\AddMovie.aspx" />
     <Content Include="Page\AddUser.aspx" />
     <Content Include="Page\Index.aspx" />
+    <Content Include="Page\Login.aspx" />
     <Content Include="Page\MoviesList.aspx" />
     <Content Include="Page\SelectTicket.aspx" />
     <Content Include="Page\UsersList.aspx" />
@@ -288,12 +289,25 @@
     <Content Include="Sources\js\jquery.js" />
     <Content Include="Sources\js\plugins.js" />
     <Content Include="Sources\js\plugins2.js" />
+    <Content Include="Sources\newIcons\icons8-edit-64.png" />
+    <Content Include="Sources\newIcons\icons8-remove-48.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection\clsConnection.cs" />
+    <Compile Include="Data\clsPelicula.cs" />
+    <Compile Include="Data\clsRol.cs" />
     <Compile Include="Data\clsUsuario.cs" />
+    <Compile Include="Logic\blPelicula.cs" />
+    <Compile Include="Logic\blRol.cs" />
     <Compile Include="Logic\blUsuario.cs" />
+    <Compile Include="Masters\Login.Master.cs">
+      <DependentUpon>Login.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\Login.Master.designer.cs">
+      <DependentUpon>Login.Master</DependentUpon>
+    </Compile>
     <Compile Include="Masters\Menu.Master.cs">
       <DependentUpon>Menu.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -322,6 +336,13 @@
     <Compile Include="Page\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Page\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Page\MoviesList.aspx.cs">
       <DependentUpon>MoviesList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -347,6 +368,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Masters\Menu.Master" />
+    <Content Include="Masters\Login.Master" />
     <None Include="packages.config" />
     <Content Include="Sources\fonts\fontawesome-webfont93e3.eot" />
     <Content Include="Sources\fonts\fontawesome-webfont93e3.ttf" />

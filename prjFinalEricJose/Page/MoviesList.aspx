@@ -35,86 +35,37 @@
 					<a href="movielist.html" class="list"><i class="ion-ios-list-outline active"></i></a>
 					<a  href="moviegrid.html" class="grid"><i class="ion-grid"></i></a>
 				</div>
-				<div class="movie-item-style-2">
-					<img src="../Sources/images/uploads/mv1.jpg" alt="">
-					<div class="mv-item-infor">
-						<div class="btn-actions-movies">
-							<button class="remove-btn" type="submit" value="save">Eliminar Pelicula</button>
-							<button class="blue-btn" type="submit" value="save">Editar Pelicula</button>
-							<button onclick="window.location.href='/Page/SelectTicket.aspx'" class="yellow-btn" type="button" value="save">Comprar Ticket</button>
+				<asp:ListView 
+						ID="ltvPeliculas" 
+						runat="server" 
+						OnItemCommand="ltvPeliculas_ItemCommand"
+						OnItemEditing="ltvPeliculas_ItemEditing" 
+						OnItemDeleting="ltvPeliculas_ItemDeleting" 
+						OnItemUpdating="ltvPeliculas_ItemUpdating"
+					>
+					<ItemTemplate>
+						<div class="movie-item-style-2">
+							<asp:Image runat="server" ImageUrl='<%# Eval("img_url_Prop") %>' />
+							<div class="mv-item-infor">
+								<div class="btn-actions-movies">
+									<asp:Button CssClass="remove-btn" ID="btn_delete" runat="server" Text="Eliminar Pelicula" CommandName="delete" CommandArgument='<%# Eval("id_Prop") %>' />  
+									<asp:Button CssClass="blue-btn" ID="Button1" runat="server" Text="Editar Pelicula" CommandName="edit" CommandArgument='<%# Eval("id_Prop") %>' />  
+									<asp:Button CssClass="yellow-btn" ID="btnupdt" runat="server" Text="Editar Pelicula" CommandName="update" CommandArgument='<%# Eval("id_Prop") %>' /> 		
+								</div>
+								<h6>
+									<asp:HyperLink runat="server" href='<%# Eval("id_Prop") %>'> <%# Eval("nombre_Prop") %>
+										<asp:Label ID="year" runat="server" Text='<%# Eval(" year_Prop") %>' />
+									</asp:HyperLink>
+								</h6>
+								<p class="rate"><i class="ion-android-star"></i><span>8.1</span> /10</p>
+								<p class="describe"><%# Eval("sipnosis_Prop") %></p>
+								<p class="run-time"> Run Time: 2h21’    .     <span>MMPA: PG-13 </span>    .     <span>Release: 1 May 2015</span></p>
+								<p>Director: <a href="#">Joss Whedon</a></p>
+								<p>Stars: <a href="#">Robert Downey Jr.,</a> <a href="#">Chris Evans,</a> <a href="#">  Chris Hemsworth</a></p>
+							</div>
 						</div>
-						<h6><a href="moviesingle.html">oblivion <span>(2012)</span></a></h6>
-						<p class="rate"><i class="ion-android-star"></i><span>8.1</span> /10</p>
-						<p class="describe">Earth's mightiest heroes must come together and learn to fight as a team if they are to stop the mischievous Loki and his alien army from enslaving humanity...</p>
-						<p class="run-time"> Run Time: 2h21’    .     <span>MMPA: PG-13 </span>    .     <span>Release: 1 May 2015</span></p>
-						<p>Director: <a href="#">Joss Whedon</a></p>
-						<p>Stars: <a href="#">Robert Downey Jr.,</a> <a href="#">Chris Evans,</a> <a href="#">  Chris Hemsworth</a></p>
-					</div>
-				</div>
-				<div class="movie-item-style-2">
-					<img src="../Sources/images/uploads/mv2.jpg" alt="">
-					<div class="mv-item-infor">
-						<div class="btn-actions-movies">
-							<button class="remove-btn" type="submit" value="save">Eliminar Pelicula</button>
-							<button class="blue-btn" type="submit" value="save">Editar Pelicula</button>
-							<button onclick="window.location.href='/Page/SelectTicket.aspx'" class="yellow-btn" type="button" value="save">Comprar Ticket</button>
-						</div>
-						<h6><a href="moviesingle.html">into the wild <span>(2014)</span></a></h6>
-						<p class="rate"><i class="ion-android-star"></i><span>7.8</span> /10</p>
-						<p class="describe">As Steve Rogers struggles to embrace his role in the modern world, he teams up with a fellow Avenger and S.H.I.E.L.D agent, Black Widow, to battle a new threat...</p>
-						<p class="run-time"> Run Time: 2h21’    .     <span>MMPA: PG-13 </span>    .     <span>Release: 1 May 2015</span></p>
-						<p>Director: <a href="#">Anthony Russo,</a><a href="#">Joe Russo</a></p>
-						<p>Stars: <a href="#">Chris Evans,</a> <a href="#">Samuel L. Jackson,</a> <a href="#">  Scarlett Johansson</a></p>
-					</div>
-				</div>
-				<div class="movie-item-style-2">
-					<img src="../Sources/images/uploads/mv3.jpg" alt="">
-					<div class="mv-item-infor">
-						<div class="btn-actions-movies">
-							<button class="remove-btn" type="submit" value="save">Eliminar Pelicula</button>
-							<button class="blue-btn" type="submit" value="save">Editar Pelicula</button>
-							<button onclick="window.location.href='/Page/SelectTicket.aspx'" class="yellow-btn" type="button" value="save">Comprar Ticket</button>
-						</div>
-						<h6><a href="moviesingle.html">blade runner  <span>(2015)</span></a></h6>
-						<p class="rate"><i class="ion-android-star"></i><span>7.3</span> /10</p>
-						<p class="describe">Armed with a super-suit with the astonishing ability to shrink in scale but increase in strength, cat burglar Scott Lang must embrace his inner hero and help...</p>
-						<p class="run-time"> Run Time: 2h21’    .     <span>MMPA: PG-13 </span>    .     <span>Release: 1 May 2015</span></p>
-						<p>Director: <a href="#">Peyton Reed</a></p>
-						<p>Stars: <a href="#">Paul Rudd,</a> <a href="#"> Michael Douglas</a></p>
-					</div>
-				</div>
-				<div class="movie-item-style-2">
-					<img src="../Sources/images/uploads/mv4.jpg" alt="">
-					<div class="mv-item-infor">
-						<div class="btn-actions-movies">
-							<button class="remove-btn" type="submit" value="save">Eliminar Pelicula</button>
-							<button class="blue-btn" type="submit" value="save">Editar Pelicula</button>
-							<button onclick="window.location.href='/Page/SelectTicket.aspx'" class="yellow-btn" type="button" value="save">Comprar Ticket</button>
-						</div>
-						<h6><a href="moviesingle.html">Mulholland pride<span> (2013)  </span></a></h6>
-						<p class="rate"><i class="ion-android-star"></i><span>7.2</span> /10</p>
-						<p class="describe">When Tony Stark's world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.</p>
-						<p class="run-time"> Run Time: 2h21’    .     <span>MMPA: PG-13 </span>    .     <span>Release: 1 May 2015</span></p>
-						<p>Director: <a href="#">Shane Black</a></p>
-						<p>Stars: <a href="#">Robert Downey Jr., </a> <a href="#">  Guy Pearce,</a><a href="#">Don Cheadle</a></p>
-					</div>
-				</div>
-				<div class="movie-item-style-2">
-					<img src="../Sources/images/uploads/mv5.jpg" alt="">
-					<div class="mv-item-infor">
-						<div class="btn-actions-movies">
-							<button class="remove-btn" type="submit" value="save">Eliminar Pelicula</button>
-							<button class="blue-btn" type="submit" value="save">Editar Pelicula</button>
-							<button onclick="window.location.href='/Page/SelectTicket.aspx'" class="yellow-btn" type="button" value="save">Comprar Ticket</button>
-						</div>
-						<h6><a href="moviesingle.html">skyfall: evil of boss<span> (2013)  </span></a></h6>
-						<p class="rate"><i class="ion-android-star"></i><span>7.0</span> /10</p>
-						<p class="describe">When Tony Stark's world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.</p>
-						<p class="run-time"> Run Time: 2h21’    .     <span>MMPA: PG-13 </span>    .     <span>Release: 1 May 2015</span></p>
-						<p>Director: <a href="#">Alan Taylor</a></p>
-						<p>Stars: <a href="#">Chris Hemsworth,  </a> <a href="#">  Natalie Portman,</a><a href="#">Tom Hiddleston</a></p>
-					</div>
-				</div>
+					</ItemTemplate>
+				</asp:ListView>
 				<div class="topbar-filter">
 					<label>Movies per page:</label>
 					<select>
