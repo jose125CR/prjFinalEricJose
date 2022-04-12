@@ -7,45 +7,76 @@ namespace prjFinalEricJose.Data
 {
     public class clsPelicula
     {
-        private int id;
+        private int id_pelicula;
 
-        public int id_Prop
+        public int id_pelicula_Prop
         {
-            get { return id; }
-            set { id = value; }
+            get { return id_pelicula; }
+            set { id_pelicula = value; }
         }
 
-        private string nombre;
+        private int id_categoria_edad_pelicula;
 
-        public string nombre_Prop
+        public int id_categoria_edad_pelicula_Prop
         {
-            get { return nombre; }
-            set { nombre = value; }
+            get { return id_categoria_edad_pelicula; }
+            set { id_categoria_edad_pelicula = value; }
         }
 
-        private string sipnosis;
+        private string nombre_pelicula;
 
-        public string sipnosis_Prop
+        public string nombre_pelicula_Prop
         {
-            get { return sipnosis; }
-            set { sipnosis = value; }
+            get { return nombre_pelicula; }
+            set { nombre_pelicula = value; }
         }
 
-        private string img_url;
+        private string direccion_img;
 
-        public string img_url_Prop
+        public string direccion_img_prop
         {
-            get { return img_url; }
-            set { img_url = value; }
+            get { return direccion_img; }
+            set { direccion_img = value; }
         }
 
-        private string year;
+        private string sinopsis;
 
-        public string year_Prop
+        public string sinopsis_Prop
         {
-            get { return year; }
-            set { year = value; }
+            get { return sinopsis; }
+            set { sinopsis = value; }
         }
 
+        private string estado;
+
+        public string estado_Prop
+        {
+            get { return estado; }
+            set { estado = value; }
+        }
+
+        private List<clsHorario> horarios;
+
+        public List<clsHorario> horarios_Prop
+        {
+            get { return horarios; }
+            set { horarios = value; }
+        }
+
+        private List<clsSalaPelicula> salas;
+
+        public List<clsSalaPelicula> salas_Prop
+        {
+            get { return salas; }
+            set { salas = value; }
+        }
+
+        private DateTime fecha_estreno;
+
+        public DateTime fecha_estreno_Prop
+        {
+            get { return fecha_estreno; }
+            set { fecha_estreno = value; }
+        }
     }
 }

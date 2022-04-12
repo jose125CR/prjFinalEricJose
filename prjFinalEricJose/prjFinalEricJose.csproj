@@ -67,8 +67,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Page\AddMovie.aspx" />
-    <Content Include="Page\AddUser.aspx" />
     <Content Include="Page\Index.aspx" />
     <Content Include="Page\Login.aspx" />
     <Content Include="Page\MoviesList.aspx" />
@@ -295,11 +293,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection\clsConnection.cs" />
+    <Compile Include="Data\clsCategoriaEdad.cs" />
+    <Compile Include="Data\clsHorario.cs" />
     <Compile Include="Data\clsPelicula.cs" />
     <Compile Include="Data\clsRol.cs" />
+    <Compile Include="Data\clsSalaPelicula.cs" />
     <Compile Include="Data\clsUsuario.cs" />
+    <Compile Include="Logic\blCategoriaEdad.cs" />
+    <Compile Include="Logic\blHorario.cs" />
     <Compile Include="Logic\blPelicula.cs" />
     <Compile Include="Logic\blRol.cs" />
+    <Compile Include="Logic\blSalaPelicula.cs" />
     <Compile Include="Logic\blUsuario.cs" />
     <Compile Include="Masters\Login.Master.cs">
       <DependentUpon>Login.Master</DependentUpon>
@@ -314,20 +318,6 @@
     </Compile>
     <Compile Include="Masters\Menu.Master.designer.cs">
       <DependentUpon>Menu.Master</DependentUpon>
-    </Compile>
-    <Compile Include="Page\AddMovie.aspx.cs">
-      <DependentUpon>AddMovie.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\AddMovie.aspx.designer.cs">
-      <DependentUpon>AddMovie.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Page\AddUser.aspx.cs">
-      <DependentUpon>AddUser.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\AddUser.aspx.designer.cs">
-      <DependentUpon>AddUser.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>

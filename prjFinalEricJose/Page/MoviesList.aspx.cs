@@ -12,7 +12,7 @@ namespace prjFinalEricJose.Page
     public partial class MoviesList : System.Web.UI.Page
     {
         int idSeleccionado;
-        List<clsPelicula> listaGlobalPeliculas = new List<clsPelicula>();
+        private List<int> checkbox_seleccionados = new List<int>();
         public void Mensaje(string pMensaje)
         {
             Type cstype = this.GetType();
@@ -26,18 +26,52 @@ namespace prjFinalEricJose.Page
             }
         }
 
-        public void mostrarListaPeliculas()
+        public void MostrarListaPeliculas()
         {
-            blPelicula blm = new blPelicula();
-            clsPelicula vPelicula = new clsPelicula();
+            blPelicula lg_pelicula = new blPelicula();
             string vError = null;
 
-            listaGlobalPeliculas = blm.CosultarPeliculas(ref vError);
+            List<clsPelicula> lista_peliculas = lg_pelicula.CosultarPeliculas(ref vError);
 
             if (vError == null)
             {
-                ltvPeliculas.DataSource = listaGlobalPeliculas;
+                ltvPeliculas.DataSource = lista_peliculas;
                 ltvPeliculas.DataBind();
+            }
+            else {
+                Mensaje(vError);
+            }
+        }
+
+        public void MostrarListaHorariosDisponibles()
+        {
+            blHorario lg_horario = new blHorario();
+            string vError = null;
+
+            List<clsHorario> lista_horarios = lg_horario.CosultarListaHorarios(ref vError);
+
+            if (vError == null)
+            {
+                ltb_horarios_disponibles.DataSource = lista_horarios;
+                ltb_horarios_disponibles.DataTextField = "horario_Prop";
+                ltb_horarios_disponibles.DataValueField = "id_horario_Prop";
+                ltb_horarios_disponibles.DataBind();
+            }
+        }
+
+        public void MostrarListaCategoriasEdades()
+        {
+            blCategoriaEdad lg_categoria_edad = new blCategoriaEdad();
+            string vError = null;
+
+            List<clsCategoriaEdad> lista_categorias_edades = lg_categoria_edad.CosultarListaCategoriaEdades(ref vError);
+
+            if (vError == null)
+            {
+                ddl_categoria_edad.DataSource = lista_categorias_edades;
+                ddl_categoria_edad.DataTextField = "categoria_edad_prop";
+                ddl_categoria_edad.DataValueField = "id_categoria_edad_pelicula_Prop";
+                ddl_categoria_edad.DataBind();
             }
         }
 
@@ -45,7 +79,9 @@ namespace prjFinalEricJose.Page
         {
             if (IsPostBack == false)
             {
-                mostrarListaPeliculas();
+                MostrarListaPeliculas();
+                MostrarListaHorariosDisponibles();
+                MostrarListaCategoriasEdades();
             }
         }
 
@@ -66,7 +102,89 @@ namespace prjFinalEricJose.Page
 
         protected void ltvPeliculas_ItemUpdating(object sender, ListViewUpdateEventArgs e)
         {
+            clsPelicula pelicula = (clsPelicula)e.OldValues;
             Mensaje(idSeleccionado.ToString());
+        }
+
+        private void GuardarPelicula()
+        {
+            blHorario lg_horario = new blHorario();
+            string vError = null;
+            List<clsHorario> lista_horarios = lg_horario.CosultarListaHorarios(ref vError);
+            List<clsHorario> lista_horarios_seleccionado = new List<clsHorario>();
+            clsPelicula dt_pelicula = new clsPelicula();
+
+            if (fud_imagen_pelicula.HasFile)
+            {
+                //si hay un archivo.
+                string nombreArchivo = fud_imagen_pelicula.FileName;
+                string ruta = "~/Sources/images/uploads/" + nombreArchivo;
+                fud_imagen_pelicula.SaveAs(Server.MapPath(ruta));
+                dt_pelicula.direccion_img_prop = nombreArchivo;
+
+            }
+            else
+            {
+                //si no se selecciona ninguna imagen selecciona una por defecto
+                dt_pelicula.direccion_img_prop = "default.jpg";
+            }
+
+            //Se agregan al objeto de pelicula los campos que son solo texto
+            dt_pelicula.nombre_pelicula_Prop = txt_nombre_pelicula.Text;
+            dt_pelicula.sinopsis_Prop = txt_sipnosis.Text;
+
+            //Primero se guardan lo indices seleccionados de la listbox
+            //Luego se recorren los indices y se buscan los objetos en la lista de horarios y encontrarlos por el index
+            int[] indexes = this.ltb_horarios_disponibles.GetSelectedIndices();
+            foreach (int index in indexes)
+            {
+                lista_horarios_seleccionado.Add(lista_horarios[index]);
+            }
+            dt_pelicula.horarios_Prop = lista_horarios_seleccionado;
+
+            dt_pelicula.id_categoria_edad_pelicula_Prop = ddl_categoria_edad.SelectedIndex;
+
+            //El método nos regresa la lista de salas que han sido marcadas
+            dt_pelicula.salas_Prop = SalasSeleccionadas();
+
+            int s = 100;
+        }
+
+        protected void btn_guardar_pelicula_Click(object sender, EventArgs e)
+        {
+            GuardarPelicula();
+        }
+
+        private List<clsSalaPelicula> SalasSeleccionadas()
+        {
+            List<clsSalaPelicula> dt_salas_seleccionadas = new List<clsSalaPelicula>();
+
+            if (sala1.Checked)
+            {
+                dt_salas_seleccionadas.Add(new clsSalaPelicula() { id_sala_cartelera_Prop = 1, nombre_tipo_sala_Prop = "sala1" });
+            }
+            if (sala2.Checked)
+            {
+                dt_salas_seleccionadas.Add(new clsSalaPelicula() { id_sala_cartelera_Prop = 2, nombre_tipo_sala_Prop = "sala2" });
+            }
+            if (sala3.Checked)
+            {
+                dt_salas_seleccionadas.Add(new clsSalaPelicula() { id_sala_cartelera_Prop = 3, nombre_tipo_sala_Prop = "sala3" });
+            }
+            if (sala4.Checked)
+            {
+                dt_salas_seleccionadas.Add(new clsSalaPelicula() { id_sala_cartelera_Prop = 4, nombre_tipo_sala_Prop = "sala4" });
+            }
+            if (sala5.Checked)
+            {
+                dt_salas_seleccionadas.Add(new clsSalaPelicula() { id_sala_cartelera_Prop = 5, nombre_tipo_sala_Prop = "sala5" });
+            }
+            if (sala6.Checked)
+            {
+                dt_salas_seleccionadas.Add(new clsSalaPelicula() { id_sala_cartelera_Prop = 6, nombre_tipo_sala_Prop = "sala6" });
+            }
+
+            return dt_salas_seleccionadas;
         }
     }
 }

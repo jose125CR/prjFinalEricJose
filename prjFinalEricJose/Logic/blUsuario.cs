@@ -168,7 +168,6 @@ namespace prjFinalEricJose.Logic
                 conn.Open();
 
                 vRespuesta = cmd.ExecuteNonQuery();
-
             }
             catch (Exception ex)
             {

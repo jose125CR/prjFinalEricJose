@@ -13,7 +13,10 @@ namespace prjFinalEricJose.Logic
     {
         public List<clsPelicula> CosultarPeliculas(ref string pError)
         {
-            List<clsPelicula> lista = new List<clsPelicula>();
+            blHorario lg_horario = new blHorario();
+            blSalaPelicula lg_sala_pelicula = new blSalaPelicula();
+
+            List<clsPelicula> lista_peliculas = new List<clsPelicula>();
 
             clsConnection conexion = new clsConnection();
 
@@ -25,7 +28,7 @@ namespace prjFinalEricJose.Logic
             {
                 SqlDataReader dr;
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "spConsultarPeliculas";
+                cmd.CommandText = "pa_consultar_peliculas";
 
                 cmd.Connection = conn;
 
@@ -34,30 +37,48 @@ namespace prjFinalEricJose.Logic
                 dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                    clsPelicula vPelicula = new clsPelicula();
+                    clsPelicula dt_pelicula = new clsPelicula();
 
-                    if (!string.IsNullOrEmpty(dr["id"].ToString()))
+                    if (!string.IsNullOrEmpty(dr["id_pelicula"].ToString()))
                     {
-                        vPelicula.id_Prop = Convert.ToInt32(dr["id"].ToString());
+                        dt_pelicula.id_pelicula_Prop = Convert.ToInt32(dr["id_pelicula"].ToString());
                     }
-                    if (!string.IsNullOrEmpty(dr["nombre"].ToString()))
+                    if (!string.IsNullOrEmpty(dr["id_categoria_edad_pelicula"].ToString()))
                     {
-                        vPelicula.nombre_Prop = dr["nombre"].ToString();
+                        dt_pelicula.id_categoria_edad_pelicula_Prop = Convert.ToInt32(dr["id_categoria_edad_pelicula"].ToString());
                     }
-                    if (!string.IsNullOrEmpty(dr["sipnosis"].ToString()))
+                    if (!string.IsNullOrEmpty(dr["nombre_pelicula"].ToString()))
                     {
-                        vPelicula.sipnosis_Prop = dr["sipnosis"].ToString();
+                        dt_pelicula.nombre_pelicula_Prop = dr["nombre_pelicula"].ToString();
                     }
-                    if (!string.IsNullOrEmpty(dr["img_url"].ToString()))
+                    if (!string.IsNullOrEmpty(dr["direccion_img"].ToString()))
                     {
-                        vPelicula.img_url_Prop = dr["img_url"].ToString();
+                        dt_pelicula.direccion_img_prop = dr["direccion_img"].ToString();
                     }
-                    if (!string.IsNullOrEmpty(dr["year"].ToString()))
+                    if (!string.IsNullOrEmpty(dr["sinopsis"].ToString()))
                     {
-                        vPelicula.year_Prop = dr["year"].ToString();
+                        dt_pelicula.sinopsis_Prop = dr["sinopsis"].ToString();
+                    }
+                    if (!string.IsNullOrEmpty(dr["estado"].ToString()))
+                    {
+                        dt_pelicula.estado_Prop = dr["estado"].ToString();
+                    }
+                    if (!string.IsNullOrEmpty(dr["fecha_estreno"].ToString()))
+                    {
+                        dt_pelicula.fecha_estreno_Prop = Convert.ToDateTime(dr["fecha_estreno"].ToString());
+                    }
+                    if (!string.IsNullOrEmpty(dr["id_pelicula"].ToString()))
+                    {
+                        int id_pelicula = Convert.ToInt32(dr["id_pelicula"].ToString());
+                        dt_pelicula.horarios_Prop = lg_horario.CosultarHorariosPorIdPelicula(id_pelicula, ref pError);
+                    }
+                    if (!string.IsNullOrEmpty(dr["id_pelicula"].ToString()))
+                    {
+                        int id_pelicula = Convert.ToInt32(dr["id_pelicula"].ToString());
+                        dt_pelicula.salas_Prop = lg_sala_pelicula.CosultarSalassPorIdPelicula(id_pelicula, ref pError);
                     }
 
-                    lista.Add(vPelicula);
+                    lista_peliculas.Add(dt_pelicula);
                 }
             }
             catch (Exception ex)
@@ -73,7 +94,7 @@ namespace prjFinalEricJose.Logic
                 conn = null;
             }
 
-            return lista;
+            return lista_peliculas;
         }
     }
 }
