@@ -119,5 +119,54 @@ namespace prjFinalEricJose.Logic
 
             return lista_horarios;
         }
+
+        public void RegistrarHorariosPorIdPelicula(List<clsHorario> horarios_pelicula, List<clsSalaPelicula> salas_pelicula, int id_pelicula, ref string pError)
+        {
+            blSalaPelicula lg_sala_pelicula = new blSalaPelicula();
+
+            foreach (clsHorario sp in horarios_pelicula)
+            {
+                clsConnection conexion = new clsConnection();
+                SqlConnection conn = new SqlConnection(conexion.ObtenerCadenaConexion());
+                SqlCommand cmd = new SqlCommand();
+
+                int vRespuesta;
+
+                try
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "pa_registrar_horarios_pelicula";
+
+                    cmd.Parameters.Add("@ppaId_pelicula", SqlDbType.Int);
+                    cmd.Parameters["@ppaId_pelicula"].Value = id_pelicula;
+
+                    cmd.Parameters.Add("@ppaId_horario", SqlDbType.Int);
+                    cmd.Parameters["@ppaId_horario"].Value = sp.id_horario_Prop;
+
+                    cmd.Connection = conn;
+                    conn.Open();
+
+                    vRespuesta = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    System.Diagnostics.Debug.WriteLine(ex.Message, "RegistrarHorariosPorIdPelicula");
+                    pError = "Error general en la funcion RegistrarHorariosPorIdPelicula. Detalles: " + ex.Message;
+                }
+                finally
+                {
+                    conn.Close();
+                    cmd.Parameters.Clear();
+                    cmd.Dispose();
+                    conn.Dispose();
+                    conn = null;
+                }
+            }
+
+            if (id_pelicula != -1)
+            {
+                lg_sala_pelicula.RegistrarSalasPorIdPelicula(salas_pelicula, id_pelicula, ref pError);
+            }
+        }
     }
 }

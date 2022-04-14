@@ -22,5 +22,6 @@ namespace prjFinalEricJose.Data
             get { return nombre_tipo_sala; }
             set { nombre_tipo_sala = value; }
         }
+
     }
 }

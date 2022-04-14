@@ -58,29 +58,29 @@
                                     <label>Salas donde se presentara la película</label>
                                     <div class="row form-it d-flex">
                                         <div class="col d-flex justify-content-center">
-                                            <asp:CheckBox runat="server" ID="sala1" name="sala1" value="1" />
+                                            <asp:CheckBox runat="server" ID="sala1" name="sala1" />
                                             <label for="sala1">Sala 1 2D</label>
                                         </div>
                                         <div class="col d-flex justify-content-center">
-                                            <asp:CheckBox runat="server" class="ms-3" ID="sala2" name="sala2" value="2" />
+                                            <asp:CheckBox runat="server" class="ms-3" ID="sala2" name="sala2" />
                                             <label for="sala2">Sala 2 3D</label>
                                         </div>
                                         <div class="col d-flex justify-content-center">
-                                            <asp:CheckBox runat="server" class="ms-3" ID="sala3" name="sala3" value="3" />
+                                            <asp:CheckBox runat="server" class="ms-3" ID="sala3" name="sala3" />
                                             <label for="sala3">Sala 3 IMAX</label>
                                         </div>
                                     </div>
                                     <div class="row form-it d-flex">
                                         <div class="col d-flex justify-content-center">
-                                            <asp:CheckBox runat="server" ID="sala4" name="sala4" value="4" />
+                                            <asp:CheckBox runat="server" ID="sala4" name="sala4" />
                                             <label for="sala4">Sala 4 2D</label>
                                         </div>
                                         <div class="col d-flex justify-content-center">
-                                            <asp:CheckBox runat="server" class="ms-3" ID="sala5" name="sala2" value="5" />
+                                            <asp:CheckBox runat="server" class="ms-3" ID="sala5" name="sala2" />
                                             <label for="sala5">Sala 5 3D</label>
                                         </div>
                                         <div class="col d-flex justify-content-center">
-                                            <asp:CheckBox runat="server" class="ms-3" ID="sala6" name="sala3" value="6" />
+                                            <asp:CheckBox runat="server" class="ms-3" ID="sala6" name="sala3" />
                                             <label for="sala6">Sala 6 IMAX</label>
                                         </div>
                                     </div>
@@ -129,16 +129,19 @@
                                     <div class="row">
                                         <div class="col-md-3 form-it">
                                             <label class="white-color-text">Horarios Disponibles</label>
-                                            <asp:DropDownList CssClass="general-select" runat="server" DataSource='<%# Eval("horarios_Prop") %>' DataTextField="horario_Prop" DataValueField="id_horario_Prop" />
+                                            <asp:DropDownList ID="horario" CssClass="general-select" runat="server" DataSource='<%# Eval("horarios_Prop") %>' DataTextField="horario_Prop" DataValueField="id_horario_Prop" />
                                         </div>
                                         <div class="col-md-3 form-it">
                                             <label class="white-color-text">Salas Disponibles</label>
                                             <asp:DropDownList CssClass="general-select" runat="server" DataSource='<%# Eval("salas_Prop") %>' DataTextField="nombre_tipo_sala_Prop" DataValueField="id_sala_cartelera_Prop" />
                                         </div>
+                                        <div class="col-md-2 form-it d-flex justify-content-center">
+                                            <asp:Button  CssClass="black-btn margin-bonificacion-btn" ID="btn_ingresar_persona" runat="server" Text="Bonificación 2D" />
+                                        </div>
+                                        <div class="col-md-2 form-it d-flex justify-content-center">
+                                            <asp:Button  CssClass="black-btn margin-bonificacion-btn" ID="btn_registar_persona" runat="server" Text="Bonificación IMAX" />
+                                        </div>
                                     </div>
-                                    <%--<p class="run-time"> Run Time: 2h21’    .     <span>MMPA: PG-13 </span>    .     <span>Release: 1 May 2015</span></p>
-								<p>Director: <a href="#">Joss Whedon</a></p>
-								<p>Stars: <a href="#">Robert Downey Jr.,</a> <a href="#">Chris Evans,</a> <a href="#">  Chris Hemsworth</a></p>--%>
                                 </div>
                             </div>
                         </ItemTemplate>

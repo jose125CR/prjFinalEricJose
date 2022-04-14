@@ -11,10 +11,11 @@ namespace prjFinalEricJose.Page
 {
     public partial class MoviesList : System.Web.UI.Page
     {
+        
         int idSeleccionado;
-        private List<int> checkbox_seleccionados = new List<int>();
         public void Mensaje(string pMensaje)
         {
+            //HttpUtility.ParseQueryString(myU)
             Type cstype = this.GetType();
 
             ClientScriptManager cs = Page.ClientScript;
@@ -26,12 +27,17 @@ namespace prjFinalEricJose.Page
             }
         }
 
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+        }
+
         public void MostrarListaPeliculas()
         {
             blPelicula lg_pelicula = new blPelicula();
             string vError = null;
 
             List<clsPelicula> lista_peliculas = lg_pelicula.CosultarPeliculas(ref vError);
+            int id = lg_pelicula.ConseguirNuevoIdPelicula(ref vError);
 
             if (vError == null)
             {
@@ -77,6 +83,16 @@ namespace prjFinalEricJose.Page
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //for(int i = 1; i <= 10; i++)
+            //{
+            //    Button btn = new Button();
+            //    btn.Text = "A-" + i.ToString();
+            //    btn.Click += (se, ev) => button_Click(se, ev, 10);
+            //    pnl_btns.Controls.Add(btn);
+            //}
+
+            //btn.Click += (2, 1) => { your code; }; ;
+
             if (IsPostBack == false)
             {
                 MostrarListaPeliculas();
@@ -92,7 +108,21 @@ namespace prjFinalEricJose.Page
 
         protected void ltvPeliculas_ItemDeleting(object sender, ListViewDeleteEventArgs e)
         {
-            Mensaje(idSeleccionado.ToString());
+            blPelicula lg_pelicula = new blPelicula();
+            string vError = null;
+
+            lg_pelicula.EliminarPelicula(idSeleccionado, ref vError);
+
+
+            if (vError == null)
+            {
+                Mensaje("Película eliminada con exito");
+                MostrarListaPeliculas();
+            }
+            else
+            {
+                Mensaje("Error al eliminar la Película");
+            }
         }
 
         protected void ltvPeliculas_ItemEditing(object sender, ListViewEditEventArgs e)
@@ -102,17 +132,25 @@ namespace prjFinalEricJose.Page
 
         protected void ltvPeliculas_ItemUpdating(object sender, ListViewUpdateEventArgs e)
         {
-            clsPelicula pelicula = (clsPelicula)e.OldValues;
-            Mensaje(idSeleccionado.ToString());
+            ListViewItem item = ltvPeliculas.Items[e.ItemIndex];
+
+            DropDownList textBox = (DropDownList)item.FindControl("horario");
+
+            Session["id_pelicula"] = textBox.SelectedValue.ToString();
+
+            Response.Redirect("SelectTicket.aspx");
         }
 
         private void GuardarPelicula()
         {
             blHorario lg_horario = new blHorario();
             string vError = null;
+            //Llamar a todos los horarios
             List<clsHorario> lista_horarios = lg_horario.CosultarListaHorarios(ref vError);
+            //Lista horarios vacia
             List<clsHorario> lista_horarios_seleccionado = new List<clsHorario>();
             clsPelicula dt_pelicula = new clsPelicula();
+            blPelicula lg_pelicula = new blPelicula();
 
             if (fud_imagen_pelicula.HasFile)
             {
@@ -142,12 +180,22 @@ namespace prjFinalEricJose.Page
             }
             dt_pelicula.horarios_Prop = lista_horarios_seleccionado;
 
-            dt_pelicula.id_categoria_edad_pelicula_Prop = ddl_categoria_edad.SelectedIndex;
+            dt_pelicula.id_categoria_edad_pelicula_Prop = Convert.ToInt32(ddl_categoria_edad.SelectedValue);
 
             //El método nos regresa la lista de salas que han sido marcadas
             dt_pelicula.salas_Prop = SalasSeleccionadas();
 
-            int s = 100;
+            lg_pelicula.GuardarPelicula(dt_pelicula, ref vError);
+
+            if (vError == null)
+            {
+                Mensaje("Pelicula registrada con exito");
+                MostrarListaPeliculas();
+            }
+            else
+            {
+                Mensaje("Error al registrar la Pelicula");
+            }
         }
 
         protected void btn_guardar_pelicula_Click(object sender, EventArgs e)
