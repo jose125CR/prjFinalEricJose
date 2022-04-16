@@ -123,6 +123,7 @@ namespace prjFinalEricJose.Logic
         public void RegistrarHorariosPorIdPelicula(List<clsHorario> horarios_pelicula, List<clsSalaPelicula> salas_pelicula, int id_pelicula, ref string pError)
         {
             blSalaPelicula lg_sala_pelicula = new blSalaPelicula();
+            blButaca lg_butaca = new blButaca();
 
             foreach (clsHorario sp in horarios_pelicula)
             {
@@ -166,6 +167,7 @@ namespace prjFinalEricJose.Logic
             if (id_pelicula != -1)
             {
                 lg_sala_pelicula.RegistrarSalasPorIdPelicula(salas_pelicula, id_pelicula, ref pError);
+                lg_butaca.RegistrarButacasHorarioSalaPelicula(horarios_pelicula, salas_pelicula, id_pelicula, ref pError);
             }
         }
     }

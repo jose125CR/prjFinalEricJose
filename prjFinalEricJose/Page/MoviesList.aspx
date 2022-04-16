@@ -7,11 +7,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="hero-ct">
-                        <h1>Agregar una Película</h1>
-                        <ul class="breadcumb">
-                            <li class="active"><a href="#">Películas</a></li>
-                            <li><span class="ion-ios-arrow-right"></span>Agregar una Película</li>
+                    <div class="row">
+                            <h1>Módulo de Películas</h1>
+                        <ul class="row d-flex justify-content-center breadcumb">
+                            <li class="active"><a href="../Page/index.aspx">Inicio</a></li>
+                            <li><span class="ion-ios-arrow-right"></span>Módulo de Películas</li>
                         </ul>
                     </div>
                 </div>
@@ -127,12 +127,16 @@
                                     <p class="rate"><i class="ion-android-star"></i><span>8.1</span> /10</p>
                                     <p class="describe"><%# Eval("sinopsis_prop") %></p>
                                     <div class="row">
-                                        <div class="col-md-3 form-it">
+                                        <div class="col-md-2 form-it">
                                             <label class="white-color-text">Horarios Disponibles</label>
                                             <asp:DropDownList ID="horario" CssClass="general-select" runat="server" DataSource='<%# Eval("horarios_Prop") %>' DataTextField="horario_Prop" DataValueField="id_horario_Prop" />
                                         </div>
-                                        <div class="col-md-3 form-it">
+                                        <div class="col-md-2 form-it">
                                             <label class="white-color-text">Salas Disponibles</label>
+                                            <asp:DropDownList CssClass="general-select" runat="server" DataSource='<%# Eval("salas_Prop") %>' DataTextField="nombre_tipo_sala_Prop" DataValueField="id_sala_cartelera_Prop" />
+                                        </div>
+                                        <div class="col-md-2 form-it">
+                                            <label class="white-color-text">Días Disponibles</label>
                                             <asp:DropDownList CssClass="general-select" runat="server" DataSource='<%# Eval("salas_Prop") %>' DataTextField="nombre_tipo_sala_Prop" DataValueField="id_sala_cartelera_Prop" />
                                         </div>
                                         <div class="col-md-2 form-it d-flex justify-content-center">

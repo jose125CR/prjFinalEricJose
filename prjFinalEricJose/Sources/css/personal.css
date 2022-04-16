@@ -134,10 +134,20 @@ td {
     border: 0.5px solid grey;
 }
 
+.factura-contenedor {
+    padding: 50px 134px;
+}
+
 .asiento-label {
     font-size: 18px;
     color: white;
     font-weight: 500;
+}
+
+.label-venta-ticket {
+    font-size: 18px;
+    color: #abb7c4;
+    font-weight 500;
 }
 
 .seat.ocupada {
@@ -153,7 +163,7 @@ td {
 }
 
 .seats-container {
-    max-width: 355px;
+    /*max-width: 355px;*/
     margin: auto;
 }
 
