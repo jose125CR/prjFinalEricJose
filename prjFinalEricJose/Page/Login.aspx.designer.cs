@@ -7,47 +7,56 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace prjFinalEricJose.Masters
+namespace prjFinalEricJose.Page
 {
 
 
-    public partial class Menu
+    public partial class Login
     {
 
         /// <summary>
-        /// Control head.
+        /// Control formulario_persona.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Panel formulario_persona;
 
         /// <summary>
-        /// Control header_master.
+        /// Control txt_usuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel header_master;
+        protected global::System.Web.UI.WebControls.TextBox txt_usuario;
 
         /// <summary>
-        /// Control form1.
+        /// Control txt_contrasena.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.TextBox txt_contrasena;
 
         /// <summary>
-        /// Control ContentPlaceHolder1.
+        /// Control btn_ingresar_persona.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Button btn_ingresar_persona;
+
+        /// <summary>
+        /// Control btn_registar_persona.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_registar_persona;
     }
 }

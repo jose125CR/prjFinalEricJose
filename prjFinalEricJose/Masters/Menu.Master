@@ -6,7 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <!-- Basic need -->
-	<title>Open Pediatrics</title>
+	<title>Movie Center</title>
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="author" content="">
@@ -120,7 +120,7 @@
 
 <!-- BEGIN | Header -->
 <header class="ht-header">
-	<div class="container">
+	<asp:Panel ID="header_master" runat="server" class="container">
 		<nav class="navbar navbar-default navbar-custom">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header logo">
@@ -207,7 +207,7 @@
 				</div>
 			<!-- /.navbar-collapse -->
 	    </nav>
-	</div>
+	</asp:Panel>
 </header>
 <!-- END | Header -->
 

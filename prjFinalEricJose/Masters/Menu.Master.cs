@@ -11,7 +11,10 @@ namespace prjFinalEricJose.Masters
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Convert.ToBoolean(Session["loggueado"])) 
+            {
+                header_master.Visible = true;
+            }
         }
     }
 }

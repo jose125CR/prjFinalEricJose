@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace prjFinalEricJose.Page
 {
-    public partial class AddUser : System.Web.UI.Page
+    public partial class FacturaTickets : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

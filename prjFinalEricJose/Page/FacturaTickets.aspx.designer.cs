@@ -11,7 +11,16 @@ namespace prjFinalEricJose.Page
 {
 
 
-    public partial class AddUser
+    public partial class FacturaTickets
     {
+
+        /// <summary>
+        /// Control btn_guardar_pelicula.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_guardar_pelicula;
     }
 }

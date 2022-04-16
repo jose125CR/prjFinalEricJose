@@ -11,7 +11,7 @@ namespace prjFinalEricJose.Masters
 {
 
 
-    public partial class Menu
+    public partial class Login
     {
 
         /// <summary>
@@ -22,15 +22,6 @@ namespace prjFinalEricJose.Masters
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
-
-        /// <summary>
-        /// Control header_master.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel header_master;
 
         /// <summary>
         /// Control form1.

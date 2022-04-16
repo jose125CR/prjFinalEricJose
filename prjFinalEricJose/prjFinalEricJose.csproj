@@ -67,9 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Page\AddMovie.aspx" />
-    <Content Include="Page\AddUser.aspx" />
+    <Content Include="Page\FacturaTickets.aspx" />
     <Content Include="Page\Index.aspx" />
+    <Content Include="Page\Login.aspx" />
     <Content Include="Page\MoviesList.aspx" />
     <Content Include="Page\SelectTicket.aspx" />
     <Content Include="Page\UsersList.aspx" />
@@ -100,6 +100,7 @@
     <Content Include="Sources\images\nivo\next.png" />
     <Content Include="Sources\images\nivo\prev%402x.png" />
     <Content Include="Sources\images\nivo\prev.png" />
+    <Content Include="Sources\images\sala-cine-3d.jpg" />
     <Content Include="Sources\images\uploads\ads1.png" />
     <Content Include="Sources\images\uploads\ads2.png" />
     <Content Include="Sources\images\uploads\author.png" />
@@ -288,12 +289,41 @@
     <Content Include="Sources\js\jquery.js" />
     <Content Include="Sources\js\plugins.js" />
     <Content Include="Sources\js\plugins2.js" />
+    <Content Include="Sources\newIcons\icons8-edit-64.png" />
+    <Content Include="Sources\newIcons\icons8-remove-48.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connection\clsConnection.cs" />
+    <Compile Include="Data\clsButaca.cs" />
+    <Compile Include="Data\clsButacaTicket.cs" />
+    <Compile Include="Data\clsCategoriaEdad.cs" />
+    <Compile Include="Data\clsCategoriaPersona.cs" />
+    <Compile Include="Data\clsHorario.cs" />
+    <Compile Include="Data\clsPelicula.cs" />
+    <Compile Include="Data\clsPreciosEntradasSalaDia.cs" />
+    <Compile Include="Data\clsRol.cs" />
+    <Compile Include="Data\clsSalaPelicula.cs" />
+    <Compile Include="Data\clsTicket.cs" />
     <Compile Include="Data\clsUsuario.cs" />
+    <Compile Include="Logic\blButaca.cs" />
+    <Compile Include="Logic\blButacaTicket.cs" />
+    <Compile Include="Logic\blCategoriaEdad.cs" />
+    <Compile Include="Logic\blCategoriaPersona.cs" />
+    <Compile Include="Logic\blHorario.cs" />
+    <Compile Include="Logic\blPelicula.cs" />
+    <Compile Include="Logic\blPreciosEntradasSalaDia.cs" />
+    <Compile Include="Logic\blRol.cs" />
+    <Compile Include="Logic\blSalaPelicula.cs" />
+    <Compile Include="Logic\blTicket.cs" />
     <Compile Include="Logic\blUsuario.cs" />
+    <Compile Include="Masters\Login.Master.cs">
+      <DependentUpon>Login.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\Login.Master.designer.cs">
+      <DependentUpon>Login.Master</DependentUpon>
+    </Compile>
     <Compile Include="Masters\Menu.Master.cs">
       <DependentUpon>Menu.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -301,19 +331,12 @@
     <Compile Include="Masters\Menu.Master.designer.cs">
       <DependentUpon>Menu.Master</DependentUpon>
     </Compile>
-    <Compile Include="Page\AddMovie.aspx.cs">
-      <DependentUpon>AddMovie.aspx</DependentUpon>
+    <Compile Include="Page\FacturaTickets.aspx.cs">
+      <DependentUpon>FacturaTickets.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Page\AddMovie.aspx.designer.cs">
-      <DependentUpon>AddMovie.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Page\AddUser.aspx.cs">
-      <DependentUpon>AddUser.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\AddUser.aspx.designer.cs">
-      <DependentUpon>AddUser.aspx</DependentUpon>
+    <Compile Include="Page\FacturaTickets.aspx.designer.cs">
+      <DependentUpon>FacturaTickets.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
@@ -321,6 +344,13 @@
     </Compile>
     <Compile Include="Page\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\MoviesList.aspx.cs">
       <DependentUpon>MoviesList.aspx</DependentUpon>
@@ -347,6 +377,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Masters\Menu.Master" />
+    <Content Include="Masters\Login.Master" />
     <None Include="packages.config" />
     <Content Include="Sources\fonts\fontawesome-webfont93e3.eot" />
     <Content Include="Sources\fonts\fontawesome-webfont93e3.ttf" />

@@ -5000,6 +5000,7 @@ ul {
     justify-content: flex-start;
     overflow: hidden;
     margin-bottom: 30px;
+    border-top: 1px solid #405266;
 }
 
 @media (max-width: 767px) {
@@ -5052,7 +5053,6 @@ ul {
 
 .movie-item-style-2 .mv-item-infor .describe {
     padding-bottom: 25px;
-    border-bottom: 1px solid #405266;
     margin-bottom: 25px;
 }
 
@@ -6704,13 +6704,8 @@ ul {
         padding-top: 225px;
     }
 
-        .user-hero .hero-ct h1 {
-            margin-left: -120px;
-        }
-
-    .user-hero ul.breadcumb {
-        text-align: left;
-        margin-left: 25.5%;
+    .user-hero .hero-ct h1 {
+        margin-left: -120px;
     }
 
 @media (max-width: 991px) {
@@ -7548,7 +7543,7 @@ ul {
         margin-bottom: 10px;
     }
 
-    .form-style-1 input:not(input[type="checkbox"]),
+    .form-style-1 input:not(input[type="submit"]):not(input[type="checkbox"]),
     .form-style-1 select {
         font-family: 'Nunito', sans-serif;
         font-size: 12px;
@@ -7562,6 +7557,8 @@ ul {
         border-radius: 3px !important;
         height: 40px;
     }
+
+
 
     .form-style-1 input::-webkit-input-placeholder {
         color: #abb7c4;

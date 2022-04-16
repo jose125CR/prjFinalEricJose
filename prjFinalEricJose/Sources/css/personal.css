@@ -1,4 +1,16 @@
-﻿textarea {
+﻿.display-flex {
+    display: flex;
+}
+
+.margin-auto {
+    margin: auto;
+}
+
+.white-color-text {
+    color: white;
+}
+
+textarea {
     font-family: Nunito, sans-serif;
     font-size: 12px;
     color: rgb(171, 183, 196);
@@ -62,7 +74,7 @@ td {
     }
 }
 
-.mv-item-infor .yellow-btn, .mv-item-infor .remove-btn, .mv-item-infor .blue-btn {
+.yellow-btn, .primary-btn, .blue-btn, .black-btn {
     font-family: 'Dosis', sans-serif;
     font-size: 13px;
     font-weight: 700;
@@ -70,26 +82,41 @@ td {
     border-radius: 8px;
     height: 40px;
     border: none;
-    margin: 7px;
-    padding: 8px;
+    padding: 8px 12px;
 }
 
-.mv-item-infor .yellow-btn {
+.yellow-btn {
     color: black;
-    background: #dcf836;
+    background: #e3c800;
 }
 
-.mv-item-infor .remove-btn {
+.black-btn {
+    color: white;
+    border: 1px solid white;
+    background: center;
+}
+
+.primary-btn {
     color: white;
     background: #dd003f;
 }
 
-.mv-item-infor .blue-btn {
+.blue-btn{
     color: white;
     background: #4280bf;
 }
 
+.margin-bonificacion-btn {
+    margin-top: 22px;
+}
+
 .screen {
+    margin: 40px 0;
+    border: solid 13px WHITE;
+}
+
+
+/* .screen {
     background-color: #fff;
     width: 100%;
     height: 300px;
@@ -97,19 +124,38 @@ td {
     margin: auto;
     transform: rotateX(-45deg);
     box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
-}
-
+}*/
 .seat {
-    background-color: #444451;
-    height: 27px;
-    width: 30px;
-    margin: 3px;
+    background-color: #008a00;
+    height: 46px;
+    width: 50px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    border: 0.5px solid grey;
 }
 
-.seat.occupied {
-    background-color: #fff;
+.factura-contenedor {
+    padding: 50px 134px;
+}
+
+.asiento-label {
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+}
+
+.label-venta-ticket {
+    font-size: 18px;
+    color: #abb7c4;
+    font-weight 500;
+}
+
+.seat.ocupada {
+    background-color: #e51400;
+}
+
+.seat.seleccionada {
+    background-color: #e3c800;
 }
 
 .seats-row {
@@ -117,11 +163,52 @@ td {
 }
 
 .seats-container {
-    width: 300px;
+    /*max-width: 355px;*/
     margin: auto;
 }
 
 .seat-center-group {
     display: flex;
     margin: 0 60px;
+}
+
+
+.login-container {
+    min-height: 100vh;
+    background: url(../images/uploads/user-hero-bg.jpg);
+}
+
+.login-header-logo-container, .login-header-title-container {
+    display: flex;
+}
+
+.login-header-logo, .login-header-title {
+    margin: 0 auto 48px auto;
+}
+
+.login-header-title h1 {
+    color: white;    
+}
+
+.multi-select {
+    min-height: 70px
+}
+
+.general-select {
+    font-family: 'Nunito', sans-serif;
+    font-size: 12px;
+    color: #abb7c4;
+    font-weight: 300;
+    text-transform: none;
+    background-color: #233a50;
+    border: none;
+    -webkit-border-radius: 3px !important;
+    -moz-border-radius: 3px !important;
+    border-radius: 3px !important;
+    height: 40px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* Firefox */
+    background: url('../images/uploads/drop-icon.png') no-repeat right 20px center;
+    background-color: #233a50;
 }

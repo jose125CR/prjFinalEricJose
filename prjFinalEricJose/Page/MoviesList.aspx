@@ -1,135 +1,170 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Masters/Menu.Master" AutoEventWireup="true" CodeBehind="MoviesList.aspx.cs" Inherits="prjFinalEricJose.Page.MoviesList" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="hero common-hero">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="hero-ct">
-					<h1> movie listing - list</h1>
-					<ul class="breadcumb">
-						<li class="active"><a href="#">Home</a></li>
-						<li> <span class="ion-ios-arrow-right"></span> movie listing</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<div class="page-single movie_list">
-	<div class="container">
-		<div class="row ipad-width2">
-			<div class="col-md-12 col-sm-12 col-xs-12">
-				<div class="topbar-filter">
-					<p>Found <span>1,608 movies</span> in total</p>
-					<label>Sort by:</label>
-					<select>
-						<option value="popularity">Popularity Descending</option>
-						<option value="popularity">Popularity Ascending</option>
-						<option value="rating">Rating Descending</option>
-						<option value="rating">Rating Ascending</option>
-						<option value="date">Release date Descending</option>
-						<option value="date">Release date Ascending</option>
-					</select>
-					<a href="movielist.html" class="list"><i class="ion-ios-list-outline active"></i></a>
-					<a  href="moviegrid.html" class="grid"><i class="ion-grid"></i></a>
-				</div>
-				<div class="movie-item-style-2">
-					<img src="../Sources/images/uploads/mv1.jpg" alt="">
-					<div class="mv-item-infor">
-						<div class="btn-actions-movies">
-							<button class="remove-btn" type="submit" value="save">Eliminar Pelicula</button>
-							<button class="blue-btn" type="submit" value="save">Editar Pelicula</button>
-							<button onclick="window.location.href='/Page/SelectTicket.aspx'" class="yellow-btn" type="button" value="save">Comprar Ticket</button>
-						</div>
-						<h6><a href="moviesingle.html">oblivion <span>(2012)</span></a></h6>
-						<p class="rate"><i class="ion-android-star"></i><span>8.1</span> /10</p>
-						<p class="describe">Earth's mightiest heroes must come together and learn to fight as a team if they are to stop the mischievous Loki and his alien army from enslaving humanity...</p>
-						<p class="run-time"> Run Time: 2h21’    .     <span>MMPA: PG-13 </span>    .     <span>Release: 1 May 2015</span></p>
-						<p>Director: <a href="#">Joss Whedon</a></p>
-						<p>Stars: <a href="#">Robert Downey Jr.,</a> <a href="#">Chris Evans,</a> <a href="#">  Chris Hemsworth</a></p>
-					</div>
-				</div>
-				<div class="movie-item-style-2">
-					<img src="../Sources/images/uploads/mv2.jpg" alt="">
-					<div class="mv-item-infor">
-						<div class="btn-actions-movies">
-							<button class="remove-btn" type="submit" value="save">Eliminar Pelicula</button>
-							<button class="blue-btn" type="submit" value="save">Editar Pelicula</button>
-							<button onclick="window.location.href='/Page/SelectTicket.aspx'" class="yellow-btn" type="button" value="save">Comprar Ticket</button>
-						</div>
-						<h6><a href="moviesingle.html">into the wild <span>(2014)</span></a></h6>
-						<p class="rate"><i class="ion-android-star"></i><span>7.8</span> /10</p>
-						<p class="describe">As Steve Rogers struggles to embrace his role in the modern world, he teams up with a fellow Avenger and S.H.I.E.L.D agent, Black Widow, to battle a new threat...</p>
-						<p class="run-time"> Run Time: 2h21’    .     <span>MMPA: PG-13 </span>    .     <span>Release: 1 May 2015</span></p>
-						<p>Director: <a href="#">Anthony Russo,</a><a href="#">Joe Russo</a></p>
-						<p>Stars: <a href="#">Chris Evans,</a> <a href="#">Samuel L. Jackson,</a> <a href="#">  Scarlett Johansson</a></p>
-					</div>
-				</div>
-				<div class="movie-item-style-2">
-					<img src="../Sources/images/uploads/mv3.jpg" alt="">
-					<div class="mv-item-infor">
-						<div class="btn-actions-movies">
-							<button class="remove-btn" type="submit" value="save">Eliminar Pelicula</button>
-							<button class="blue-btn" type="submit" value="save">Editar Pelicula</button>
-							<button onclick="window.location.href='/Page/SelectTicket.aspx'" class="yellow-btn" type="button" value="save">Comprar Ticket</button>
-						</div>
-						<h6><a href="moviesingle.html">blade runner  <span>(2015)</span></a></h6>
-						<p class="rate"><i class="ion-android-star"></i><span>7.3</span> /10</p>
-						<p class="describe">Armed with a super-suit with the astonishing ability to shrink in scale but increase in strength, cat burglar Scott Lang must embrace his inner hero and help...</p>
-						<p class="run-time"> Run Time: 2h21’    .     <span>MMPA: PG-13 </span>    .     <span>Release: 1 May 2015</span></p>
-						<p>Director: <a href="#">Peyton Reed</a></p>
-						<p>Stars: <a href="#">Paul Rudd,</a> <a href="#"> Michael Douglas</a></p>
-					</div>
-				</div>
-				<div class="movie-item-style-2">
-					<img src="../Sources/images/uploads/mv4.jpg" alt="">
-					<div class="mv-item-infor">
-						<div class="btn-actions-movies">
-							<button class="remove-btn" type="submit" value="save">Eliminar Pelicula</button>
-							<button class="blue-btn" type="submit" value="save">Editar Pelicula</button>
-							<button onclick="window.location.href='/Page/SelectTicket.aspx'" class="yellow-btn" type="button" value="save">Comprar Ticket</button>
-						</div>
-						<h6><a href="moviesingle.html">Mulholland pride<span> (2013)  </span></a></h6>
-						<p class="rate"><i class="ion-android-star"></i><span>7.2</span> /10</p>
-						<p class="describe">When Tony Stark's world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.</p>
-						<p class="run-time"> Run Time: 2h21’    .     <span>MMPA: PG-13 </span>    .     <span>Release: 1 May 2015</span></p>
-						<p>Director: <a href="#">Shane Black</a></p>
-						<p>Stars: <a href="#">Robert Downey Jr., </a> <a href="#">  Guy Pearce,</a><a href="#">Don Cheadle</a></p>
-					</div>
-				</div>
-				<div class="movie-item-style-2">
-					<img src="../Sources/images/uploads/mv5.jpg" alt="">
-					<div class="mv-item-infor">
-						<div class="btn-actions-movies">
-							<button class="remove-btn" type="submit" value="save">Eliminar Pelicula</button>
-							<button class="blue-btn" type="submit" value="save">Editar Pelicula</button>
-							<button onclick="window.location.href='/Page/SelectTicket.aspx'" class="yellow-btn" type="button" value="save">Comprar Ticket</button>
-						</div>
-						<h6><a href="moviesingle.html">skyfall: evil of boss<span> (2013)  </span></a></h6>
-						<p class="rate"><i class="ion-android-star"></i><span>7.0</span> /10</p>
-						<p class="describe">When Tony Stark's world is torn apart by a formidable terrorist called the Mandarin, he starts an odyssey of rebuilding and retribution.</p>
-						<p class="run-time"> Run Time: 2h21’    .     <span>MMPA: PG-13 </span>    .     <span>Release: 1 May 2015</span></p>
-						<p>Director: <a href="#">Alan Taylor</a></p>
-						<p>Stars: <a href="#">Chris Hemsworth,  </a> <a href="#">  Natalie Portman,</a><a href="#">Tom Hiddleston</a></p>
-					</div>
-				</div>
-				<div class="topbar-filter">
-					<label>Movies per page:</label>
-					<select>
-						<option value="range">5 Movies</option>
-						<option value="saab">10 Movies</option>
-					</select>
-					<div class="pagination2">
-						<span>Page 1 of 2:</span>
-						<a class="active" href="#">1</a>
-						<a href="#">2</a>
-						<a href="#"><i class="ion-arrow-right-b"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+    <div class="hero user-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                            <h1>Módulo de Películas</h1>
+                        <ul class="row d-flex justify-content-center breadcumb">
+                            <li class="active"><a href="../Page/index.aspx">Inicio</a></li>
+                            <li><span class="ion-ios-arrow-right"></span>Módulo de Películas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-single">
+        <div class="container">
+            <div class="row ipad-width">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-style-1 user-pro" action="#">
+                        <div action="#" class="user">
+                            <h4>Detalles de la nueva Película</h4>
+                            <div class="row">
+                                <div class="col-md-6 form-it">
+                                    <label>Nombre de la Película</label>
+                                    <asp:TextBox runat="server" ID="txt_nombre_pelicula" placeholder="Nombre de la Película" />
+                                </div>
+                                <div class="col-md-6 form-it">
+                                    <label>Imagen de la Película</label>
+                                    <asp:FileUpload CssClass="w-100" runat="server" ID="fud_imagen_pelicula" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 form-it">
+                                    <label>Sipnosis</label>
+                                    <asp:TextBox ID="txt_sipnosis" runat="server" Wrap="true" TextMode="MultiLine" placeholder="Escribe la sipnosis de la Película " />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 form-it">
+                                    <div class="col-md-6 form-it">
+                                        <label>Categoría de Edad</label>
+                                        <asp:DropDownList ID="ddl_categoria_edad" CssClass="general-select" runat="server" />
+                                    </div>
+                                    <div class="col-md-6 form-it">
+                                        <label>Horarios Disponibles</label>
+                                        <div class="group-ip">
+                                            <asp:ListBox CssClass="multi-select" ID="ltb_horarios_disponibles" SelectionMode="Multiple" runat="server" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 form-it">
+                                    <label>Salas donde se presentara la película</label>
+                                    <div class="row form-it d-flex">
+                                        <div class="col d-flex justify-content-center">
+                                            <asp:CheckBox runat="server" ID="sala1" name="sala1" />
+                                            <label for="sala1">Sala 1 2D</label>
+                                        </div>
+                                        <div class="col d-flex justify-content-center">
+                                            <asp:CheckBox runat="server" class="ms-3" ID="sala2" name="sala2" />
+                                            <label for="sala2">Sala 2 3D</label>
+                                        </div>
+                                        <div class="col d-flex justify-content-center">
+                                            <asp:CheckBox runat="server" class="ms-3" ID="sala3" name="sala3" />
+                                            <label for="sala3">Sala 3 IMAX</label>
+                                        </div>
+                                    </div>
+                                    <div class="row form-it d-flex">
+                                        <div class="col d-flex justify-content-center">
+                                            <asp:CheckBox runat="server" ID="sala4" name="sala4" />
+                                            <label for="sala4">Sala 4 2D</label>
+                                        </div>
+                                        <div class="col d-flex justify-content-center">
+                                            <asp:CheckBox runat="server" class="ms-3" ID="sala5" name="sala2" />
+                                            <label for="sala5">Sala 5 3D</label>
+                                        </div>
+                                        <div class="col d-flex justify-content-center">
+                                            <asp:CheckBox runat="server" class="ms-3" ID="sala6" name="sala3" />
+                                            <label for="sala6">Sala 6 IMAX</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <asp:Button runat="server" Text="Agregar Pelicula" CssClass="btn-red" ID="btn_guardar_pelicula" OnClick="btn_guardar_pelicula_Click" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%--**********************************************************************************--%>
+    <div class="page-single movie_list">
+        <div class="container">
+            <div class="row ipad-width2">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <asp:ListView
+                        ID="ltvPeliculas"
+                        runat="server"
+                        OnItemCommand="ltvPeliculas_ItemCommand"
+                        OnItemEditing="ltvPeliculas_ItemEditing"
+                        OnItemDeleting="ltvPeliculas_ItemDeleting"
+                        OnItemUpdating="ltvPeliculas_ItemUpdating">
+                        <ItemTemplate>
+                            <div class="movie-item-style-2">
+                                <asp:Image runat="server" ImageUrl='<%# "../Sources/images/uploads/" + Eval("direccion_img_prop") %>' />
+                                <div class="mv-item-infor">
+                                    <div class="btn-actions-movies">
+                                        <asp:Button CssClass="primary-btn me-2" ID="btn_delete" runat="server" Text="Eliminar Pelicula" CommandName="delete" CommandArgument='<%# Eval("id_pelicula_Prop") %>' />
+                                        <asp:Button CssClass="blue-btn me-2 me-2 ms-2" ID="Button1" runat="server" Text="Editar Pelicula" CommandName="edit" CommandArgument='<%# Eval("id_pelicula_Prop") %>' />
+                                        <asp:Button CssClass="yellow-btn ms-2" ID="btnupdt" runat="server" Text="Editar Pelicula" CommandName="update" CommandArgument='<%# Eval("id_pelicula_Prop") %>' />
+                                    </div>
+                                    <h6>
+                                        <asp:HyperLink runat="server" href='<%# Eval("id_pelicula_Prop") %>'>
+                                            <%# Eval("nombre_pelicula_Prop") %>
+                                            <asp:Label CssClass="ms-1" ID="year" runat="server" Text="2022" />
+                                        </asp:HyperLink>
+                                    </h6>
+                                    <p class="rate"><i class="ion-android-star"></i><span>8.1</span> /10</p>
+                                    <p class="describe"><%# Eval("sinopsis_prop") %></p>
+                                    <div class="row">
+                                        <div class="col-md-2 form-it">
+                                            <label class="white-color-text">Horarios Disponibles</label>
+                                            <asp:DropDownList ID="horario" CssClass="general-select" runat="server" DataSource='<%# Eval("horarios_Prop") %>' DataTextField="horario_Prop" DataValueField="id_horario_Prop" />
+                                        </div>
+                                        <div class="col-md-2 form-it">
+                                            <label class="white-color-text">Salas Disponibles</label>
+                                            <asp:DropDownList CssClass="general-select" runat="server" DataSource='<%# Eval("salas_Prop") %>' DataTextField="nombre_tipo_sala_Prop" DataValueField="id_sala_cartelera_Prop" />
+                                        </div>
+                                        <div class="col-md-2 form-it">
+                                            <label class="white-color-text">Días Disponibles</label>
+                                            <asp:DropDownList CssClass="general-select" runat="server" DataSource='<%# Eval("salas_Prop") %>' DataTextField="nombre_tipo_sala_Prop" DataValueField="id_sala_cartelera_Prop" />
+                                        </div>
+                                        <div class="col-md-2 form-it d-flex justify-content-center">
+                                            <asp:Button  CssClass="black-btn margin-bonificacion-btn" ID="btn_ingresar_persona" runat="server" Text="Bonificación 2D" />
+                                        </div>
+                                        <div class="col-md-2 form-it d-flex justify-content-center">
+                                            <asp:Button  CssClass="black-btn margin-bonificacion-btn" ID="btn_registar_persona" runat="server" Text="Bonificación IMAX" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ItemTemplate>
+                    </asp:ListView>
+                    <div class="topbar-filter">
+                        <label>Movies per page:</label>
+                        <select>
+                            <option value="range">5 Movies</option>
+                            <option value="saab">10 Movies</option>
+                        </select>
+                        <div class="pagination2">
+                            <span>Page 1 of 2:</span>
+                            <a class="active" href="#">1</a>
+                            <a href="#">2</a>
+                            <a href="#"><i class="ion-arrow-right-b"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </asp:Content>
