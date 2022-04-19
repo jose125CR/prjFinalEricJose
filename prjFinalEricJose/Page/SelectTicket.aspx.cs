@@ -54,7 +54,7 @@ namespace prjFinalEricJose.Page
                     btn.CssClass = "seat me-1 ms-1 mt-2" + ConseguirClaseButaca(index, lista_butacas[index - 1]);
                     btn.Text = lista_butacas[index - 1].identificador_Prop;
                     btn.Click += new EventHandler(buataca_preciona);
-                    pnl_butacas.Controls.Add(btn);
+                    PlaceholderControls.Controls.Add(btn);
                 }
             }
             else
@@ -171,19 +171,21 @@ namespace prjFinalEricJose.Page
             ViewState["seleccionada"] = btn.Text;
             string vError = null;
 
+            string tex = btn.Text;
+
             clsButaca r_butaca = lg_butaca.ConsultarUnaButaca(id_pelicula, id_horario, id_sala, btn.Text, ref vError);
 
-            if(vError == null)
+            if (vError == null)
             {
-                int selected_index_btn = pnl_butacas.Controls.IndexOf(btn);
+                int selected_index_btn = PlaceholderControls.Controls.IndexOf(btn);
 
                 if (r_butaca.estado_Prop == seleccionada)
                 {
-                    pnl_butacas.Controls.Remove(btn);
+                    PlaceholderControls.Controls.Remove(btn);
 
                     btn.CssClass = "seat me-1 ms-1 mt-2 disponible" + ConseguirClaseButaca(selected_index_btn + 1, null);
                     btn.Click += new EventHandler(buataca_preciona);
-                    pnl_butacas.Controls.AddAt(selected_index_btn, btn);
+                    PlaceholderControls.Controls.AddAt(selected_index_btn, btn);
 
                     lg_butaca.ActualizarButaca(id_pelicula, id_horario, id_sala, id_categoria_persona, btn.Text, disponible, ref vError);
 
@@ -191,11 +193,13 @@ namespace prjFinalEricJose.Page
                 }
                 else if (r_butaca.estado_Prop == disponible)
                 {
-                    pnl_butacas.Controls.Remove(btn);
+                    PlaceholderControls.Controls.Remove(btn);
+
 
                     btn.CssClass = "seat me-1 ms-1 mt-2 seleccionada" + ConseguirClaseButaca(selected_index_btn + 1, null);
                     btn.Click += new EventHandler(buataca_preciona);
-                    pnl_butacas.Controls.AddAt(selected_index_btn, btn);
+                    PlaceholderControls.Controls.AddAt(selected_index_btn, btn);
+
 
                     lg_butaca.ActualizarButaca(id_pelicula, id_horario, id_sala, id_categoria_persona, btn.Text, seleccionada, ref vError);
 
@@ -278,17 +282,17 @@ namespace prjFinalEricJose.Page
 
                 lg_ticket.Guardarticket(dt_ticket, ref vError);
 
-                if(vError == null)
+                if (vError == null)
                 {
-                    foreach(clsButaca bt in butacas_seleccionadas)
+                    foreach (clsButaca bt in butacas_seleccionadas)
                     {
                         float precio_butaca = lg_butaca.ConsultarPrecioButaca(id_sala, id_dia_seleccionado, bt.id_categoria_persona_Prop, ref vError);
 
-                        if(vError == null)
+                        if (vError == null)
                         {
                             lg_butaca_ticket.GuardarButacaTicket(nuevo_id, bt.id_butaca_Prop, precio_butaca, ref vError);
 
-                            if(vError == null)
+                            if (vError == null)
                             {
                                 lg_butaca.ActualizarButaca(id_pelicula, id_horario, id_sala, bt.id_categoria_persona_Prop, bt.identificador_Prop, ocupada, ref vError);
                             }
@@ -297,7 +301,7 @@ namespace prjFinalEricJose.Page
                 }
             }
 
-            if(vError == null)
+            if (vError == null)
             {
                 Response.Redirect($"/factura/{nuevo_id}");
             }

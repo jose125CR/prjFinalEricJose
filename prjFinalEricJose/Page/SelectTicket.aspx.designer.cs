@@ -15,6 +15,24 @@ namespace prjFinalEricJose.Page
     {
 
         /// <summary>
+        /// Control ScriptManager1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
+
+        /// <summary>
+        /// Control UpdatePanel1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
+
+        /// <summary>
         /// Control ddl_seleccionar_persona.
         /// </summary>
         /// <remarks>
@@ -51,13 +69,13 @@ namespace prjFinalEricJose.Page
         protected global::System.Web.UI.WebControls.Label txt_cantidad_adulto;
 
         /// <summary>
-        /// Control pnl_butacas.
+        /// Control PlaceholderControls.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnl_butacas;
+        protected global::System.Web.UI.WebControls.PlaceHolder PlaceholderControls;
 
         /// <summary>
         /// Control txt_precio_general.

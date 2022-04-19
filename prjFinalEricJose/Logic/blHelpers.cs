@@ -25,9 +25,12 @@ namespace prjFinalEricJose.Logic
 
         public static float TipoCambio()
         {
+
             string url = $"{BASE_URI}/api/{API_VERSION}/convert?q=USD_CRC&compact=ultra&apiKey={API_KEY}";
             var jsonString = GetResponse(url);
             var json_object = JObject.Parse(jsonString);
+
+
 
             float tipo_cambio_string = (float)json_object["USD_CRC"].ToObject<float>();
 
@@ -36,16 +39,22 @@ namespace prjFinalEricJose.Logic
 
         private static string GetResponse(string url)
         {
-            string jsonString;
-
-            var request = (HttpWebRequest)WebRequest.Create(url);
-            request.AutomaticDecompression = DecompressionMethods.GZip;
-
-            using (var response = (HttpWebResponse)request.GetResponse())
-            using (var stream = response.GetResponseStream())
-            using (var reader = new StreamReader(stream))
+            string jsonString = "";
+            
+            try
             {
-                jsonString = reader.ReadToEnd();
+                var request = (HttpWebRequest)WebRequest.Create(url);
+                request.AutomaticDecompression = DecompressionMethods.GZip;
+
+                using (var response = (HttpWebResponse)request.GetResponse())
+                using (var stream = response.GetResponseStream())
+                using (var reader = new StreamReader(stream))
+                {
+                    jsonString = reader.ReadToEnd();
+                }
+            }catch
+            {
+                
             }
 
             return jsonString;
