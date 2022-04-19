@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+/*Libreria para definir las rutas*/
+
 namespace prjFinalEricJose.Masters
 {
     public partial class Menu : System.Web.UI.MasterPage
@@ -15,6 +17,13 @@ namespace prjFinalEricJose.Masters
             {
                 header_master.Visible = true;
             }
+
+            //RegisterRoutes(RouteTable.Routes);
         }
+
+        //private void RegisterRoutes(RouteCollection routes)
+        //{
+        //    routes.MapPageRoute("users", "Page/users", "~/Page/UsersList.aspx");
+        //}
     }
 }

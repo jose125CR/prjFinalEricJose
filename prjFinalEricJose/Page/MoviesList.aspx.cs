@@ -83,16 +83,6 @@ namespace prjFinalEricJose.Page
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //for(int i = 1; i <= 10; i++)
-            //{
-            //    Button btn = new Button();
-            //    btn.Text = "A-" + i.ToString();
-            //    btn.Click += (se, ev) => button_Click(se, ev, 10);
-            //    pnl_btns.Controls.Add(btn);
-            //}
-
-            //btn.Click += (2, 1) => { your code; }; ;
-
             if (IsPostBack == false)
             {
                 MostrarListaPeliculas();
@@ -134,11 +124,15 @@ namespace prjFinalEricJose.Page
         {
             ListViewItem item = ltvPeliculas.Items[e.ItemIndex];
 
-            DropDownList textBox = (DropDownList)item.FindControl("horario");
+            DropDownList ddl_horario = (DropDownList)item.FindControl("horario");
+            DropDownList ddl_sala = (DropDownList)item.FindControl("sala");
+            DropDownList ddl_dia = (DropDownList)item.FindControl("dia");
+            string id_pelicula = idSeleccionado.ToString();
+            string id_horario = ddl_horario.SelectedValue.ToString();
+            string id_sala = ddl_sala.SelectedValue.ToString();
+            string id_dia = ddl_dia.SelectedValue.ToString();
 
-            Session["id_pelicula"] = textBox.SelectedValue.ToString();
-
-            Response.Redirect("SelectTicket.aspx");
+            Response.Redirect($"/tickets/{id_pelicula}/{id_horario}/{id_sala}/{id_dia}");
         }
 
         private void GuardarPelicula()

@@ -179,7 +179,7 @@ namespace prjFinalEricJose.Logic
 
                     if (!string.IsNullOrEmpty(dr["id_butaca"].ToString()))
                     {
-                        dt_butaca.id_butaca_Prop = Convert.ToInt32(dr["id_pelicula"].ToString());
+                        dt_butaca.id_butaca_Prop = Convert.ToInt32(dr["id_butaca"].ToString());
                     }
                     if (!string.IsNullOrEmpty(dr["id_pelicula"].ToString()))
                     {

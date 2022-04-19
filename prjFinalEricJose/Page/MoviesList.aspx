@@ -133,11 +133,11 @@
                                         </div>
                                         <div class="col-md-2 form-it">
                                             <label class="white-color-text">Salas Disponibles</label>
-                                            <asp:DropDownList CssClass="general-select" runat="server" DataSource='<%# Eval("salas_Prop") %>' DataTextField="nombre_tipo_sala_Prop" DataValueField="id_sala_cartelera_Prop" />
+                                            <asp:DropDownList ID="sala" CssClass="general-select" runat="server" DataSource='<%# Eval("salas_Prop") %>' DataTextField="nombre_tipo_sala_Prop" DataValueField="id_sala_cartelera_Prop" />
                                         </div>
                                         <div class="col-md-2 form-it">
                                             <label class="white-color-text">Días Disponibles</label>
-                                            <asp:DropDownList CssClass="general-select" runat="server" DataSource='<%# Eval("salas_Prop") %>' DataTextField="nombre_tipo_sala_Prop" DataValueField="id_sala_cartelera_Prop" />
+                                            <asp:DropDownList ID="dia" CssClass="general-select" runat="server" DataSource='<%# Eval("dias_Prop") %>' DataTextField="nombre_dia_Prop" DataValueField="id_dia_Prop" />
                                         </div>
                                         <div class="col-md-2 form-it d-flex justify-content-center">
                                             <asp:Button  CssClass="black-btn margin-bonificacion-btn" ID="btn_ingresar_persona" runat="server" Text="Bonificación 2D" />

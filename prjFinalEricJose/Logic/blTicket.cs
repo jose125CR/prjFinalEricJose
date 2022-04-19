@@ -79,6 +79,12 @@ namespace prjFinalEricJose.Logic
                 cmd.Parameters.Add("@ppaId_pelicula", SqlDbType.Int);
                 cmd.Parameters["@ppaId_pelicula"].Value = dt_ticket.id_pelicula_Prop;
 
+                cmd.Parameters.Add("@ppaId_sala_pelicula", SqlDbType.Int);
+                cmd.Parameters["@ppaId_sala_pelicula"].Value = dt_ticket.id_sala_pelicula_prop;
+
+                cmd.Parameters.Add("@ppaId_horario_pelicula", SqlDbType.Int);
+                cmd.Parameters["@ppaId_horario_pelicula"].Value = dt_ticket.id_horario_pelicula_prop;
+
                 cmd.Connection = conn;
                 conn.Open();
                 vRespuesta = cmd.ExecuteNonQuery();

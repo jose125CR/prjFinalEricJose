@@ -7,6 +7,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using prjFinalEricJose.Logic;
 using prjFinalEricJose.Data;
+using System.Net;
+using System.Web.Script.Serialization;
 
 namespace prjFinalEricJose.Page
 {
@@ -16,13 +18,12 @@ namespace prjFinalEricJose.Page
         const string ocupada = "o";
         const string disponible = "d";
         const string seleccionada = "s";
-        const int id_pelicula = 4;
-        const int id_horario = 3;
-        const int id_sala = 1;
+        int id_pelicula = 0;
+        int id_horario = 0;
+        int id_sala = 0;
+        int id_dia_seleccionado = 0;
         const int id_categoria_persona = 1;
-        const int id_dia_seleccionado = 4;
         const string dni_persona = "115960067";
-
 
         public void Mensaje(string pMensaje)
         {
@@ -96,8 +97,11 @@ namespace prjFinalEricJose.Page
                 }
             }
 
-            txt_total_pagar.Text = precio_final.ToString();
-            //float total_pagar = general.precio_total_categoria_prop + ninos.precio_total_categoria_prop + adultos.precio_total_categoria_prop;
+            txt_total_pagar_colones.Text = precio_final.ToString();
+
+
+
+            txt_total_pagar_dolares.Text = blHelpers.ConseguirValorDolares(precio_final).ToString();
         }
 
         private void ValoresDefecto()
@@ -113,13 +117,23 @@ namespace prjFinalEricJose.Page
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            Cargar_butacas();
+            if (Page.RouteData.Values["id_pelicula"] != null &&
+                Page.RouteData.Values["id_horario"] != null &&
+                Page.RouteData.Values["id_sala"] != null &&
+                Page.RouteData.Values["id_dia"] != null
+            )
+            {
+                id_pelicula = Convert.ToInt32(Page.RouteData.Values["id_pelicula"]);
+                id_horario = Convert.ToInt32(Page.RouteData.Values["id_horario"]);
+                id_sala = Convert.ToInt32(Page.RouteData.Values["id_sala"]);
+                id_dia_seleccionado = Convert.ToInt32(Page.RouteData.Values["id_dia"]);
+            }
             if (!IsPostBack)
             {
                 CargarDdlCategoriaPersona();
                 CargarPreciosCantidad();
             }
+            Cargar_butacas();
         }
 
         private string ConseguirClaseButaca(int index, clsButaca bt)
@@ -137,15 +151,14 @@ namespace prjFinalEricJose.Page
 
             if (bt != null)
             {
-                if (bt.estado_Prop == "s")
+                if (bt.estado_Prop == seleccionada)
                 {
                     clase_final += " seleccionada";
                 }
-                else if (bt.estado_Prop == "o")
+                else if (bt.estado_Prop == ocupada)
                 {
                     clase_final += " ocupada";
                 }
-
             }
 
             return clase_final;
@@ -252,13 +265,16 @@ namespace prjFinalEricJose.Page
 
             List<clsButaca> butacas_seleccionadas = lg_butaca.ConsultarButacasHorarioSalaPeliculaSeleccionadas(id_pelicula, id_horario, id_sala, ref vError);
 
-            if(vError == null)
+            int nuevo_id = -1;
+            if (vError == null)
             {
-                int nuevo_id = lg_ticket.ConseguirNuevoIdTicket(ref vError);
+                nuevo_id = lg_ticket.ConseguirNuevoIdTicket(ref vError);
 
                 dt_ticket.id_ticket_Prop = nuevo_id;
                 dt_ticket.id_pelicula_Prop = id_pelicula;
                 dt_ticket.dni_persona_prop = dni_persona;
+                dt_ticket.id_sala_pelicula_prop = id_sala;
+                dt_ticket.id_horario_pelicula_prop = id_horario;
 
                 lg_ticket.Guardarticket(dt_ticket, ref vError);
 
@@ -271,9 +287,19 @@ namespace prjFinalEricJose.Page
                         if(vError == null)
                         {
                             lg_butaca_ticket.GuardarButacaTicket(nuevo_id, bt.id_butaca_Prop, precio_butaca, ref vError);
+
+                            if(vError == null)
+                            {
+                                lg_butaca.ActualizarButaca(id_pelicula, id_horario, id_sala, bt.id_categoria_persona_Prop, bt.identificador_Prop, ocupada, ref vError);
+                            }
                         }
                     }
                 }
+            }
+
+            if(vError == null)
+            {
+                Response.Redirect($"/factura/{nuevo_id}");
             }
         }
     }

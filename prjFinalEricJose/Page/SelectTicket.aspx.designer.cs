@@ -87,13 +87,22 @@ namespace prjFinalEricJose.Page
         protected global::System.Web.UI.WebControls.Label txt_precio_adulto;
 
         /// <summary>
-        /// Control txt_total_pagar.
+        /// Control txt_total_pagar_colones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txt_total_pagar;
+        protected global::System.Web.UI.WebControls.Label txt_total_pagar_colones;
+
+        /// <summary>
+        /// Control txt_total_pagar_dolares.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txt_total_pagar_dolares;
 
         /// <summary>
         /// Control btn_registar_persona.

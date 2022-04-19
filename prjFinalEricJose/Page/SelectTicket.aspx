@@ -46,7 +46,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="row d-flex justify-content-center">
                         <div>
-                            <img class="screen" src="../Sources/images/sala-cine-3d.jpg" />
+                            <img class="screen" src="/Sources/images/sala-cine-3d.jpg" />
                         </div>
                     </div>
                 </div>
@@ -125,10 +125,16 @@
                                     </div>
                                 </div>
                                 <div class="row mt-5">
-                                    <div class="col-md-6 form-it">
+                                    <div class="col-md-3 form-it">
                                         <div class="row">
-                                            <asp:Label CssClass="label-venta-ticket" runat="server" Text="Total a pagar: ₡" />
-                                            <asp:Label CssClass="label-venta-ticket" ID="txt_total_pagar" runat="server" Text="0" />
+                                            <asp:Label CssClass="label-venta-ticket" runat="server" Text="Total a pagar Colones: ₡" />
+                                            <asp:Label CssClass="label-venta-ticket" ID="txt_total_pagar_colones" runat="server" Text="0" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 form-it">
+                                        <div class="row">
+                                            <asp:Label CssClass="label-venta-ticket" runat="server" Text="Total a pagar Dólares: $" />
+                                            <asp:Label CssClass="label-venta-ticket" ID="txt_total_pagar_dolares" runat="server" Text="0" />
                                         </div>
                                     </div>
                                     <div class="col-md-6 form-it d-flex justify-content-end">

@@ -32,6 +32,22 @@ namespace prjFinalEricJose.Data
             set { id_pelicula = value; }
         }
 
+        private int id_sala_pelicula;
+
+        public int id_sala_pelicula_prop
+        {
+            get { return id_sala_pelicula; }
+            set { id_sala_pelicula = value; }
+        }
+
+        private int id_horario_pelicula;
+
+        public int id_horario_pelicula_prop
+        {
+            get { return id_horario_pelicula; }
+            set { id_horario_pelicula = value; }
+        }
+
         private DateTime hora_compra;
 
         public DateTime hora_compra_Prop

@@ -10,6 +10,12 @@
     color: white;
 }
 
+.label-factura-final-resultado {
+    font-size: 14px;
+    color: #abb7c4;
+    font-weight: 500;
+}
+
 textarea {
     font-family: Nunito, sans-serif;
     font-size: 12px;
@@ -147,10 +153,11 @@ td {
 .label-venta-ticket {
     font-size: 18px;
     color: #abb7c4;
-    font-weight 500;
+    font-weight: 500;
 }
 
 .seat.ocupada {
+    color: white;
     background-color: #e51400;
 }
 
@@ -171,7 +178,6 @@ td {
     display: flex;
     margin: 0 60px;
 }
-
 
 .login-container {
     min-height: 100vh;

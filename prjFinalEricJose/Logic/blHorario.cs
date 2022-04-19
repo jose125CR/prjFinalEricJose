@@ -91,9 +91,9 @@ namespace prjFinalEricJose.Logic
                 {
                     clsHorario dt_horario = new clsHorario();
 
-                    if (!string.IsNullOrEmpty(dr["id_horario_pelicula"].ToString()))
+                    if (!string.IsNullOrEmpty(dr["id_horario"].ToString()))
                     {
-                        dt_horario.id_horario_Prop = Convert.ToInt32(dr["id_horario_pelicula"].ToString());
+                        dt_horario.id_horario_Prop = Convert.ToInt32(dr["id_horario"].ToString());
                     }
                     if (!string.IsNullOrEmpty(dr["horario"].ToString()))
                     {

@@ -21,17 +21,17 @@
 
 	<!-- CSS files -->
 	
-	<link rel="stylesheet" href="../Sources/css/plugins.css">
-	<link rel="stylesheet" href="../Sources/css/style.css">
-	<link rel="stylesheet" href="../Sources/css/bootstrap.css">
-	<link rel="stylesheet" href="../Sources/css/personal.css">
+	<link rel="stylesheet" href="/Sources/css/plugins.css">
+	<link rel="stylesheet" href="/Sources/css/style.css">
+	<link rel="stylesheet" href="/Sources/css/bootstrap.css">
+	<link rel="stylesheet" href="/Sources/css/personal.css">
 	<asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
 <!--preloading-->
 <div id="preloader">
-    <img class="logo" src="../Sources/images/logo1.png" alt="" width="119" height="58">
+    <img class="logo" src="/Sources/images/logo1.png" alt="" width="119" height="58">
     <div id="status">
         <span></span>
         <span></span>
@@ -132,7 +132,7 @@
 							<span></span>
 						</div>
 				    </div>
-				    <a href="index-2.html"><img class="logo" src="../Sources/images/logo1.png" alt="" width="119" height="58"></a>
+				    <a href="index-2.html"><img class="logo" src="/Sources/images/logo1.png" alt="" width="119" height="58"></a>
 			    </div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse flex-parent" id="bs-example-navbar-collapse-1">
@@ -165,7 +165,7 @@
 							Películas <i class="fa fa-angle-down" aria-hidden="true"></i>
 							</a>
 							<ul class="dropdown-menu level1">
-								<li><a href="../Page/MoviesList.aspx">Lista de Películas</a></li>
+								<li><a href="/peliculas">Lista de Películas</a></li>
 								<li><a href="../Page/AddMovie.aspx">Agregar una Película </a></li>
 							</ul>
 						</li>
@@ -224,7 +224,7 @@
 	<div class="container">
 		<div class="flex-parent-ft">
 			<div class="flex-child-ft item1">
-				 <a href="index-2.html"><img class="logo" src="../Sources/images/logo1.png" alt=""></a>
+				 <a href="index-2.html"><img class="logo" src="/Sources/images/logo1.png" alt=""></a>
 				 <p>5th Avenue st, manhattan<br>
 				New York, NY 10001</p>
 				<p>Call us: <a href="#">(+01) 202 342 6789</a></p>
@@ -279,9 +279,9 @@
 <!-- end of footer section-->
 
 	<script src="https://kit.fontawesome.com/6c44485c78.js" crossorigin="anonymous"></script>
-	<script src="../Sources/js/jquery.js"></script>
-	<script src="../Sources/js/plugins.js"></script>
-	<script src="../Sources/js/plugins2.js"></script>
-	<script src="../Sources/js/custom.js"></script>
+	<script src="/Sources/js/jquery.js"></script>
+	<script src="/Sources/js/plugins.js"></script>
+	<script src="/Sources/js/plugins2.js"></script>
+	<script src="/Sources/js/custom.js"></script>
 </body>
 </html>

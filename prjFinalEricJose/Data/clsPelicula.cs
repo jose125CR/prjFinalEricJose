@@ -71,6 +71,14 @@ namespace prjFinalEricJose.Data
             set { salas = value; }
         }
 
+        private List<clsDiaSemana> dias;
+
+        public List<clsDiaSemana> dias_Prop
+        {
+            get { return dias; }
+            set { dias = value; }
+        }
+
         private DateTime fecha_estreno;
 
         public DateTime fecha_estreno_Prop
