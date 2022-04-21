@@ -15,6 +15,7 @@ namespace prjFinalEricJose.Logic
         {
             blHorario lg_horario = new blHorario();
             blSalaPelicula lg_sala_pelicula = new blSalaPelicula();
+            blDiaSemana lg_dia_pelicula = new blDiaSemana();
 
             List<clsPelicula> lista_peliculas = new List<clsPelicula>();
 
@@ -35,6 +36,8 @@ namespace prjFinalEricJose.Logic
                 conn.Open();
 
                 dr = cmd.ExecuteReader();
+
+                List<clsDiaSemana> dt_dias_semana = lg_dia_pelicula.CosultarListaDiasSemana(ref pError);
                 while (dr.Read())
                 {
                     clsPelicula dt_pelicula = new clsPelicula();
@@ -76,6 +79,10 @@ namespace prjFinalEricJose.Logic
                     {
                         int id_pelicula = Convert.ToInt32(dr["id_pelicula"].ToString());
                         dt_pelicula.salas_Prop = lg_sala_pelicula.CosultarSalasPorIdPelicula(id_pelicula, ref pError);
+                    }
+                    if (!string.IsNullOrEmpty(dr["id_pelicula"].ToString()))
+                    {
+                        dt_pelicula.dias_Prop = dt_dias_semana;
                     }
 
                     lista_peliculas.Add(dt_pelicula);

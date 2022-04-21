@@ -116,7 +116,7 @@
                                     <div class="btn-actions-movies">
                                         <asp:Button CssClass="primary-btn me-2" ID="btn_delete" runat="server" Text="Eliminar Pelicula" CommandName="delete" CommandArgument='<%# Eval("id_pelicula_Prop") %>' />
                                         <asp:Button CssClass="blue-btn me-2 me-2 ms-2" ID="Button1" runat="server" Text="Editar Pelicula" CommandName="edit" CommandArgument='<%# Eval("id_pelicula_Prop") %>' />
-                                        <asp:Button CssClass="yellow-btn ms-2" ID="btnupdt" runat="server" Text="Editar Pelicula" CommandName="update" CommandArgument='<%# Eval("id_pelicula_Prop") %>' />
+                                        <asp:Button CssClass="yellow-btn ms-2" ID="btnupdt" runat="server" Text="Seleccionar Butacas" CommandName="update" CommandArgument='<%# Eval("id_pelicula_Prop") %>' />
                                     </div>
                                     <h6>
                                         <asp:HyperLink runat="server" href='<%# Eval("id_pelicula_Prop") %>'>
@@ -126,6 +126,7 @@
                                     </h6>
                                     <p class="rate"><i class="ion-android-star"></i><span>8.1</span> /10</p>
                                     <p class="describe"><%# Eval("sinopsis_prop") %></p>
+                                    <p class="alerta-pelicula">Por favor verifica los datos de la película!!</p>
                                     <div class="row">
                                         <div class="col-md-2 form-it">
                                             <label class="white-color-text">Horarios Disponibles</label>
@@ -133,11 +134,11 @@
                                         </div>
                                         <div class="col-md-2 form-it">
                                             <label class="white-color-text">Salas Disponibles</label>
-                                            <asp:DropDownList CssClass="general-select" runat="server" DataSource='<%# Eval("salas_Prop") %>' DataTextField="nombre_tipo_sala_Prop" DataValueField="id_sala_cartelera_Prop" />
+                                            <asp:DropDownList ID="sala" CssClass="general-select" runat="server" DataSource='<%# Eval("salas_Prop") %>' DataTextField="nombre_tipo_sala_Prop" DataValueField="id_sala_cartelera_Prop" />
                                         </div>
                                         <div class="col-md-2 form-it">
                                             <label class="white-color-text">Días Disponibles</label>
-                                            <asp:DropDownList CssClass="general-select" runat="server" DataSource='<%# Eval("salas_Prop") %>' DataTextField="nombre_tipo_sala_Prop" DataValueField="id_sala_cartelera_Prop" />
+                                            <asp:DropDownList ID="dia" CssClass="general-select" runat="server" DataSource='<%# Eval("dias_Prop") %>' DataTextField="nombre_dia_Prop" DataValueField="id_dia_Prop" />
                                         </div>
                                         <div class="col-md-2 form-it d-flex justify-content-center">
                                             <asp:Button  CssClass="black-btn margin-bonificacion-btn" ID="btn_ingresar_persona" runat="server" Text="Bonificación 2D" />

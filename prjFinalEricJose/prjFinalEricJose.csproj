@@ -44,6 +44,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,10 +70,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Global.asax" />
     <Content Include="Page\FacturaTickets.aspx" />
     <Content Include="Page\Index.aspx" />
     <Content Include="Page\Login.aspx" />
     <Content Include="Page\MoviesList.aspx" />
+    <Content Include="Page\Permisos.aspx" />
     <Content Include="Page\SelectTicket.aspx" />
     <Content Include="Page\UsersList.aspx" />
     <Content Include="Sources\css\ajax-loader.html" />
@@ -299,19 +304,31 @@
     <Compile Include="Data\clsButacaTicket.cs" />
     <Compile Include="Data\clsCategoriaEdad.cs" />
     <Compile Include="Data\clsCategoriaPersona.cs" />
+    <Compile Include="Data\clsDiaSemana.cs" />
+    <Compile Include="Data\clsFacturaFinal.cs" />
     <Compile Include="Data\clsHorario.cs" />
+    <Compile Include="Data\clsModulo.cs" />
     <Compile Include="Data\clsPelicula.cs" />
+    <Compile Include="Data\clsPermiso.cs" />
     <Compile Include="Data\clsPreciosEntradasSalaDia.cs" />
     <Compile Include="Data\clsRol.cs" />
     <Compile Include="Data\clsSalaPelicula.cs" />
     <Compile Include="Data\clsTicket.cs" />
     <Compile Include="Data\clsUsuario.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Logic\blButaca.cs" />
     <Compile Include="Logic\blButacaTicket.cs" />
     <Compile Include="Logic\blCategoriaEdad.cs" />
     <Compile Include="Logic\blCategoriaPersona.cs" />
+    <Compile Include="Logic\blDiaSemana.cs" />
+    <Compile Include="Logic\blFacturaFinal.cs" />
+    <Compile Include="Logic\blHelpers.cs" />
     <Compile Include="Logic\blHorario.cs" />
+    <Compile Include="Logic\blModulo.cs" />
     <Compile Include="Logic\blPelicula.cs" />
+    <Compile Include="Logic\blPermiso.cs" />
     <Compile Include="Logic\blPreciosEntradasSalaDia.cs" />
     <Compile Include="Logic\blRol.cs" />
     <Compile Include="Logic\blSalaPelicula.cs" />
@@ -358,6 +375,13 @@
     </Compile>
     <Compile Include="Page\MoviesList.aspx.designer.cs">
       <DependentUpon>MoviesList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Permisos.aspx.cs">
+      <DependentUpon>Permisos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\Permisos.aspx.designer.cs">
+      <DependentUpon>Permisos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\SelectTicket.aspx.cs">
       <DependentUpon>SelectTicket.aspx</DependentUpon>

@@ -10,6 +10,28 @@
     color: white;
 }
 
+.green-text {
+    color: lightgreen;
+}
+
+.red-text {
+    color: #abb7c4;
+}
+
+.label-factura-final-resultado {
+    font-size: 14px;
+    color: #abb7c4;
+    font-weight: 500;
+}
+
+.btn-salir {
+    padding: 10px 20px !important;
+}
+
+.editar-roles {
+    border-left: 1px solid #405266;
+}
+
 textarea {
     font-family: Nunito, sans-serif;
     font-size: 12px;
@@ -27,7 +49,12 @@ input[type="checkbox"] {
     height: 12px
 }
 
-.btn-red {
+.alerta-pelicula {
+    font-size: 17px;
+    color: indianred;
+}
+
+.btn-red, .btn-salir {
     font-family: 'Dosis', sans-serif;
     font-size: 14px;
     color: white;
@@ -138,6 +165,11 @@ td {
     padding: 50px 134px;
 }
 
+.label-user {
+    font-size: 14px;
+    color: #abb7c4;
+}
+
 .asiento-label {
     font-size: 18px;
     color: white;
@@ -147,10 +179,11 @@ td {
 .label-venta-ticket {
     font-size: 18px;
     color: #abb7c4;
-    font-weight 500;
+    font-weight: 500;
 }
 
 .seat.ocupada {
+    color: white;
     background-color: #e51400;
 }
 
@@ -171,7 +204,6 @@ td {
     display: flex;
     margin: 0 60px;
 }
-
 
 .login-container {
     min-height: 100vh;

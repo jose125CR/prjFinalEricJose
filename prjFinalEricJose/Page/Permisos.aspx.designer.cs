@@ -11,8 +11,17 @@ namespace prjFinalEricJose.Page
 {
 
 
-    public partial class SelectTicket
+    public partial class Permisos
     {
+
+        /// <summary>
+        /// Control formulario_persona.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel formulario_persona;
 
         /// <summary>
         /// Control ScriptManager1.
@@ -33,111 +42,75 @@ namespace prjFinalEricJose.Page
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
 
         /// <summary>
-        /// Control ddl_seleccionar_persona.
+        /// Control txt_nombre_rol.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_seleccionar_persona;
+        protected global::System.Web.UI.WebControls.TextBox txt_nombre_rol;
 
         /// <summary>
-        /// Control txt_cantidad_general.
+        /// Control btn_guardar_rol.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txt_cantidad_general;
+        protected global::System.Web.UI.WebControls.Button btn_guardar_rol;
 
         /// <summary>
-        /// Control txt_cantidad_ninos.
+        /// Control lb_mensaje_guardo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txt_cantidad_ninos;
+        protected global::System.Web.UI.WebControls.Label lb_mensaje_guardo;
 
         /// <summary>
-        /// Control txt_cantidad_adulto.
+        /// Control ddl_roles.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txt_cantidad_adulto;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_roles;
 
         /// <summary>
-        /// Control PlaceholderControls.
+        /// Control ddl_modulos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PlaceholderControls;
+        protected global::System.Web.UI.WebControls.DropDownList ddl_modulos;
 
         /// <summary>
-        /// Control txt_precio_general.
+        /// Control lb_mensaje_resultado.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txt_precio_general;
+        protected global::System.Web.UI.WebControls.Label lb_mensaje_resultado;
 
         /// <summary>
-        /// Control txt_precio_ninos.
+        /// Control grd_permisos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txt_precio_ninos;
+        protected global::System.Web.UI.WebControls.GridView grd_permisos;
 
         /// <summary>
-        /// Control txt_precio_adulto.
+        /// Control btn_eliminar_rol.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txt_precio_adulto;
-
-        /// <summary>
-        /// Control txt_total_pagar_colones.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txt_total_pagar_colones;
-
-        /// <summary>
-        /// Control txt_total_pagar_dolares.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txt_total_pagar_dolares;
-
-        /// <summary>
-        /// Control btn_registar_persona.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_registar_persona;
-
-        /// <summary>
-        /// Control btn_comprar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_comprar;
+        protected global::System.Web.UI.WebControls.Button btn_eliminar_rol;
     }
 }

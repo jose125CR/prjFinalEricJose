@@ -37,9 +37,9 @@ namespace prjFinalEricJose.Logic
                 {
                     clsSalaPelicula dt_sala_pelicula = new clsSalaPelicula();
 
-                    if (!string.IsNullOrEmpty(dr["id_sala_pelicula"].ToString()))
+                    if (!string.IsNullOrEmpty(dr["id_sala"].ToString()))
                     {
-                        dt_sala_pelicula.id_sala_cartelera_Prop = Convert.ToInt32(dr["id_sala_pelicula"].ToString());
+                        dt_sala_pelicula.id_sala_cartelera_Prop = Convert.ToInt32(dr["id_sala"].ToString());
                     }
                     if (!string.IsNullOrEmpty(dr["nombre_tipo_sala"].ToString()))
                     {

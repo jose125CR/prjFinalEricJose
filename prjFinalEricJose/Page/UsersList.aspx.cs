@@ -103,7 +103,6 @@ namespace prjFinalEricJose.Page
         public void caragarListaRoles()
         {
             blRol lg_rol = new blRol();
-            //clsRol dt_sario = new clsRol();
             string vError = null;
 
             List<clsRol> lista_roles = lg_rol.CosultarRoles(ref vError);
