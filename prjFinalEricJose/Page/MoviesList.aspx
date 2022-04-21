@@ -116,7 +116,7 @@
                                     <div class="btn-actions-movies">
                                         <asp:Button CssClass="primary-btn me-2" ID="btn_delete" runat="server" Text="Eliminar Pelicula" CommandName="delete" CommandArgument='<%# Eval("id_pelicula_Prop") %>' />
                                         <asp:Button CssClass="blue-btn me-2 me-2 ms-2" ID="Button1" runat="server" Text="Editar Pelicula" CommandName="edit" CommandArgument='<%# Eval("id_pelicula_Prop") %>' />
-                                        <asp:Button CssClass="yellow-btn ms-2" ID="btnupdt" runat="server" Text="Editar Pelicula" CommandName="update" CommandArgument='<%# Eval("id_pelicula_Prop") %>' />
+                                        <asp:Button CssClass="yellow-btn ms-2" ID="btnupdt" runat="server" Text="Seleccionar Butacas" CommandName="update" CommandArgument='<%# Eval("id_pelicula_Prop") %>' />
                                     </div>
                                     <h6>
                                         <asp:HyperLink runat="server" href='<%# Eval("id_pelicula_Prop") %>'>
@@ -126,6 +126,7 @@
                                     </h6>
                                     <p class="rate"><i class="ion-android-star"></i><span>8.1</span> /10</p>
                                     <p class="describe"><%# Eval("sinopsis_prop") %></p>
+                                    <p class="alerta-pelicula">Por favor verifica los datos de la película!!</p>
                                     <div class="row">
                                         <div class="col-md-2 form-it">
                                             <label class="white-color-text">Horarios Disponibles</label>

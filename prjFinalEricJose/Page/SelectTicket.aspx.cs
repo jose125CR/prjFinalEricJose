@@ -214,6 +214,7 @@ namespace prjFinalEricJose.Page
             else
             {
                 CargarPreciosCantidad();
+                ddl_seleccionar_persona.Items[0].Attributes.Add("disabled", "disabled");
             }
         }
 
@@ -231,6 +232,8 @@ namespace prjFinalEricJose.Page
                 ddl_seleccionar_persona.DataTextField = "nombre_categoria_prop";
                 ddl_seleccionar_persona.DataValueField = "id_categoria_persona_Prop";
                 ddl_seleccionar_persona.DataBind();
+
+                
             }
         }
 

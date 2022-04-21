@@ -75,6 +75,7 @@
     <Content Include="Page\Index.aspx" />
     <Content Include="Page\Login.aspx" />
     <Content Include="Page\MoviesList.aspx" />
+    <Content Include="Page\Permisos.aspx" />
     <Content Include="Page\SelectTicket.aspx" />
     <Content Include="Page\UsersList.aspx" />
     <Content Include="Sources\css\ajax-loader.html" />
@@ -306,7 +307,9 @@
     <Compile Include="Data\clsDiaSemana.cs" />
     <Compile Include="Data\clsFacturaFinal.cs" />
     <Compile Include="Data\clsHorario.cs" />
+    <Compile Include="Data\clsModulo.cs" />
     <Compile Include="Data\clsPelicula.cs" />
+    <Compile Include="Data\clsPermiso.cs" />
     <Compile Include="Data\clsPreciosEntradasSalaDia.cs" />
     <Compile Include="Data\clsRol.cs" />
     <Compile Include="Data\clsSalaPelicula.cs" />
@@ -323,7 +326,9 @@
     <Compile Include="Logic\blFacturaFinal.cs" />
     <Compile Include="Logic\blHelpers.cs" />
     <Compile Include="Logic\blHorario.cs" />
+    <Compile Include="Logic\blModulo.cs" />
     <Compile Include="Logic\blPelicula.cs" />
+    <Compile Include="Logic\blPermiso.cs" />
     <Compile Include="Logic\blPreciosEntradasSalaDia.cs" />
     <Compile Include="Logic\blRol.cs" />
     <Compile Include="Logic\blSalaPelicula.cs" />
@@ -370,6 +375,13 @@
     </Compile>
     <Compile Include="Page\MoviesList.aspx.designer.cs">
       <DependentUpon>MoviesList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Permisos.aspx.cs">
+      <DependentUpon>Permisos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\Permisos.aspx.designer.cs">
+      <DependentUpon>Permisos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\SelectTicket.aspx.cs">
       <DependentUpon>SelectTicket.aspx</DependentUpon>

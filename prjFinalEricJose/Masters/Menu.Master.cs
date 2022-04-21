@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using prjFinalEricJose.Logic;
+using prjFinalEricJose.Data;
 
 /*Libreria para definir las rutas*/
 
@@ -13,17 +15,13 @@ namespace prjFinalEricJose.Masters
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Convert.ToBoolean(Session["loggueado"])) 
+            if(Session["usuario_ingresado"] != null)
             {
-                header_master.Visible = true;
+                clsUsuario usuario = (clsUsuario)Session["usuario_ingresado"];
+
+                lb_user_logged.Text = $"{usuario.nombre1_Prop} {usuario.nombre2_Prop} {usuario.apellido1_Prop} {usuario.apellido2_Prop} ";
+
             }
-
-            //RegisterRoutes(RouteTable.Routes);
         }
-
-        //private void RegisterRoutes(RouteCollection routes)
-        //{
-        //    routes.MapPageRoute("users", "Page/users", "~/Page/UsersList.aspx");
-        //}
     }
 }

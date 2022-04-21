@@ -11,11 +11,10 @@ namespace prjFinalEricJose.Page
 {
     public partial class MoviesList : System.Web.UI.Page
     {
-        
+
         int idSeleccionado;
         public void Mensaje(string pMensaje)
         {
-            //HttpUtility.ParseQueryString(myU)
             Type cstype = this.GetType();
 
             ClientScriptManager cs = Page.ClientScript;
@@ -83,6 +82,14 @@ namespace prjFinalEricJose.Page
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //string vError = null;
+
+            //Boolean consultar = blPermiso.CosultarPermisoPagina(blHelpers.PELICULAS, blHelpers.CONSULTAR, ref vError);
+
+            //if (consultar)
+            //{
+            //    ltvPeliculas.Visible = false;
+            //}
             if (IsPostBack == false)
             {
                 MostrarListaPeliculas();

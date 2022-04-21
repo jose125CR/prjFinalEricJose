@@ -19,13 +19,19 @@ namespace prjFinalEricJose
 
         void RegisterRoutes(RouteCollection Routes)
         {
+            RouteTable.Routes.MapPageRoute("inicio", "inicio", "~/Page/Index.aspx");
+
+            RouteTable.Routes.MapPageRoute("ingresar", "ingresar", "~/Page/Login.aspx");
+
             RouteTable.Routes.MapPageRoute("listaPersonas", "personas", "~/Page/UsersList.aspx");
 
             RouteTable.Routes.MapPageRoute("selecionTickets", "tickets/{id_pelicula}/{id_horario}/{id_sala}/{id_dia}/", "~/Page/SelectTicket.aspx");
             
-            RouteTable.Routes.MapPageRoute("listaPeliculas", "peliculas/", "~/Page/MoviesList.aspx");
+            RouteTable.Routes.MapPageRoute("listaPeliculas", "peliculas", "~/Page/MoviesList.aspx");
 
             RouteTable.Routes.MapPageRoute("FacturaFinal", "factura/{id_ticket}", "~/Page/FacturaTickets.aspx");
+
+            RouteTable.Routes.MapPageRoute("permisos", "permisos", "~/Page/Permisos.aspx");
         }
 
         protected void Session_Start(object sender, EventArgs e)

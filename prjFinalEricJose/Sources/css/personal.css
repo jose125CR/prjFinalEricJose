@@ -10,10 +10,26 @@
     color: white;
 }
 
+.green-text {
+    color: lightgreen;
+}
+
+.red-text {
+    color: #abb7c4;
+}
+
 .label-factura-final-resultado {
     font-size: 14px;
     color: #abb7c4;
     font-weight: 500;
+}
+
+.btn-salir {
+    padding: 10px 20px !important;
+}
+
+.editar-roles {
+    border-left: 1px solid #405266;
 }
 
 textarea {
@@ -33,7 +49,12 @@ input[type="checkbox"] {
     height: 12px
 }
 
-.btn-red {
+.alerta-pelicula {
+    font-size: 17px;
+    color: indianred;
+}
+
+.btn-red, .btn-salir {
     font-family: 'Dosis', sans-serif;
     font-size: 14px;
     color: white;
@@ -142,6 +163,11 @@ td {
 
 .factura-contenedor {
     padding: 50px 134px;
+}
+
+.label-user {
+    font-size: 14px;
+    color: #abb7c4;
 }
 
 .asiento-label {

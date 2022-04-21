@@ -44,12 +44,12 @@ namespace prjFinalEricJose.Page
 
             if (vError == null && dt_persona != null)
             {
-                Session["loggueao"] = true;
+                Session["usuario_ingresado"] = dt_persona;
                 Response.Redirect("UsersList.aspx");
             }
             else
             {
-                Session["loggueado"] = false;
+                Session["usuario_ingresado"] = null;
                 Mensaje("Nombre de usuario y/o contraseñas no coinciden, por favor verifique");
             }
         }

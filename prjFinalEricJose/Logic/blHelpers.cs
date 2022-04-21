@@ -18,6 +18,18 @@ namespace prjFinalEricJose.Logic
 {
     public class blHelpers
     {
+        /******************MODULOS************************************************************************************/
+        public static readonly int PELICULAS = 2;
+
+
+        /******************PERMISOS************************************************************************************/
+        public static readonly int CONSULTAR = 1;
+        public static readonly int REGISTRAR = 2;
+        public static readonly int MODIFICAR = 3;
+        public static readonly int ELIMINAR = 4;
+
+
+
         private static readonly String BASE_URI = "https://free.currconv.com";
         private static readonly String API_VERSION = "v7";
         private static readonly String API_KEY = "97e0aba6803c65e407b8";

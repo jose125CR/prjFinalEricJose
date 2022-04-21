@@ -64,5 +64,75 @@ namespace prjFinalEricJose.Logic
 
             return lista;
         }
+
+        public void GuardarRol(String nombre_rol, ref string pError)
+        {
+            clsConnection conexion = new clsConnection();
+            SqlConnection conn = new SqlConnection(conexion.ObtenerCadenaConexion());
+            SqlCommand cmd = new SqlCommand();
+
+            int vRespuesta;
+
+            try
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "pa_registar_rol";
+
+                cmd.Parameters.Add("@nombre_rol", SqlDbType.VarChar);
+                cmd.Parameters["@nombre_rol"].Value = nombre_rol;
+
+                cmd.Connection = conn;
+                conn.Open();
+                vRespuesta = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                pError = "Error general en la funcion GuardarRol. Detalles: " + ex.Message;
+            }
+            finally
+            {
+                conn.Close();
+                cmd.Parameters.Clear();
+                cmd.Dispose();
+                conn.Dispose();
+                conn = null;
+            }
+        }
+
+        public void EliminarRol(int id_rol_to_delete, ref string pError)
+        {
+            clsConnection conexion = new clsConnection();
+            SqlConnection conn = new SqlConnection(conexion.ObtenerCadenaConexion());
+            SqlCommand cmd = new SqlCommand();
+
+            int vRespuesta;
+
+            try
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "pa_eliminar_rol";
+
+                cmd.Parameters.Add("@id_rol", SqlDbType.Int);
+                cmd.Parameters["@id_rol"].Value = id_rol_to_delete;
+
+                cmd.Connection = conn;
+                conn.Open();
+
+                vRespuesta = cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                pError = "Error general en la funcion EliminarRol. Detalles: " + ex.Message;
+            }
+            finally
+            {
+                conn.Close();
+                cmd.Parameters.Clear();
+                cmd.Dispose();
+                conn.Dispose();
+                conn = null;
+            }
+        }
     }
 }
