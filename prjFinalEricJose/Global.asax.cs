@@ -32,6 +32,8 @@ namespace prjFinalEricJose
             RouteTable.Routes.MapPageRoute("FacturaFinal", "factura/{id_ticket}", "~/Page/FacturaTickets.aspx");
 
             RouteTable.Routes.MapPageRoute("permisos", "permisos", "~/Page/Permisos.aspx");
+
+            RouteTable.Routes.MapPageRoute("perfil", "perfil", "~/Page/Perfil.aspx");
         }
 
         protected void Session_Start(object sender, EventArgs e)

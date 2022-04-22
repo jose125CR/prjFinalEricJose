@@ -30,7 +30,7 @@
                                     <label>Fecha y hora de la compra:</label>
                                 </div>
                                 <div class="col-md-7 form-it">
-                                    <asp:Label CssClass="label-factura-final-resultado" runat="server" ID="txt_fecha_hora_compra" Text="Miercoles 24 de Junio de 2022 a las 11:25 am" />
+                                    <asp:Label CssClass="label-general" runat="server" ID="txt_fecha_hora_compra" Text="Miercoles 24 de Junio de 2022 a las 11:25 am" />
                                 </div>
                             </div>
                             <div class="row">
@@ -38,7 +38,7 @@
                                     <label>Nombre de la pelicula:</label>
                                 </div>
                                 <div class="col-md-4 form-it">
-                                    <asp:Label CssClass="label-factura-final-resultado" runat="server" ID="txt_nombre_pelicula" Text="Avengers" />
+                                    <asp:Label CssClass="label-general" runat="server" ID="txt_nombre_pelicula" Text="Avengers" />
                                 </div>
                             </div>
                             <div class="row">
@@ -46,7 +46,7 @@
                                     <label>Categoria de Pelicula:</label>
                                 </div>
                                 <div class="col-md-4 form-it">
-                                    <asp:Label CssClass="label-factura-final-resultado" runat="server" ID="txt_categoria_pelicula" Text="Todo Público" />
+                                    <asp:Label CssClass="label-general" runat="server" ID="txt_categoria_pelicula" Text="Todo Público" />
                                 </div>
                             </div>
                             <div class="row">
@@ -54,7 +54,7 @@
                                     <label>Identificación del Cliente:</label>
                                 </div>
                                 <div class="col-md-4 form-it">
-                                    <asp:Label CssClass="label-factura-final-resultado" runat="server" ID="txt_dni_cliente" Text="115960067" />
+                                    <asp:Label CssClass="label-general" runat="server" ID="txt_dni_cliente" Text="115960067" />
                                 </div>
                             </div>
                             <div class="row">
@@ -62,7 +62,7 @@
                                     <label>Nombre del cliente:</label>
                                 </div>
                                 <div class="col-md-4 form-it">
-                                    <asp:Label CssClass="label-factura-final-resultado" runat="server" ID="txt_nombre_completo_cliente" Text="Jose Luis Morales Mora" />
+                                    <asp:Label CssClass="label-general" runat="server" ID="txt_nombre_completo_cliente" Text="Jose Luis Morales Mora" />
                                 </div>
                             </div>
                             <div class="row">
@@ -70,7 +70,7 @@
                                     <label>Butacas General:</label>
                                 </div>
                                 <div class="col-md-4 form-it">
-                                    <asp:Label CssClass="label-factura-final-resultado" runat="server" ID="txt_butacas_general" Text="0 Butaca(s)" />
+                                    <asp:Label CssClass="label-general" runat="server" ID="txt_butacas_general" Text="0 Butaca(s)" />
                                 </div>
                             </div>
                             <div class="row">
@@ -78,7 +78,7 @@
                                     <label>Butacas Niños:</label>
                                 </div>
                                 <div class="col-md-4 form-it">
-                                    <asp:Label CssClass="label-factura-final-resultado" runat="server" ID="txt_butacas_nino" Text="0 Butaca(s)" />
+                                    <asp:Label CssClass="label-general" runat="server" ID="txt_butacas_nino" Text="0 Butaca(s)" />
                                 </div>
                             </div>
                             <div class="row">
@@ -86,7 +86,7 @@
                                     <label>Butacas Adultos Mayores:</label>
                                 </div>
                                 <div class="col-md-4 form-it">
-                                    <asp:Label CssClass="label-factura-final-resultado" runat="server" ID="txt_butacas_adulto" Text="0 Butaca(s)" />
+                                    <asp:Label CssClass="label-general" runat="server" ID="txt_butacas_adulto" Text="0 Butaca(s)" />
                                 </div>
                             </div>
                             <div class="row">
@@ -94,7 +94,7 @@
                                     <label>Butaca(s) Comprada(s):</label>
                                 </div>
                                 <div class="col-md-4 form-it">
-                                    <asp:Label CssClass="label-factura-final-resultado" runat="server" ID="txt_lista_butacas" Text="A-1" />
+                                    <asp:Label CssClass="label-general" runat="server" ID="txt_lista_butacas" Text="A-1" />
                                 </div>
                             </div>
                             <div class="row">
@@ -102,7 +102,7 @@
                                     <label>Sala de la Función:</label>
                                 </div>
                                 <div class="col-md-4 form-it">
-                                    <asp:Label CssClass="label-factura-final-resultado" runat="server" ID="txt_sala" Text="Sala 1 2D" />
+                                    <asp:Label CssClass="label-general" runat="server" ID="txt_sala" Text="Sala 1 2D" />
                                 </div>
                             </div>
                             <div class="row">
@@ -110,7 +110,7 @@
                                     <label>Horario de la Función:</label>
                                 </div>
                                 <div class="col-md-4 form-it">
-                                    <asp:Label CssClass="label-factura-final-resultado" runat="server" ID="txt_hora_pelicula" Text="11:25 am" />
+                                    <asp:Label CssClass="label-general" runat="server" ID="txt_hora_pelicula" Text="11:25 am" />
                                 </div>
                             </div>
                             <div class="row">
@@ -118,7 +118,7 @@
                                     <label>Total Pagado Colones:</label>
                                 </div>
                                 <div class="col-md-4 form-it">
-                                    <asp:Label CssClass="label-factura-final-resultado" runat="server" ID="txt_total_pagado_colones" Text="₡0" />
+                                    <asp:Label CssClass="label-general" runat="server" ID="txt_total_pagado_colones" Text="₡0" />
                                 </div>
                             </div>
                             <div class="row">
@@ -126,7 +126,7 @@
                                     <label>Total Pagado Dólares:</label>
                                 </div>
                                 <div class="col-md-4 form-it">
-                                    <asp:Label CssClass="label-factura-final-resultado" runat="server" ID="txt_total_pagado_dolares" Text="$0" />
+                                    <asp:Label CssClass="label-general" runat="server" ID="txt_total_pagado_dolares" Text="$0" />
                                 </div>
                             </div>
                             <div class="row">

@@ -75,6 +75,7 @@
     <Content Include="Page\Index.aspx" />
     <Content Include="Page\Login.aspx" />
     <Content Include="Page\MoviesList.aspx" />
+    <Content Include="Page\Perfil.aspx" />
     <Content Include="Page\Permisos.aspx" />
     <Content Include="Page\SelectTicket.aspx" />
     <Content Include="Page\UsersList.aspx" />
@@ -105,6 +106,7 @@
     <Content Include="Sources\images\nivo\next.png" />
     <Content Include="Sources\images\nivo\prev%402x.png" />
     <Content Include="Sources\images\nivo\prev.png" />
+    <Content Include="Sources\images\profile-user.png" />
     <Content Include="Sources\images\sala-cine-3d.jpg" />
     <Content Include="Sources\images\uploads\ads1.png" />
     <Content Include="Sources\images\uploads\ads2.png" />
@@ -309,6 +311,7 @@
     <Compile Include="Data\clsHorario.cs" />
     <Compile Include="Data\clsModulo.cs" />
     <Compile Include="Data\clsPelicula.cs" />
+    <Compile Include="Data\clsPerfil.cs" />
     <Compile Include="Data\clsPermiso.cs" />
     <Compile Include="Data\clsPreciosEntradasSalaDia.cs" />
     <Compile Include="Data\clsRol.cs" />
@@ -328,6 +331,7 @@
     <Compile Include="Logic\blHorario.cs" />
     <Compile Include="Logic\blModulo.cs" />
     <Compile Include="Logic\blPelicula.cs" />
+    <Compile Include="Logic\blPerfil.cs" />
     <Compile Include="Logic\blPermiso.cs" />
     <Compile Include="Logic\blPreciosEntradasSalaDia.cs" />
     <Compile Include="Logic\blRol.cs" />
@@ -375,6 +379,13 @@
     </Compile>
     <Compile Include="Page\MoviesList.aspx.designer.cs">
       <DependentUpon>MoviesList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Perfil.aspx.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\Perfil.aspx.designer.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\Permisos.aspx.cs">
       <DependentUpon>Permisos.aspx</DependentUpon>
