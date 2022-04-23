@@ -31,6 +31,7 @@ namespace prjFinalEricJose.Page
             txt_lista_butacas.Text = dt_factura_final.butacas_ordenadas_Prop;
             txt_sala.Text = dt_factura_final.sala_Prop;
             txt_hora_pelicula.Text = dt_factura_final.hora_pelicula_Prop;
+            txt_puntos_ganados.Text = dt_factura_final.puntos_acumulados_Prop;
             txt_total_pagado_colones.Text = "₡" + dt_factura_final.monto_total_Prop.ToString();
             txt_total_pagado_dolares.Text = "$" + blHelpers.ConseguirValorDolares(dt_factura_final.monto_total_Prop).ToString();
 

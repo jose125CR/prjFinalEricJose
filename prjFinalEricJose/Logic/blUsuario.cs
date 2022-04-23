@@ -329,5 +329,45 @@ namespace prjFinalEricJose.Logic
 
             return dt_persona;
         }
+
+
+        public void SumarPuntos(string dni_persona, int cantidad_butacas, ref string pError)
+        {
+            clsConnection conexion = new clsConnection();
+            SqlConnection conn = new SqlConnection(conexion.ObtenerCadenaConexion());
+            SqlCommand cmd = new SqlCommand();
+
+            int vRespuesta;
+
+            try
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "pa_sumar_puntos";
+
+                cmd.Parameters.Add("@dni_persona", SqlDbType.VarChar);
+                cmd.Parameters["@dni_persona"].Value = dni_persona;
+
+                cmd.Parameters.Add("@cantidad_butacas", SqlDbType.Int);
+                cmd.Parameters["@cantidad_butacas"].Value = cantidad_butacas;
+
+                cmd.Connection = conn;
+                conn.Open();
+
+                vRespuesta = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                pError = "Error general en la funcion SumarPuntos. Detalles: " + ex.Message;
+            }
+            finally
+            {
+                conn.Close();
+                cmd.Parameters.Clear();
+                cmd.Dispose();
+                conn.Dispose();
+                conn = null;
+            }
+        }
+
     }
 }

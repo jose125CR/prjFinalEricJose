@@ -73,10 +73,13 @@
     <Content Include="Global.asax" />
     <Content Include="Page\FacturaTickets.aspx" />
     <Content Include="Page\Index.aspx" />
+    <Content Include="Page\ListaTickets.aspx" />
     <Content Include="Page\Login.aspx" />
     <Content Include="Page\MoviesList.aspx" />
     <Content Include="Page\Perfil.aspx" />
     <Content Include="Page\Permisos.aspx" />
+    <Content Include="Page\PreciosPromociones.aspx" />
+    <Content Include="Page\Salir.aspx" />
     <Content Include="Page\SelectTicket.aspx" />
     <Content Include="Page\UsersList.aspx" />
     <Content Include="Sources\css\ajax-loader.html" />
@@ -309,13 +312,16 @@
     <Compile Include="Data\clsDiaSemana.cs" />
     <Compile Include="Data\clsFacturaFinal.cs" />
     <Compile Include="Data\clsHorario.cs" />
+    <Compile Include="Data\clsListaTicket.cs" />
     <Compile Include="Data\clsModulo.cs" />
     <Compile Include="Data\clsPelicula.cs" />
     <Compile Include="Data\clsPerfil.cs" />
     <Compile Include="Data\clsPermiso.cs" />
+    <Compile Include="Data\clsPreciosCategorias.cs" />
     <Compile Include="Data\clsPreciosEntradasSalaDia.cs" />
     <Compile Include="Data\clsRol.cs" />
     <Compile Include="Data\clsSalaPelicula.cs" />
+    <Compile Include="Data\clsSemanaPromicion.cs" />
     <Compile Include="Data\clsTicket.cs" />
     <Compile Include="Data\clsUsuario.cs" />
     <Compile Include="Global.asax.cs">
@@ -329,13 +335,16 @@
     <Compile Include="Logic\blFacturaFinal.cs" />
     <Compile Include="Logic\blHelpers.cs" />
     <Compile Include="Logic\blHorario.cs" />
+    <Compile Include="Logic\blListaTicket.cs" />
     <Compile Include="Logic\blModulo.cs" />
     <Compile Include="Logic\blPelicula.cs" />
     <Compile Include="Logic\blPerfil.cs" />
     <Compile Include="Logic\blPermiso.cs" />
+    <Compile Include="Logic\blPreciosCategorias.cs" />
     <Compile Include="Logic\blPreciosEntradasSalaDia.cs" />
     <Compile Include="Logic\blRol.cs" />
     <Compile Include="Logic\blSalaPelicula.cs" />
+    <Compile Include="Logic\blSemanaPromocion.cs" />
     <Compile Include="Logic\blTicket.cs" />
     <Compile Include="Logic\blUsuario.cs" />
     <Compile Include="Masters\Login.Master.cs">
@@ -366,6 +375,13 @@
     <Compile Include="Page\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Page\ListaTickets.aspx.cs">
+      <DependentUpon>ListaTickets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\ListaTickets.aspx.designer.cs">
+      <DependentUpon>ListaTickets.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Page\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -393,6 +409,20 @@
     </Compile>
     <Compile Include="Page\Permisos.aspx.designer.cs">
       <DependentUpon>Permisos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\PreciosPromociones.aspx.cs">
+      <DependentUpon>PreciosPromociones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\PreciosPromociones.aspx.designer.cs">
+      <DependentUpon>PreciosPromociones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Salir.aspx.cs">
+      <DependentUpon>Salir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\Salir.aspx.designer.cs">
+      <DependentUpon>Salir.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\SelectTicket.aspx.cs">
       <DependentUpon>SelectTicket.aspx</DependentUpon>

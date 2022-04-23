@@ -114,6 +114,15 @@ namespace prjFinalEricJose.Page
         protected global::System.Web.UI.WebControls.Label txt_hora_pelicula;
 
         /// <summary>
+        /// Control txt_puntos_ganados.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txt_puntos_ganados;
+
+        /// <summary>
         /// Control txt_total_pagado_colones.
         /// </summary>
         /// <remarks>

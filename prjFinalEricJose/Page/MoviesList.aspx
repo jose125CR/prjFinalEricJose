@@ -107,16 +107,15 @@
                         runat="server"
                         OnItemCommand="ltvPeliculas_ItemCommand"
                         OnItemEditing="ltvPeliculas_ItemEditing"
-                        OnItemDeleting="ltvPeliculas_ItemDeleting"
-                        OnItemUpdating="ltvPeliculas_ItemUpdating">
+                        >
                         <ItemTemplate>
                             <div class="movie-item-style-2">
                                 <asp:Image runat="server" ImageUrl='<%# "../Sources/images/uploads/" + Eval("direccion_img_prop") %>' />
                                 <div class="mv-item-infor">
                                     <div class="btn-actions-movies">
-                                        <asp:Button CssClass="primary-btn me-2" ID="btn_delete" runat="server" Text="Eliminar Pelicula" CommandName="delete" CommandArgument='<%# Eval("id_pelicula_Prop") %>' />
+                                        <asp:Button CssClass="primary-btn me-2" ID="btn_delete" runat="server" Text="Eliminar Pelicula" CommandName="eliminar_pelicula" CommandArgument='<%# Eval("id_pelicula_Prop") %>' />
                                         <asp:Button CssClass="blue-btn me-2 me-2 ms-2" ID="Button1" runat="server" Text="Editar Pelicula" CommandName="edit" CommandArgument='<%# Eval("id_pelicula_Prop") %>' />
-                                        <asp:Button CssClass="yellow-btn ms-2" ID="btnupdt" runat="server" Text="Seleccionar Butacas" CommandName="update" CommandArgument='<%# Eval("id_pelicula_Prop") %>' />
+                                        <asp:Button CssClass="yellow-btn ms-2" ID="btnupdt" runat="server" Text="Seleccionar Butacas" CommandName="seleccionar_butaca" CommandArgument='<%# Eval("id_pelicula_Prop") %>' />
                                     </div>
                                     <h6>
                                         <asp:HyperLink runat="server" href='<%# Eval("id_pelicula_Prop") %>'>
@@ -141,10 +140,10 @@
                                             <asp:DropDownList ID="dia" CssClass="general-select" runat="server" DataSource='<%# Eval("dias_Prop") %>' DataTextField="nombre_dia_Prop" DataValueField="id_dia_Prop" />
                                         </div>
                                         <div class="col-md-2 form-it d-flex justify-content-center">
-                                            <asp:Button  CssClass="black-btn margin-bonificacion-btn" ID="btn_ingresar_persona" runat="server" Text="Bonificación 2D" />
+                                            <asp:Button  CssClass="black-btn margin-bonificacion-btn" CommandName="btn_bono_2d" CommandArgument='<%# Eval("id_pelicula_Prop") %>' ID="btn_promocion_2d" runat="server" Text="Bonificación 2D" />
                                         </div>
                                         <div class="col-md-2 form-it d-flex justify-content-center">
-                                            <asp:Button  CssClass="black-btn margin-bonificacion-btn" ID="btn_registar_persona" runat="server" Text="Bonificación IMAX" />
+                                            <asp:Button  CssClass="black-btn margin-bonificacion-btn" CommandName="btn_bono_imax" CommandArgument='<%# Eval("id_pelicula_Prop") %>' ID="btn_registar_persona" runat="server" Text="Bonificación IMAX" />
                                         </div>
                                     </div>
                                 </div>

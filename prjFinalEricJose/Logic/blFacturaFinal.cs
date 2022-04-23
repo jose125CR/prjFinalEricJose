@@ -89,6 +89,10 @@ namespace prjFinalEricJose.Logic
                     {
                         factura_final.cantidad_total_butacas_Prop = dr["cantidad_total_butacas"].ToString();
                     }
+                    if (!string.IsNullOrEmpty(dr["puntos_ganados"].ToString()))
+                    {
+                        factura_final.puntos_acumulados_Prop = dr["puntos_ganados"].ToString();
+                    }
                     if (!string.IsNullOrEmpty(dr["monto_total"].ToString()))
                     {
                         factura_final.monto_total_Prop = float.Parse(dr["monto_total"].ToString());

@@ -37,14 +37,21 @@ namespace prjFinalEricJose.Logic
 
         public static float TipoCambio()
         {
+            float tipo_cambio_string = 0;
 
             string url = $"{BASE_URI}/api/{API_VERSION}/convert?q=USD_CRC&compact=ultra&apiKey={API_KEY}";
-            var jsonString = GetResponse(url);
-            var json_object = JObject.Parse(jsonString);
+            try
+            {
+                var jsonString = GetResponse(url);
+                var json_object = JObject.Parse(jsonString);
 
+                tipo_cambio_string = (float)json_object["USD_CRC"].ToObject<float>();
 
+            }
+            catch(Exception e)
+            {
 
-            float tipo_cambio_string = (float)json_object["USD_CRC"].ToObject<float>();
+            }
 
             return tipo_cambio_string;
         }
@@ -75,8 +82,15 @@ namespace prjFinalEricJose.Logic
         public static decimal ConseguirValorDolares(float colones)
         {
             float resultado = colones / TipoCambio();
+            decimal resultado_decimal = 0;
 
-            decimal resultado_decimal = Convert.ToDecimal(resultado);
+            try
+            {
+                resultado_decimal = Convert.ToDecimal(resultado);
+            }catch(Exception e)
+            {
+
+            }
 
             return Math.Round(resultado_decimal, 2);
         }

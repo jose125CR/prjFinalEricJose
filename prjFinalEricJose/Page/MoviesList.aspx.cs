@@ -11,8 +11,6 @@ namespace prjFinalEricJose.Page
 {
     public partial class MoviesList : System.Web.UI.Page
     {
-
-        int idSeleccionado;
         public void Mensaje(string pMensaje)
         {
             Type cstype = this.GetType();
@@ -100,15 +98,46 @@ namespace prjFinalEricJose.Page
 
         protected void ltvPeliculas_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
-            idSeleccionado = Convert.ToInt32(e.CommandArgument);
+            ListViewItem item = e.Item;
+            int id_pelicula = Convert.ToInt32(e.CommandArgument);
+
+            if (e.CommandName == "btn_bono_2d")
+            {
+                ReclamarBono2D(item, id_pelicula);
+            }else if(e.CommandName == "seleccionar_butaca")
+            {
+                SeleccionarButaca(item, id_pelicula);
+            }
+            else if(e.CommandName == "btn_bono_imax")
+            {
+                ReclamarBonoIMAX(item, id_pelicula);
+            }
+            else if(e.CommandName == "eliminar_pelicula")
+            {
+                EliminarPelicula(id_pelicula);
+            }
         }
 
-        protected void ltvPeliculas_ItemDeleting(object sender, ListViewDeleteEventArgs e)
+        private void SeleccionarButaca(ListViewItem item, int id_pelicula)
+        {
+            DropDownList ddl_horario = (DropDownList)item.FindControl("horario");
+            DropDownList ddl_sala = (DropDownList)item.FindControl("sala");
+            DropDownList ddl_dia = (DropDownList)item.FindControl("dia");
+            string id_peli = id_pelicula.ToString();
+            string id_horario = ddl_horario.SelectedValue.ToString();
+            string id_sala = ddl_sala.SelectedValue.ToString();
+            string id_dia = ddl_dia.SelectedValue.ToString();
+
+            Response.Redirect($"/tickets/{id_peli}/{id_horario}/{id_sala}/{id_dia}");
+        }
+
+
+        private void EliminarPelicula(int id_pelicula)
         {
             blPelicula lg_pelicula = new blPelicula();
             string vError = null;
 
-            lg_pelicula.EliminarPelicula(idSeleccionado, ref vError);
+            lg_pelicula.EliminarPelicula(id_pelicula, ref vError);
 
 
             if (vError == null)
@@ -124,22 +153,7 @@ namespace prjFinalEricJose.Page
 
         protected void ltvPeliculas_ItemEditing(object sender, ListViewEditEventArgs e)
         {
-            Mensaje(idSeleccionado.ToString());
-        }
-
-        protected void ltvPeliculas_ItemUpdating(object sender, ListViewUpdateEventArgs e)
-        {
-            ListViewItem item = ltvPeliculas.Items[e.ItemIndex];
-
-            DropDownList ddl_horario = (DropDownList)item.FindControl("horario");
-            DropDownList ddl_sala = (DropDownList)item.FindControl("sala");
-            DropDownList ddl_dia = (DropDownList)item.FindControl("dia");
-            string id_pelicula = idSeleccionado.ToString();
-            string id_horario = ddl_horario.SelectedValue.ToString();
-            string id_sala = ddl_sala.SelectedValue.ToString();
-            string id_dia = ddl_dia.SelectedValue.ToString();
-
-            Response.Redirect($"/tickets/{id_pelicula}/{id_horario}/{id_sala}/{id_dia}");
+            
         }
 
         private void GuardarPelicula()
@@ -235,5 +249,88 @@ namespace prjFinalEricJose.Page
 
             return dt_salas_seleccionadas;
         }
+
+        private void ReclamarBono2D(ListViewItem item, int id_pelicula)
+        {
+            DropDownList ddl_sala = (DropDownList)item.FindControl("sala");
+            DropDownList ddl_horario = (DropDownList)item.FindControl("horario");
+            //DropDownList ddl_dia = (DropDownList)item.FindControl("dia");
+
+            int id_sala = Convert.ToInt32(ddl_sala.SelectedValue);
+            int id_horario = Convert.ToInt32(ddl_horario.SelectedValue);
+
+            if(id_sala == 1 || id_sala == 4)
+            {
+                blTicket lg_ticket = new blTicket();
+                string vError = null;
+                int resultado = lg_ticket.ReclamarPromo2D("115960067", id_pelicula, id_sala, id_horario, ref vError);
+
+                if(resultado == -502)
+                {
+                    Mensaje("La sala esta llena");
+                }
+
+                if (resultado == -501)
+                {
+                    Mensaje("No dispones de los puntos suficientes");
+                }
+
+                if (vError != null)
+                {
+                    Mensaje("Ha ocurrido un error por favor reintenta");
+                }
+
+                if(resultado > 0 && vError == null)
+                {
+                    Response.Redirect($"/factura/{resultado}");
+                }
+            }
+            else
+            {
+                Mensaje("Debe asegurarse de elegir una sala 2D");
+            }
+        }
+
+        private void ReclamarBonoIMAX(ListViewItem item, int id_pelicula)
+        {
+            DropDownList ddl_sala = (DropDownList)item.FindControl("sala");
+            DropDownList ddl_horario = (DropDownList)item.FindControl("horario");
+            //DropDownList ddl_dia = (DropDownList)item.FindControl("dia");
+
+            int id_sala = Convert.ToInt32(ddl_sala.SelectedValue);
+            int id_horario = Convert.ToInt32(ddl_horario.SelectedValue);
+
+            if (id_sala == 3 || id_sala == 6)
+            {
+                blTicket lg_ticket = new blTicket();
+                string vError = null;
+                int resultado = lg_ticket.ReclamarPromoIMAX("115960067", id_pelicula, id_sala, id_horario, ref vError);
+
+                if (resultado == -502)
+                {
+                    Mensaje("La sala esta llena");
+                }
+
+                if (resultado == -501)
+                {
+                    Mensaje("No dispones de los canjeos suficientes");
+                }
+
+                if (vError != null)
+                {
+                    Mensaje("Ha ocurrido un error por favor reintenta");
+                }
+
+                if (resultado > 0 && vError == null)
+                {
+                    Response.Redirect($"/factura/{resultado}");
+                }
+            }
+            else
+            {
+                Mensaje("Debe asegurarse de elegir una sala IMAX");
+            }
+        }
+
     }
 }

@@ -113,6 +113,14 @@
                                     <asp:Label CssClass="label-general" runat="server" ID="txt_hora_pelicula" Text="11:25 am" />
                                 </div>
                             </div>
+                             <div class="row">
+                                <div class="col-md-8 form-it">
+                                    <label>Puntos ganados en esta compra:</label>
+                                </div>
+                                <div class="col-md-4 form-it">
+                                    <asp:Label CssClass="label-general" runat="server" ID="txt_puntos_ganados" Text="0" />
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-md-8 form-it">
                                     <label>Total Pagado Colones:</label>

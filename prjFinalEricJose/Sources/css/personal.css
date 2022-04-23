@@ -244,3 +244,11 @@ td {
     background: url('../images/uploads/drop-icon.png') no-repeat right 20px center;
     background-color: #233a50;
 }
+
+.tabla-precios input {
+    text-align: center;
+}
+
+.canjeos-puntos input {
+    text-align: center;
+}

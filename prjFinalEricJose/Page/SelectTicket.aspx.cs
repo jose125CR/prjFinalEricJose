@@ -266,12 +266,13 @@ namespace prjFinalEricJose.Page
         {
             blButaca lg_butaca = new blButaca();
             blTicket lg_ticket = new blTicket();
+            blUsuario lg_usuario = new blUsuario();
             blButacaTicket lg_butaca_ticket = new blButacaTicket();
             clsTicket dt_ticket = new clsTicket();
             string vError = null;
 
             List<clsButaca> butacas_seleccionadas = lg_butaca.ConsultarButacasHorarioSalaPeliculaSeleccionadas(id_pelicula, id_horario, id_sala, ref vError);
-
+            
             int nuevo_id = -1;
             if (vError == null)
             {
@@ -300,6 +301,11 @@ namespace prjFinalEricJose.Page
                                 lg_butaca.ActualizarButaca(id_pelicula, id_horario, id_sala, bt.id_categoria_persona_Prop, bt.identificador_Prop, ocupada, ref vError);
                             }
                         }
+                    }
+
+                    if (vError == null && butacas_seleccionadas.Count >= 2)
+                    {
+                        lg_usuario.SumarPuntos("115960067", butacas_seleccionadas.Count, ref vError);
                     }
                 }
             }

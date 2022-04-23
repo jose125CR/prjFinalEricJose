@@ -70,13 +70,16 @@
 						<li class="dropdown first">
 							<a href="/permisos" class="btn btn-default">Permisos</a>
 						</li>
+						<li class="dropdown first">
+							<a href="/lista-boletos" class="btn btn-default">Consulta Facturado</a>
+						</li>
 					</ul>
 					<ul class="nav navbar-nav flex-child-menu menu-right">
 						<li class="dropdown first">
 							<a href="/perfil" class="btn btn-default"><asp:Label ID="lb_user_logged" CssClass="label-user" Text="Aun nadie esta logeado" runat="server" /></a>
 						</li>
 						<li class="dropdown first">
-							<a class="ms-3 btn-salir" href="/personas">Salir</a>
+							<a class="ms-3 btn-salir" href="/salir">Salir</a>
 						</li>
 					</ul>
 				</div>

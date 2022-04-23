@@ -102,5 +102,122 @@ namespace prjFinalEricJose.Logic
                 conn = null;
             }
         }
+
+        public int ReclamarPromo2D(string dni_usuario, int id_pelicula, int id_sala, int id_horario, ref string pError)
+        {
+            clsConnection conexion = new clsConnection();
+
+            SqlConnection conn = new SqlConnection(conexion.ObtenerCadenaConexion());
+
+            SqlCommand cmd = new SqlCommand();
+
+            int num = -502;
+
+            try
+            {
+                SqlDataReader dr;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "pa_reclamar_canjeo_2d";
+
+                cmd.Parameters.Add("@ppaDni_persona", SqlDbType.VarChar);
+                cmd.Parameters["@ppaDni_persona"].Value = dni_usuario;
+
+                cmd.Parameters.Add("@id_pelicula", SqlDbType.Int);
+                cmd.Parameters["@id_pelicula"].Value = id_pelicula;
+
+                cmd.Parameters.Add("@id_sala_pelicula", SqlDbType.Int);
+                cmd.Parameters["@id_sala_pelicula"].Value = id_sala;
+
+                cmd.Parameters.Add("@id_horario_pelicula", SqlDbType.Int);
+                cmd.Parameters["@id_horario_pelicula"].Value = id_horario;
+
+                cmd.Connection = conn;
+
+                conn.Open();
+
+                dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    if (!string.IsNullOrEmpty(dr["numero_regresar"].ToString()))
+                    {
+                        num = Convert.ToInt32(dr["numero_regresar"].ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                pError = "Error general en la funcion ReclamarPromo2D. Detalles: " + ex.Message;
+            }
+            finally
+            {
+                conn.Close();
+                cmd.Parameters.Clear();
+                cmd.Dispose();
+                conn.Dispose();
+                conn = null;
+            }
+
+            return num;
+        }
+
+        public int ReclamarPromoIMAX(string dni_usuario, int id_pelicula, int id_sala, int id_horario, ref string pError)
+        {
+            clsConnection conexion = new clsConnection();
+
+            SqlConnection conn = new SqlConnection(conexion.ObtenerCadenaConexion());
+
+            SqlCommand cmd = new SqlCommand();
+
+            int num = -502;
+
+            try
+            {
+                SqlDataReader dr;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "pa_reclamar_canjeo_imax";
+
+                cmd.Parameters.Add("@ppaDni_persona", SqlDbType.VarChar);
+                cmd.Parameters["@ppaDni_persona"].Value = dni_usuario;
+
+                cmd.Parameters.Add("@id_pelicula", SqlDbType.Int);
+                cmd.Parameters["@id_pelicula"].Value = id_pelicula;
+
+                cmd.Parameters.Add("@id_sala_pelicula", SqlDbType.Int);
+                cmd.Parameters["@id_sala_pelicula"].Value = id_sala;
+
+                cmd.Parameters.Add("@id_horario_pelicula", SqlDbType.Int);
+                cmd.Parameters["@id_horario_pelicula"].Value = id_horario;
+
+                cmd.Connection = conn;
+
+                conn.Open();
+
+                dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    if (!string.IsNullOrEmpty(dr["numero_regresar"].ToString()))
+                    {
+                        num = Convert.ToInt32(dr["numero_regresar"].ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                pError = "Error general en la funcion ReclamarPromoIMAX. Detalles: " + ex.Message;
+            }
+            finally
+            {
+                conn.Close();
+                cmd.Parameters.Clear();
+                cmd.Dispose();
+                conn.Dispose();
+                conn = null;
+            }
+
+            return num;
+        }
+
     }
 }
