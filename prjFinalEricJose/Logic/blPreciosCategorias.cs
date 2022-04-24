@@ -91,5 +91,51 @@ namespace prjFinalEricJose.Logic
                 return "2D";
             }
         }
+
+        public void ActualizarPreciosCategorias(List<clsPreciosCategorias> lista_categorias, ref string pError)
+        {
+            for (int tipo_sala = 1; tipo_sala <= 3; tipo_sala++)
+            {
+                clsConnection conexion = new clsConnection();
+                SqlConnection conn = new SqlConnection(conexion.ObtenerCadenaConexion());
+                SqlCommand cmd = new SqlCommand();
+
+                int vRespuesta;
+
+                try
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "pa_actualizar_precios_categoria_persona";
+
+                    cmd.Parameters.Add("@id_tipo_sala", SqlDbType.Int);
+                    cmd.Parameters["@id_tipo_sala"].Value = tipo_sala;
+
+                    cmd.Parameters.Add("@general", SqlDbType.Float);
+                    cmd.Parameters["@general"].Value = lista_categorias[tipo_sala - 1].precio_general_prop;
+
+                    cmd.Parameters.Add("@ninos", SqlDbType.Float);
+                    cmd.Parameters["@ninos"].Value = lista_categorias[tipo_sala - 1].precio_nino_prop;
+
+                    cmd.Parameters.Add("@adultos", SqlDbType.Float);
+                    cmd.Parameters["@adultos"].Value = lista_categorias[tipo_sala - 1].precio_adulto_prop;
+
+                    cmd.Connection = conn;
+                    conn.Open();
+                    vRespuesta = cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    pError = "Error general en la funcion ActualizarPreciosCategorias. Detalles: " + ex.Message;
+                }
+                finally
+                {
+                    conn.Close();
+                    cmd.Parameters.Clear();
+                    cmd.Dispose();
+                    conn.Dispose();
+                    conn = null;
+                }
+            }
+        }
     }
 }

@@ -118,12 +118,15 @@
                                         <asp:Button CssClass="yellow-btn ms-2" ID="btnupdt" runat="server" Text="Seleccionar Butacas" CommandName="seleccionar_butaca" CommandArgument='<%# Eval("id_pelicula_Prop") %>' />
                                     </div>
                                     <h6>
-                                        <asp:HyperLink runat="server" href='<%# Eval("id_pelicula_Prop") %>'>
+                                        <asp:HyperLink runat="server">
                                             <%# Eval("nombre_pelicula_Prop") %>
-                                            <asp:Label CssClass="ms-1" ID="year" runat="server" Text="2022" />
+                                            <asp:Label CssClass="ms-1" runat="server" Text="2022" />
                                         </asp:HyperLink>
                                     </h6>
-                                    <p class="rate"><i class="ion-android-star"></i><span>8.1</span> /10</p>
+                                    <div class="row d-flex">
+                                        <p class="rate"><i class="ion-android-star"></i><span>8.1</span> /10</p>
+                                        <asp:Label CssClass="ms-3 yellow-text" runat="server" Text='<%# ((int)Eval("id_categoria_edad_pelicula_Prop") == 1) ? "(Todo Público)" : ((int)Eval("id_categoria_edad_pelicula_Prop") == 2) ? "(Mayores de 16 años)" : "(Mayores de 18 años)" %>' />
+                                    </div>
                                     <p class="describe"><%# Eval("sinopsis_prop") %></p>
                                     <p class="alerta-pelicula">Por favor verifica los datos de la película!!</p>
                                     <div class="row">

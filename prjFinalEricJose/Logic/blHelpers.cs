@@ -19,6 +19,7 @@ namespace prjFinalEricJose.Logic
     public class blHelpers
     {
         /******************MODULOS************************************************************************************/
+        public static readonly int USUARIOS = 1;
         public static readonly int PELICULAS = 2;
 
 

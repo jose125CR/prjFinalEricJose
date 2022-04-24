@@ -33,6 +33,15 @@ namespace prjFinalEricJose.Masters
         protected global::System.Web.UI.WebControls.Panel header_master;
 
         /// <summary>
+        /// Control lb_tipo_cambio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lb_tipo_cambio;
+
+        /// <summary>
         /// Control lb_user_logged.
         /// </summary>
         /// <remarks>

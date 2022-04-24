@@ -330,7 +330,6 @@ namespace prjFinalEricJose.Logic
             return dt_persona;
         }
 
-
         public void SumarPuntos(string dni_persona, int cantidad_butacas, ref string pError)
         {
             clsConnection conexion = new clsConnection();
@@ -369,5 +368,69 @@ namespace prjFinalEricJose.Logic
             }
         }
 
+        public void ActualizarPersona(clsUsuario dt_persona, ref string pError)
+        {
+            clsConnection conexion = new clsConnection();
+            SqlConnection conn = new SqlConnection(conexion.ObtenerCadenaConexion());
+            SqlCommand cmd = new SqlCommand();
+
+            int vRespuesta;
+
+            try
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "pa_actualizar_persona";
+
+                cmd.Parameters.Add("@ppaDni_persona_Prop", SqlDbType.VarChar);
+                cmd.Parameters["@ppaDni_persona_Prop"].Value = dt_persona.dni_persona_Prop;
+
+                cmd.Parameters.Add("@ppaId_rol_Prop", SqlDbType.Int);
+                cmd.Parameters["@ppaId_rol_Prop"].Value = dt_persona.id_rol_Prop;
+
+                cmd.Parameters.Add("@ppaNombre1_Prop", SqlDbType.VarChar);
+                cmd.Parameters["@ppaNombre1_Prop"].Value = dt_persona.nombre1_Prop;
+
+                cmd.Parameters.Add("@ppaNombre2_Prop", SqlDbType.VarChar);
+                cmd.Parameters["@ppaNombre2_Prop"].Value = dt_persona.nombre2_Prop;
+
+                cmd.Parameters.Add("@ppaApellido1_Prop", SqlDbType.VarChar);
+                cmd.Parameters["@ppaApellido1_Prop"].Value = dt_persona.apellido1_Prop;
+
+                cmd.Parameters.Add("@ppaApellido2_Prop", SqlDbType.VarChar);
+                cmd.Parameters["@ppaApellido2_Prop"].Value = dt_persona.apellido2_Prop;
+
+                cmd.Parameters.Add("@ppaCorreo_Prop", SqlDbType.VarChar);
+                cmd.Parameters["@ppaCorreo_Prop"].Value = dt_persona.correo_Prop;
+
+                cmd.Parameters.Add("@ppaFecha_nac_Prop", SqlDbType.DateTime);
+                cmd.Parameters["@ppaFecha_nac_Prop"].Value = dt_persona.fecha_nac_Prop;
+
+                cmd.Parameters.Add("@ppaTelefono_Prop", SqlDbType.VarChar);
+                cmd.Parameters["@ppaTelefono_Prop"].Value = dt_persona.telefono_Prop;
+
+                cmd.Parameters.Add("@ppaUsuario_Prop", SqlDbType.VarChar);
+                cmd.Parameters["@ppaUsuario_Prop"].Value = dt_persona.usuario_Prop;
+
+                cmd.Parameters.Add("@ppaContrasena_Prop", SqlDbType.VarChar);
+                cmd.Parameters["@ppaContrasena_Prop"].Value = dt_persona.contrasena_Prop;
+
+                cmd.Connection = conn;
+                conn.Open();
+
+                vRespuesta = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                pError = "Error general en la funcion ActualizarPersona. Detalles: " + ex.Message;
+            }
+            finally
+            {
+                conn.Close();
+                cmd.Parameters.Clear();
+                cmd.Dispose();
+                conn.Dispose();
+                conn = null;
+            }
+        }
     }
 }

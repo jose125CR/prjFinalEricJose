@@ -128,7 +128,7 @@
 						</div>
 						<div class="row">
 							<div class="col-md-3">
-								<asp:Button  CssClass="btn-red" ID="btn_actualizar_precios_categorias" runat="server" Text="Actualizar" />
+								<asp:Button  CssClass="btn-red" ID="btn_actualizar_precios_categorias" runat="server" Text="Actualizar" OnClick="btn_actualizar_precios_categorias_Click" />
 							</div>
 						</div>	
 					</div>
@@ -153,7 +153,7 @@
 										<label>Puntos necesarios para 2D</label>
 									</div>
 									<div class="col-md-2">
-										<asp:TextBox MaxLength="2" TextMode="Number" runat="server" Text="10" />
+										<asp:TextBox MaxLength="2" TextMode="Number" runat="server" Text="0" />
 									</div>
 								</div>
 								<div class="row mt-3">
@@ -161,14 +161,14 @@
 										<label>Canjeos necesarios para IMAX</label>
 									</div>
 									<div class="col-md-2">
-										<asp:TextBox MaxLength="2" TextMode="Number" runat="server" Text="145" />
+										<asp:TextBox MaxLength="2" TextMode="Number" runat="server" Text="0" />
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-3">
-								<asp:Button  CssClass="btn-red" ID="Button1" runat="server" Text="Actualizar" />
+								<asp:Button  CssClass="btn-red" runat="server" Text="Actualizar"/>
 							</div>
 						</div>	
 					</div>

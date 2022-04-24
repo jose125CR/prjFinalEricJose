@@ -76,6 +76,10 @@
 					</ul>
 					<ul class="nav navbar-nav flex-child-menu menu-right">
 						<li class="dropdown first">
+							<label class="label-general">Tipo Cambio:</label>
+							<asp:Label ID="lb_tipo_cambio" CssClass="label-user" Text="630.21" runat="server" />
+						</li>
+						<li class="dropdown first">
 							<a href="/perfil" class="btn btn-default"><asp:Label ID="lb_user_logged" CssClass="label-user" Text="Aun nadie esta logeado" runat="server" /></a>
 						</li>
 						<li class="dropdown first">

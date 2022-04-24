@@ -18,10 +18,16 @@
 	</div>
 </div>
 <div class="page-single">
-	<asp:Panel runat="server" ID="formulario_persona" class="container">
+	<div class="container">
 		<div class="row ipad-width">
 			<div class="col-md-12 col-sm-12 col-xs-12">
-				<div class="form-style-1 user-pro" action="#">
+				<div class="row">
+					<asp:Button CssClass="primary-btn" runat="server" Visible="false" ID="btn_abrir_panel_nuevo_usuario" Text="Agregar Nuevo Usuario" OnClick="btn_abrir_panel_nuevo_usuario_Click" />
+				</div>
+				<div class="row d-flex justify-content-center">
+					<asp:Label Visible="false" ID="lb_mensaje" CssClass="green-text" runat="server" Text="La operación se ha completado con exito" />
+				</div>
+				<asp:Panel Visible="false" runat="server" ID="formulario_persona" class="form-style-1 user-pro" action="#">
 					<div action="#" class="user">
 						<div class="row">
 							<div class="col-md-9 form-it">
@@ -30,11 +36,6 @@
 							<div class="col-md-3 form-it">
 								<label>Rol del Usuario</label>
 								<asp:DropDownList ID="ddl_roles" runat="server"  />
-								<%--<select>
-									<option value="" selected disabled hidden>Seleccione Rol</option>
-										<option value="1">Administrador</option>
-										<option value="2">Cliente</option>
-								</select>--%>
 							</div>
 						</div>
 						<div class="row mt-5">
@@ -88,15 +89,16 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-3">
-								<asp:Button  CssClass="btn-red" ID="btn_guardar_persona" runat="server" Text="Agregar Usuario" OnClick="btn_guardar_persona_Click" />
+							<div class="col-md-6" >
+								<asp:Button  CssClass="primary-btn" ID="btn_guardar_persona" runat="server" Text="Agregar Usuario" OnClick="btn_guardar_persona_Click" />
+								<asp:Button  CssClass="primary-btn ms-3" ID="btn_cancelar_formulario" runat="server" Text="Cancelar" OnClick="btn_cancelar_formulario_Click" />
 							</div>
 						</div>	
 					</div>
-				</div>
+				</asp:Panel>
 			</div>
 		</div>
-	</asp:Panel>
+	</div>
 	<div class="page-single pt-0">
 		<div class="container">
 			<div class="row ipad-width2">
@@ -124,9 +126,16 @@
 											<%# ((int)Eval("id_rol_Prop") == 1) ? "Administrador" : "Cliente" %>
 										</ItemTemplate>
 									</asp:TemplateField>
-									<asp:ButtonField  CommandName="update" ButtonType="Image" ControlStyle-Width="25" ControlStyle-Height="25" ImageUrl="../Sources/newIcons/icons8-edit-64.png"  />
-									<asp:ButtonField  CommandName="delete" ButtonType="Image" ControlStyle-Width="25" ControlStyle-Height="25" ImageUrl="../Sources/newIcons/icons8-remove-48.png" />
-									<%--<asp:CommandField ShowSelectButton="true" ButtonType="Image" DeleteImageUrl="~/Sources/images/logo1.png" HeaderStyle-Width="60px" ControlStyle-ForeColor="White" />--%>
+									<asp:TemplateField>
+										<ItemTemplate>
+											<asp:ImageButton Visible ="false" ID="btn_editar" runat="server" Width="25" Height="25" ImageUrl="../Sources/newIcons/icons8-edit-64.png" CommandName="update"/>
+										</ItemTemplate>
+									</asp:TemplateField>
+									<asp:TemplateField>
+										<ItemTemplate>
+											<asp:ImageButton Visible ="false" ID="btn_borrar" runat="server" Width="25" Height="25" ImageUrl="../Sources/newIcons/icons8-remove-48.png" CommandName="delete"/>
+										</ItemTemplate>
+									</asp:TemplateField>
 								</Columns>
 							</asp:GridView>
 						</div>

@@ -22,6 +22,13 @@ namespace prjFinalEricJose.Masters
                 lb_user_logged.Text = $"{usuario.nombre1_Prop} {usuario.nombre2_Prop} {usuario.apellido1_Prop} {usuario.apellido2_Prop} ";
 
             }
+
+            cargarTipoCambio();
+        }
+
+        private void cargarTipoCambio()
+        {
+            lb_tipo_cambio.Text = $"₡{blHelpers.TipoCambio().ToString("0.00")}";
         }
     }
 }

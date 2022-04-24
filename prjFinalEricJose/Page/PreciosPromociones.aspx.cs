@@ -82,8 +82,6 @@ namespace prjFinalEricJose.Page
                 semana.dia_sabado_prop = float.Parse(((TextBox)grd_promociones.Rows[tipo_sala - 1].FindControl("txt_sabado")).Text);
 
                 promociones_semana.Add(semana);
-
-                int asd = 0;
             }
 
             lg_promociones.ActualizarPromociones(promociones_semana, ref vError);
@@ -101,6 +99,41 @@ namespace prjFinalEricJose.Page
         protected void btn_actualizar_promociones_Click(object sender, EventArgs e)
         {
             ActualizarPromociones();
+        }
+
+        protected void btn_actualizar_precios_categorias_Click(object sender, EventArgs e)
+        {
+            ActualizarPreciosCategorias();
+        }
+
+        private void ActualizarPreciosCategorias()
+        {
+            List<clsPreciosCategorias> precios_categorias = new List<clsPreciosCategorias>();
+            blPreciosCategorias lg_categorias = new blPreciosCategorias();
+            string vError = null;
+
+            for (int tipo_sala = 1; tipo_sala <= 3; tipo_sala++)
+            {
+
+                clsPreciosCategorias dt_precio = new clsPreciosCategorias();
+                dt_precio.precio_general_prop = float.Parse(((TextBox)grd_precios_categorias.Rows[tipo_sala - 1].FindControl("txt_general")).Text);
+                dt_precio.precio_nino_prop = float.Parse(((TextBox)grd_precios_categorias.Rows[tipo_sala - 1].FindControl("txt_nino")).Text);
+                dt_precio.precio_adulto_prop = float.Parse(((TextBox)grd_precios_categorias.Rows[tipo_sala - 1].FindControl("txt_adulto")).Text);
+
+                precios_categorias.Add(dt_precio);
+
+            }
+
+            lg_categorias.ActualizarPreciosCategorias(precios_categorias, ref vError);
+
+            if (vError == null)
+            {
+                ConsultarPreciosCategorias();
+            }
+            else
+            {
+                Mensaje("Ocurrio un error al intentar actualizar los precios de las categorias");
+            }
         }
     }
 }
