@@ -33,7 +33,8 @@ namespace prjFinalEricJose.Logic
 
         private static readonly String BASE_URI = "https://free.currconv.com";
         private static readonly String API_VERSION = "v7";
-        private static readonly String API_KEY = "97e0aba6803c65e407b8";
+        private static readonly String API_KEY = "97e0aba6803c65e407b8"; //Cuenta Jose
+        //private static readonly String API_KEY = "bd2cf09fb67c7be336ac"; //Cuenta Eric
         /********************************************************************/
 
         public static float TipoCambio()
@@ -94,6 +95,28 @@ namespace prjFinalEricJose.Logic
             }
 
             return Math.Round(resultado_decimal, 2);
+        }
+
+        public static clsUsuario UsuarioDefecto()
+        {
+            clsUsuario defecto = new clsUsuario();
+
+            defecto.dni_persona_Prop = "602800141";
+            defecto.id_rol_Prop = 1;
+            defecto.nombre1_Prop = "Eric";
+            defecto.nombre2_Prop = "Gerardo";
+            defecto.apellido1_Prop = "Bonilla";
+            defecto.apellido2_Prop = "Vargas";
+            defecto.correo_Prop = "ebonillavargas@gmail.com";
+            defecto.fecha_nac_Prop = DateTime.Now;
+            defecto.telefono_Prop = "88887778";
+            defecto.usuario_Prop = "ebonillav";
+            defecto.contrasena_Prop = "1234";
+            defecto.puntos_Prop = 2;
+            defecto.canjeos_Prop = 0;
+            defecto.fecha_creacion_Prop = DateTime.Now;
+
+            return defecto;
         }
     }
 }

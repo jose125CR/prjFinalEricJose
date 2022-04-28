@@ -110,7 +110,9 @@
     <Content Include="Sources\images\nivo\prev%402x.png" />
     <Content Include="Sources\images\nivo\prev.png" />
     <Content Include="Sources\images\profile-user.png" />
+    <Content Include="Sources\images\sala-cine-2d.jpg" />
     <Content Include="Sources\images\sala-cine-3d.jpg" />
+    <Content Include="Sources\images\sala-cine-imax.jpg" />
     <Content Include="Sources\images\uploads\ads1.png" />
     <Content Include="Sources\images\uploads\ads2.png" />
     <Content Include="Sources\images\uploads\author.png" />

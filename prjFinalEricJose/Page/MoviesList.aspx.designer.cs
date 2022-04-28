@@ -15,6 +15,33 @@ namespace prjFinalEricJose.Page
     {
 
         /// <summary>
+        /// Control btn_abrir_panel_nueva_pelicula.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_abrir_panel_nueva_pelicula;
+
+        /// <summary>
+        /// Control lb_mensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lb_mensaje;
+
+        /// <summary>
+        /// Control pnl_formulario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnl_formulario;
+
+        /// <summary>
         /// Control txt_nombre_pelicula.
         /// </summary>
         /// <remarks>
@@ -121,6 +148,15 @@ namespace prjFinalEricJose.Page
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_guardar_pelicula;
+
+        /// <summary>
+        /// Control btn_cancelar_formulario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_cancelar_formulario;
 
         /// <summary>
         /// Control ltvPeliculas.

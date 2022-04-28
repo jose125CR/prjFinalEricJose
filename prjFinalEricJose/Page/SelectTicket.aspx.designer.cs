@@ -15,6 +15,33 @@ namespace prjFinalEricJose.Page
     {
 
         /// <summary>
+        /// Control lb_nombre_pelicula.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lb_nombre_pelicula;
+
+        /// <summary>
+        /// Control img_pelicula.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image img_pelicula;
+
+        /// <summary>
+        /// Control img_sala.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image img_sala;
+
+        /// <summary>
         /// Control ScriptManager1.
         /// </summary>
         /// <remarks>

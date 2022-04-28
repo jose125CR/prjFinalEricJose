@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using prjFinalEricJose.Logic;
 using prjFinalEricJose.Data;
+using System.Text.RegularExpressions;
 
 namespace prjFinalEricJose.Page
 {
@@ -19,12 +20,18 @@ namespace prjFinalEricJose.Page
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (IsPostBack == false)
+            Session["usuario_ingresado"] = blHelpers.UsuarioDefecto();//Borrar
+            
+            if(Session["usuario_ingresado"] != null)
             {
-                mostrarListaUsuarios();
-                caragarListaRoles();
-                ConsultarPermisosPagina();
-                //formulario_persona.Visible = false;
+                if (IsPostBack == false)
+                {
+                    ConsultarPermisosPagina();
+                }
+            }
+            else
+            {
+                Response.Redirect($"/ingresar");
             }
             
         }
@@ -35,13 +42,16 @@ namespace prjFinalEricJose.Page
         /// <param name="e"></param>
         protected void btn_guardar_persona_Click(object sender, EventArgs e)
         {
-            if (btn_guardar_persona.CommandName == "actualizar")
+            if (camposLlenos())
             {
-                ActualizarUsuario();
-            }
-            else
-            {
-                RegistrarPersona();
+                if (btn_guardar_persona.CommandName == "actualizar")
+                {
+                    ActualizarUsuario();
+                }
+                else
+                {
+                    RegistrarPersona();
+                }
             }
         }
         /// <summary>
@@ -131,8 +141,20 @@ namespace prjFinalEricJose.Page
             blPermiso lg_permisos = new blPermiso();
             string vError = null;
 
-            clsPermiso dt_permiso = lg_permisos.CosultarPemisosPorRolModulo(1, blHelpers.USUARIOS, ref vError);
 
+            clsUsuario usuario_actual = (clsUsuario)Session["usuario_ingresado"];
+
+            clsPermiso dt_permiso = lg_permisos.CosultarPemisosPorRolModulo(usuario_actual.id_rol_Prop, blHelpers.USUARIOS, ref vError);
+
+            if (dt_permiso.consultar_Prop)
+            {
+                mostrarListaUsuarios();
+                caragarListaRoles();
+            }
+            if (dt_permiso.registrar_Prop)
+            {
+                PuedeAgregar();
+            }
             if (dt_permiso.editar_Prop)
             {
                 PuedeEditar();
@@ -140,10 +162,6 @@ namespace prjFinalEricJose.Page
             if (dt_permiso.eliminar_Prop)
             {
                 PuedeEliminar();
-            }
-            if (dt_permiso.registrar_Prop)
-            {
-                PuedeAgregar();
             }
         }
 
@@ -225,6 +243,7 @@ namespace prjFinalEricJose.Page
                     lb_mensaje.CssClass = "green-text";
                     lb_mensaje.Text = "Persona registrada con exito";
                     mostrarListaUsuarios();
+                    ConsultarPermisosPagina();
                 }
                 else
                 {
@@ -254,6 +273,7 @@ namespace prjFinalEricJose.Page
                 lb_mensaje.CssClass = "green-text";
                 lb_mensaje.Text = "Persona eliminada con exito";
                 mostrarListaUsuarios();
+                ConsultarPermisosPagina();
             }
             else
             {
@@ -268,12 +288,10 @@ namespace prjFinalEricJose.Page
         public void mostrarListaUsuarios()
         {
             blUsuario lg_persona = new blUsuario();
-            //clsUsuario vUsario = new clsUsuario();
+
             string vError = null;
 
-            List<clsUsuario> lista = new List<clsUsuario>();
-
-            lista = lg_persona.CosultarUsuarios(ref vError);
+            List<clsUsuario> lista = lg_persona.CosultarUsuarios(ref vError);
 
             if (vError == null)
             {
@@ -369,7 +387,42 @@ namespace prjFinalEricJose.Page
 
             btn_guardar_persona.CommandName = null;
             btn_guardar_persona.Text = "Guardar Usuario";
+        }
 
+        private Boolean camposLlenos()
+        {
+            Regex regex = new Regex("^[0-9]*$");
+            if (!regex.IsMatch(txt_dni.Text) || txt_dni.Text.Length != 9)
+            {
+                Mensaje("El DNI solo puede contener números y deben ser 9");
+                return false;
+            }
+            if (string.IsNullOrEmpty(txt_nombre1.Text) || string.IsNullOrEmpty(txt_nombre1.Text) || string.IsNullOrEmpty(txt_nombre1.Text) || string.IsNullOrEmpty(txt_nombre1.Text))
+            {
+                Mensaje("Los campos de nombre y apellidos deben ir llenos");
+                return false;
+            }
+            if (string.IsNullOrEmpty(txt_contrasena.Text) || string.IsNullOrEmpty(txt_contrasena2.Text))
+            {
+                Mensaje("La contraseña No puede estar vacia");
+                return false;
+            }
+            if (string.IsNullOrEmpty(txt_usuario.Text))
+            {
+                Mensaje("Debe seleccionar un nombre de usuario");
+                return false;
+            }
+            if (string.IsNullOrEmpty(txt_correo.Text))
+            {
+                Mensaje("Debe agregar un correo electronico valido");
+                return false;
+            }
+            if (string.IsNullOrEmpty(txt_telefono.Text))
+            {
+                Mensaje("Debe agregar un numero telefónico");
+                return false;
+            }
+            return true;
         }
         #endregion
     }

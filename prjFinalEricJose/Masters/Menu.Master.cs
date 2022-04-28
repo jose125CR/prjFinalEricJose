@@ -15,11 +15,13 @@ namespace prjFinalEricJose.Masters
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(Session["usuario_ingresado"] != null)
+
+
+            if (Session["usuario_ingresado"] != null)
             {
                 clsUsuario usuario = (clsUsuario)Session["usuario_ingresado"];
 
-                lb_user_logged.Text = $"{usuario.nombre1_Prop} {usuario.nombre2_Prop} {usuario.apellido1_Prop} {usuario.apellido2_Prop} ";
+                lb_user_logged.Text = $"{usuario.nombre1_Prop} {usuario.nombre2_Prop} {usuario.apellido1_Prop} {usuario.apellido2_Prop}";
 
             }
 

@@ -41,7 +41,7 @@
 						<div class="row mt-5">
 							<div class="col-md-3 form-it">
 								<label>Numero de Cédula</label>
-								<asp:TextBox runat="server" ID="txt_dni" type="text" placeholder="Numero de Cédula"></asp:TextBox>
+								<asp:TextBox runat="server" AutoCompleteType="Disabled" ID="txt_dni" type="text" placeholder="Numero de Cédula" TextMode="Number" onKeyDown="if(this.value.length>=9 && event.keyCode!=8 || event.keyCode==109 || event.keyCode==189 || event.keyCode==107 || event.keyCode==187) return false;"></asp:TextBox>
 							</div>
 							<div class="col-md-3 form-it">
 								<label>Nombre de Usuario</label>
@@ -77,7 +77,7 @@
 						<div class="row">
 							<div class="col-md-3 form-it">
 								<label>Correo Electrónico</label>
-								<asp:TextBox runat="server" ID="txt_correo" type="email" placeholder="Correo Electrónico"></asp:TextBox>
+								<asp:TextBox runat="server" ID="txt_correo" type="email" placeholder="Correo Electrónico" TextMode="Email"></asp:TextBox>
 							</div>
 							<div class="col-md-3 form-it">
 								<label>Fecha de Nacimiento</label>
@@ -85,7 +85,7 @@
 							</div>
 							<div class="col-md-3 form-it">
 								<label>Número de Teléfono</label>
-								<asp:TextBox runat="server" ID="txt_telefono" type="text" placeholder="Número Teléfonico"></asp:TextBox>
+								<asp:TextBox runat="server" ID="txt_telefono" type="text" placeholder="Número Teléfonico" TextMode="Phone"></asp:TextBox>
 							</div>
 						</div>
 						<div class="row">

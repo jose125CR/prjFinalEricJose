@@ -127,11 +127,27 @@ namespace prjFinalEricJose.Page
                 id_horario = Convert.ToInt32(Page.RouteData.Values["id_horario"]);
                 id_sala = Convert.ToInt32(Page.RouteData.Values["id_sala"]);
                 id_dia_seleccionado = Convert.ToInt32(Page.RouteData.Values["id_dia"]);
+
+                EncontarPelicula(id_pelicula);
+
+                if (id_sala == 1 || id_sala == 4)
+                {
+                    img_sala.ImageUrl = "../Sources/images/sala-cine-2d.jpg";
+                }
+                else if (id_sala == 2 || id_sala == 5)
+                {
+                    img_sala.ImageUrl = "../Sources/images/sala-cine-3d.jpg";
+                }
+                else
+                {
+                    img_sala.ImageUrl = "../Sources/images/sala-cine-imax.jpg";
+                }
             }
             if (!IsPostBack)
             {
                 CargarDdlCategoriaPersona();
                 CargarPreciosCantidad();
+                
             }
             Cargar_butacas();
         }
@@ -313,6 +329,26 @@ namespace prjFinalEricJose.Page
             if (vError == null)
             {
                 Response.Redirect($"/factura/{nuevo_id}");
+            }
+        }
+
+        public void EncontarPelicula(int id_pelicula)
+        {
+            blPelicula lg_pelicula = new blPelicula();
+            string vError = null;
+
+            List<clsPelicula> lista_peliculas = lg_pelicula.CosultarPeliculas(ref vError);
+
+            if (vError == null)
+            {
+                clsPelicula pelicula = lista_peliculas.Find(peli => peli.id_pelicula_Prop == id_pelicula);
+
+                lb_nombre_pelicula.Text = pelicula.nombre_pelicula_Prop;
+                img_pelicula.ImageUrl = $"../Sources/images/uploads/{pelicula.direccion_img_prop}";
+            }
+            else
+            {
+                Mensaje(vError);
             }
         }
     }

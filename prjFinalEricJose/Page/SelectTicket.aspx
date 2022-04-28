@@ -23,6 +23,12 @@
             <div class="row mt-3 ipad-width">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="row d-flex justify-content-center">
+                        <asp:Label CssClass="titulo-pelicula-ticket" runat="server" ID="lb_nombre_pelicula" Text="Película" />
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <asp:Image runat="server" ID="img_pelicula" ImageUrl="../Sources/images/uploads/mv1.jpg" />
+                    </div>
+                    <div class="row mt-5 d-flex justify-content-center">
                         <div class="me-3 ms-3 form-it">
                             <label class="asiento-label">Disponible</label>
                             <div class="margin-auto seat mt-1"></div>
@@ -46,7 +52,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="row d-flex justify-content-center">
                         <div>
-                            <img class="screen" src="/Sources/images/sala-cine-3d.jpg" />
+                            <asp:Image CssClass="screen" runat="server" ID="img_sala" ImageUrl="/Sources/images/sala-cine-3d.jpg" />
                         </div>
                     </div>
                 </div>

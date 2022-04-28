@@ -256,3 +256,9 @@ td {
 .canjeos-puntos input {
     text-align: center;
 }
+
+.titulo-pelicula-ticket {
+    font-size: 21px;
+    font-weight: 700;
+    color: white;
+}

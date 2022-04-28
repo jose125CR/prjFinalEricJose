@@ -22,7 +22,13 @@
         <div class="container">
             <div class="row ipad-width">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="form-style-1 user-pro" action="#">
+                    <div class="row">
+					    <asp:Button Visible="false" CssClass="primary-btn" runat="server" ID="btn_abrir_panel_nueva_pelicula" Text="Agregar Nueva Película" OnClick="btn_abrir_panel_nueva_pelicula_Click" />
+				    </div>
+				    <div class="row d-flex justify-content-center">
+					    <asp:Label Visible="false" ID="lb_mensaje" CssClass="green-text" runat="server" Text="La operación se ha completado con exito" />
+				    </div>
+                    <asp:Panel Visible="false" ID="pnl_formulario" runat="server" class="form-style-1 user-pro">
                         <div action="#" class="user">
                             <h4>Detalles de la nueva Película</h4>
                             <div class="row">
@@ -88,11 +94,12 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-3">
-                                    <asp:Button runat="server" Text="Agregar Pelicula" CssClass="btn-red" ID="btn_guardar_pelicula" OnClick="btn_guardar_pelicula_Click" />
+                                    <asp:Button runat="server" Text="Agregar Pelicula" CssClass="primary-btn" ID="btn_guardar_pelicula" OnClick="btn_guardar_pelicula_Click" />
+								    <asp:Button  CssClass="primary-btn ms-3" ID="btn_cancelar_formulario" runat="server" Text="Cancelar" OnClick="btn_cancelar_formulario_Click" />
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </asp:Panel>
                 </div>
             </div>
         </div>
@@ -106,15 +113,14 @@
                         ID="ltvPeliculas"
                         runat="server"
                         OnItemCommand="ltvPeliculas_ItemCommand"
-                        OnItemEditing="ltvPeliculas_ItemEditing"
-                        >
+                    >
                         <ItemTemplate>
                             <div class="movie-item-style-2">
                                 <asp:Image runat="server" ImageUrl='<%# "../Sources/images/uploads/" + Eval("direccion_img_prop") %>' />
                                 <div class="mv-item-infor">
                                     <div class="btn-actions-movies">
-                                        <asp:Button CssClass="primary-btn me-2" ID="btn_delete" runat="server" Text="Eliminar Pelicula" CommandName="eliminar_pelicula" CommandArgument='<%# Eval("id_pelicula_Prop") %>' />
-                                        <asp:Button CssClass="blue-btn me-2 me-2 ms-2" ID="Button1" runat="server" Text="Editar Pelicula" CommandName="edit" CommandArgument='<%# Eval("id_pelicula_Prop") %>' />
+                                        <asp:Button Visible="false" CssClass="primary-btn me-2" ID="btn_delete" runat="server" Text="Eliminar Pelicula" CommandName="eliminar_pelicula" CommandArgument='<%# Eval("id_pelicula_Prop") %>' />
+                                        <asp:Button Visible="false" CssClass="blue-btn me-2 me-2 ms-2" ID="btn_edit" runat="server" Text="Editar Pelicula" CommandName="editar_pelicula" CommandArgument='<%# Eval("id_pelicula_Prop") %>' />
                                         <asp:Button CssClass="yellow-btn ms-2" ID="btnupdt" runat="server" Text="Seleccionar Butacas" CommandName="seleccionar_butaca" CommandArgument='<%# Eval("id_pelicula_Prop") %>' />
                                     </div>
                                     <h6>
@@ -125,7 +131,7 @@
                                     </h6>
                                     <div class="row d-flex">
                                         <p class="rate"><i class="ion-android-star"></i><span>8.1</span> /10</p>
-                                        <asp:Label CssClass="ms-3 yellow-text" runat="server" Text='<%# ((int)Eval("id_categoria_edad_pelicula_Prop") == 1) ? "(Todo Público)" : ((int)Eval("id_categoria_edad_pelicula_Prop") == 2) ? "(Mayores de 16 años)" : "(Mayores de 18 años)" %>' />
+                                        <asp:Label ID="lb_categoria_edad" CssClass="ms-3 yellow-text" runat="server" Text='<%# ((int)Eval("id_categoria_edad_pelicula_Prop") == 1) ? "(Todo Público)" : ((int)Eval("id_categoria_edad_pelicula_Prop") == 2) ? "(Mayores de 16 años)" : "(Mayores de 18 años)" %>' />
                                     </div>
                                     <p class="describe"><%# Eval("sinopsis_prop") %></p>
                                     <p class="alerta-pelicula">Por favor verifica los datos de la película!!</p>
