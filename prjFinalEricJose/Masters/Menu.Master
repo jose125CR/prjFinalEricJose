@@ -62,16 +62,20 @@
 							<a href="/inicio" class="btn btn-default">Inicio</a>
 						</li>
 						<li class="dropdown first">
-							<a href="/peliculas" class="btn btn-default">Películas</a>
+							<asp:HyperLink ID="link_peliculas" Visible="false" runat="server" href="/peliculas" class="btn btn-default">Películas</asp:HyperLink>
 						</li>
 						<li class="dropdown first">
-							<a href="/personas" class="btn btn-default">Usuarios</a>
+							<asp:HyperLink ID="link_personas" Visible="false" runat="server" href="/personas" class="btn btn-default">Usuarios</asp:HyperLink>
 						</li>
 						<li class="dropdown first">
-							<a href="/permisos" class="btn btn-default">Permisos</a>
-						</li>
-						<li class="dropdown first">
-							<a href="/lista-boletos" class="btn btn-default">Consulta Facturado</a>
+							<asp:HyperLink ID="link_drop" Visible="false" runat="server" class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown">
+							Administración <i class="fa fa-angle-down" aria-hidden="true"></i>
+							</asp:HyperLink>
+							<ul class="dropdown-menu level1">
+								<li><asp:HyperLink ID="link_facturado" Visible="false" runat="server" href="/lista-boletos">Consulta Facturado</asp:HyperLink></li>
+								<li><asp:HyperLink ID="link_permisos" Visible="false" runat="server" href="/permisos">Permisos</asp:HyperLink></li>
+								<li><asp:HyperLink ID="link_precios" Visible="false" runat="server" href="/precios">Precios</asp:HyperLink></li>
+							</ul>
 						</li>
 					</ul>
 					<ul class="nav navbar-nav flex-child-menu menu-right">

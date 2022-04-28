@@ -181,5 +181,55 @@ namespace prjFinalEricJose.Logic
                 conn = null;
             }
         }
+
+        public Boolean CosultarPermisoDropAdministracion(int id_rol, ref string pError)
+        {
+            clsConnection conexion = new clsConnection();
+
+            SqlConnection conn = new SqlConnection(conexion.ObtenerCadenaConexion());
+
+            SqlCommand cmd = new SqlCommand();
+
+            Boolean tiene_permiso = false;
+
+            try
+            {
+                SqlDataReader dr;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "pa_consultar_permiso_administracion";
+
+                cmd.Parameters.Add("@id_rol", SqlDbType.Int);
+                cmd.Parameters["@id_rol"].Value = id_rol;
+
+                cmd.Connection = conn;
+
+                conn.Open();
+
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+
+                    if (!string.IsNullOrEmpty(dr["tiene_permiso"].ToString()))
+                    {
+                        tiene_permiso = Convert.ToBoolean(dr["tiene_permiso"].ToString()); ;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                pError = "Error general en la funcion CosultarPermisoDropAdministracion. Detalles: " + ex.Message;
+            }
+            finally
+            {
+                conn.Close();
+                cmd.Parameters.Clear();
+                cmd.Dispose();
+                conn.Dispose();
+                conn = null;
+            }
+
+            return tiene_permiso;
+        }
+
     }
 }

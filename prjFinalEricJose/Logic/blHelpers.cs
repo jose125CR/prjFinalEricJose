@@ -21,6 +21,10 @@ namespace prjFinalEricJose.Logic
         /******************MODULOS************************************************************************************/
         public static readonly int USUARIOS = 1;
         public static readonly int PELICULAS = 2;
+        public static readonly int PROMOCIONES = 3;
+        public static readonly int PERMISOS = 4;
+        public static readonly int PRECIOS = 5;
+        public static readonly int FACTURADO = 6;
 
 
         /******************PERMISOS************************************************************************************/

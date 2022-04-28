@@ -395,31 +395,37 @@ namespace prjFinalEricJose.Page
             if (!regex.IsMatch(txt_dni.Text) || txt_dni.Text.Length != 9)
             {
                 Mensaje("El DNI solo puede contener números y deben ser 9");
+                txt_dni.Focus();
                 return false;
             }
             if (string.IsNullOrEmpty(txt_nombre1.Text) || string.IsNullOrEmpty(txt_nombre1.Text) || string.IsNullOrEmpty(txt_nombre1.Text) || string.IsNullOrEmpty(txt_nombre1.Text))
             {
                 Mensaje("Los campos de nombre y apellidos deben ir llenos");
+                txt_nombre1.Focus();
                 return false;
             }
             if (string.IsNullOrEmpty(txt_contrasena.Text) || string.IsNullOrEmpty(txt_contrasena2.Text))
             {
                 Mensaje("La contraseña No puede estar vacia");
+                txt_contrasena.Focus();
                 return false;
             }
             if (string.IsNullOrEmpty(txt_usuario.Text))
             {
                 Mensaje("Debe seleccionar un nombre de usuario");
+                txt_usuario.Focus();
                 return false;
             }
             if (string.IsNullOrEmpty(txt_correo.Text))
             {
                 Mensaje("Debe agregar un correo electronico valido");
+                txt_correo.Focus();
                 return false;
             }
             if (string.IsNullOrEmpty(txt_telefono.Text))
             {
                 Mensaje("Debe agregar un numero telefónico");
+                txt_telefono.Focus();
                 return false;
             }
             return true;

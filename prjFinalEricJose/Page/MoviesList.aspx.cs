@@ -597,11 +597,13 @@ namespace prjFinalEricJose.Page
             if (string.IsNullOrEmpty(txt_nombre_pelicula.Text))
             {
                 Mensaje("En nombre de la pelicula no puede estar vacio");
+                txt_nombre_pelicula.Focus();
                 return false;
             }
             if (string.IsNullOrEmpty(txt_sipnosis.Text))
             {
                 Mensaje("La sinpsis no puede estar vacia");
+                txt_sipnosis.Focus();
                 return false;
             }
             if (!fud_imagen_pelicula.HasFile && btn_guardar_pelicula.CommandName != actualizar_pelicula)
@@ -617,6 +619,7 @@ namespace prjFinalEricJose.Page
             if(ltb_horarios_disponibles.GetSelectedIndices().Length < 1 && btn_guardar_pelicula.CommandName != actualizar_pelicula)
             {
                 Mensaje("Debe selecciona al menos un horario donde se presentara la Película");
+                ltb_horarios_disponibles.Focus();
                 return false;
             }
             return true;

@@ -26,11 +26,90 @@ namespace prjFinalEricJose.Masters
             }
 
             cargarTipoCambio();
+            MostrasOpciones();
         }
 
         private void cargarTipoCambio()
         {
             lb_tipo_cambio.Text = $"₡{blHelpers.TipoCambio().ToString("0.00")}";
+        }
+
+
+        private void MostrasOpciones()
+        {
+            blPermiso lg_permiso = new blPermiso();
+
+            clsUsuario loggeado = (clsUsuario)Session["usuario_ingresado"];
+            string vError = null;
+
+
+            Boolean permiso_drop = lg_permiso.CosultarPermisoDropAdministracion(loggeado.id_rol_Prop, ref vError);
+
+            if (permiso_drop && vError == null)
+            {
+                link_drop.Visible = true;
+                clsPermiso permisos_precios = lg_permiso.CosultarPemisosPorRolModulo(loggeado.id_rol_Prop, blHelpers.PRECIOS, ref vError);
+
+                if (vError == null)
+                {
+                    if (TieneAlgunPermiso(permisos_precios))
+                    {
+                        link_precios.Visible = true;
+                    }
+                }
+
+                clsPermiso permisos_permisos = lg_permiso.CosultarPemisosPorRolModulo(loggeado.id_rol_Prop, blHelpers.PERMISOS, ref vError);
+
+                if (vError == null)
+                {
+                    if (TieneAlgunPermiso(permisos_permisos))
+                    {
+                        link_permisos.Visible = true;
+                    }
+                }
+
+                clsPermiso permisos_facturado = lg_permiso.CosultarPemisosPorRolModulo(loggeado.id_rol_Prop, blHelpers.FACTURADO, ref vError);
+
+                if (vError == null)
+                {
+                    if (TieneAlgunPermiso(permisos_facturado))
+                    {
+                        link_facturado.Visible = true;
+                    }
+                }
+            }
+
+            if(vError == null)
+            {
+                clsPermiso permisos_usuarios = lg_permiso.CosultarPemisosPorRolModulo(loggeado.id_rol_Prop, blHelpers.USUARIOS, ref vError);
+
+                if (vError == null)
+                {
+                    if (TieneAlgunPermiso(permisos_usuarios))
+                    {
+                        link_personas.Visible = true;
+                    }
+                }
+
+                clsPermiso permisos_peliculas = lg_permiso.CosultarPemisosPorRolModulo(loggeado.id_rol_Prop, blHelpers.PELICULAS, ref vError);
+
+                if (vError == null)
+                {
+                    if (TieneAlgunPermiso(permisos_peliculas))
+                    {
+                        link_peliculas.Visible = true;
+                    }
+                }
+            }
+        }
+
+        private Boolean TieneAlgunPermiso(clsPermiso permisos)
+        {
+            if (permisos.consultar_Prop || permisos.editar_Prop || permisos.eliminar_Prop || permisos.registrar_Prop)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

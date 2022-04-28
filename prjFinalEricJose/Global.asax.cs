@@ -35,6 +35,8 @@ namespace prjFinalEricJose
 
             RouteTable.Routes.MapPageRoute("permisos", "permisos", "~/Page/Permisos.aspx");
 
+            RouteTable.Routes.MapPageRoute("precios", "precios", "~/Page/PreciosPromociones.aspx");
+
             RouteTable.Routes.MapPageRoute("perfil", "perfil", "~/Page/Perfil.aspx");
 
             RouteTable.Routes.MapPageRoute("salir", "salir", "~/Page/Salir.aspx");
