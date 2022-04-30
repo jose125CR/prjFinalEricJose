@@ -11,7 +11,7 @@ namespace prjFinalEricJose.Page
 {
 
 
-    public partial class Salir
+    public partial class CreacionPdf
     {
     }
 }

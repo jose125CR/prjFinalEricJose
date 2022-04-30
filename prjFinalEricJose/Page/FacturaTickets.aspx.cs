@@ -69,5 +69,10 @@ namespace prjFinalEricJose.Page
             }
             return "Ninguna";
         }
+
+        protected void btn_guardar_pdf_Click(object sender, EventArgs e)
+        {
+            Response.Redirect($"/imprimir/{id_ticket}");
+        }
     }
 }

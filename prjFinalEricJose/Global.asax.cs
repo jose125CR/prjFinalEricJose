@@ -37,6 +37,8 @@ namespace prjFinalEricJose
 
             RouteTable.Routes.MapPageRoute("precios", "precios", "~/Page/PreciosPromociones.aspx");
 
+            RouteTable.Routes.MapPageRoute("imprimirFactura", "imprimir/{id_ticket}", "~/Page/CreacionPdf.aspx");
+
             RouteTable.Routes.MapPageRoute("perfil", "perfil", "~/Page/Perfil.aspx");
 
             RouteTable.Routes.MapPageRoute("salir", "salir", "~/Page/Salir.aspx");
