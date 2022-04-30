@@ -7,10 +7,10 @@
 		<div class="row">
 			<div class="col-md-12">
                 <div class="row">
-                        <h1>Módulo de Usuarios</h1>
+                        <h1>Módulo de Facturas</h1>
                     <ul class="row d-flex justify-content-center breadcumb">
                         <li class="active"><a href="../Page/index.aspx">Inicio</a></li>
-                        <li><span class="ion-ios-arrow-right"></span>Módulo de Usuarios</li>
+                        <li><span class="ion-ios-arrow-right"></span>Módulo de Facturas</li>
                     </ul>
                 </div>
             </div>
@@ -25,18 +25,17 @@
 					<div action="#" class="user">
 						<div class="row">
 							<div class="col-md-9 form-it">
-								<h4>Detalles del nuevo Usuario</h4>
+								<h4>Filtrar por Cédula</h4>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-3 form-it">
-								<label>Primer Nombre</label>
-								<asp:TextBox runat="server" ID="txt_buscar_ticket" type="text" placeholder="Buscar Ticket"></asp:TextBox>
+								<asp:TextBox runat="server" ID="txt_buscar_ticket" type="text" placeholder="Ingrese la Cédula"></asp:TextBox>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-3">
-								<asp:Button  CssClass="btn-red" ID="btn_guardar_persona" runat="server" Text="Agregar Usuario" />
+								<asp:Button  CssClass="btn-red" ID="btn_buscar_ticket" runat="server" Text="Buscar" OnClick="btn_buscar_ticket_Click" />
 							</div>
 						</div>	
 					</div>
@@ -58,8 +57,8 @@
 								CssClass="col-md-12 mt-4">
 								<Columns>
 									<asp:BoundField DataField="dni_persona_Prop" HeaderText="Identificación" />
-									<asp:BoundField DataField="nombre_apellido_Prop" HeaderText="Fecha de Registro" />
-									<asp:BoundField DataField="hora_compra_Prop" HeaderText="Fecha de Registro" />
+									<asp:BoundField DataField="nombre_apellido_Prop" HeaderText="Nombre y Apellido" />
+									<asp:BoundField DataField="hora_compra_Prop" HeaderText="Fecha de la Compra" />
 									<asp:HyperLinkField datatextfield="id_ticket_Prop" datanavigateurlfields="id_ticket_Prop"
 										datanavigateurlformatstring="~\factura/{0}"  />
 								</Columns>

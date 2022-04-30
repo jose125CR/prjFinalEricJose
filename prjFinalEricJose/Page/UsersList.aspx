@@ -105,12 +105,12 @@
 				<div class="col-md-12 col-sm-12 col-xs-12">
 					<div class="row">
 						<div class="col-md-12">	
-							<asp:GridView 
+							<asp:GridView
 								OnRowDeleting="grdUsuarios_RowDeleting"
 								OnRowUpdating="grdUsuarios_RowUpdating"
-								ID="grdUsuarios" 
-								runat="server" 
-								AutoGenerateColumns="false" 
+								ID="grdUsuarios"
+								runat="server"
+								AutoGenerateColumns="false"
 								PageSize="20"
 								CssClass="col-md-12 mt-4">
 								<Columns>
@@ -121,17 +121,13 @@
 										</ItemTemplate>
 									</asp:TemplateField>
 									<asp:BoundField DataField="fecha_creacion_Prop" HeaderText="Fecha de Registro" />
-									<asp:TemplateField HeaderText="" ItemStyle-HorizontalAlign="center">
-										<ItemTemplate>
-											<%# ((int)Eval("id_rol_Prop") == 1) ? "Administrador" : "Cliente" %>
-										</ItemTemplate>
-									</asp:TemplateField>
-									<asp:TemplateField>
+									<asp:BoundField DataField="rol_Prop" HeaderText="Rol Asignado" />
+									<asp:TemplateField HeaderText="Editar">
 										<ItemTemplate>
 											<asp:ImageButton Visible ="false" ID="btn_editar" runat="server" Width="25" Height="25" ImageUrl="../Sources/newIcons/icons8-edit-64.png" CommandName="update"/>
 										</ItemTemplate>
 									</asp:TemplateField>
-									<asp:TemplateField>
+									<asp:TemplateField HeaderText="Borrar">
 										<ItemTemplate>
 											<asp:ImageButton Visible ="false" ID="btn_borrar" runat="server" Width="25" Height="25" ImageUrl="../Sources/newIcons/icons8-remove-48.png" CommandName="delete"/>
 										</ItemTemplate>

@@ -45,7 +45,7 @@ namespace prjFinalEricJose.Page
             if (vError == null && dt_persona != null)
             {
                 Session["usuario_ingresado"] = dt_persona;
-                Response.Redirect("UsersList.aspx");
+                Response.Redirect("/inicio");
             }
             else
             {

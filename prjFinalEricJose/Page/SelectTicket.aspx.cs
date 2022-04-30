@@ -23,7 +23,6 @@ namespace prjFinalEricJose.Page
         int id_sala = 0;
         int id_dia_seleccionado = 0;
         const int id_categoria_persona = 1;
-        const string dni_persona = "115960067";
 
         public void Mensaje(string pMensaje)
         {
@@ -117,39 +116,47 @@ namespace prjFinalEricJose.Page
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Page.RouteData.Values["id_pelicula"] != null &&
+
+            if (Session["usuario_ingresado"] != null)
+            {
+                if (Page.RouteData.Values["id_pelicula"] != null &&
                 Page.RouteData.Values["id_horario"] != null &&
                 Page.RouteData.Values["id_sala"] != null &&
                 Page.RouteData.Values["id_dia"] != null
             )
-            {
-                id_pelicula = Convert.ToInt32(Page.RouteData.Values["id_pelicula"]);
-                id_horario = Convert.ToInt32(Page.RouteData.Values["id_horario"]);
-                id_sala = Convert.ToInt32(Page.RouteData.Values["id_sala"]);
-                id_dia_seleccionado = Convert.ToInt32(Page.RouteData.Values["id_dia"]);
+                {
+                    id_pelicula = Convert.ToInt32(Page.RouteData.Values["id_pelicula"]);
+                    id_horario = Convert.ToInt32(Page.RouteData.Values["id_horario"]);
+                    id_sala = Convert.ToInt32(Page.RouteData.Values["id_sala"]);
+                    id_dia_seleccionado = Convert.ToInt32(Page.RouteData.Values["id_dia"]);
 
-                EncontarPelicula(id_pelicula);
+                    EncontarPelicula(id_pelicula);
 
-                if (id_sala == 1 || id_sala == 4)
-                {
-                    img_sala.ImageUrl = "../Sources/images/sala-cine-2d.jpg";
+                    if (id_sala == 1 || id_sala == 4)
+                    {
+                        img_sala.ImageUrl = "../Sources/images/sala-cine-2d.jpg";
+                    }
+                    else if (id_sala == 2 || id_sala == 5)
+                    {
+                        img_sala.ImageUrl = "../Sources/images/sala-cine-3d.jpg";
+                    }
+                    else
+                    {
+                        img_sala.ImageUrl = "../Sources/images/sala-cine-imax.jpg";
+                    }
                 }
-                else if (id_sala == 2 || id_sala == 5)
+                if (!IsPostBack)
                 {
-                    img_sala.ImageUrl = "../Sources/images/sala-cine-3d.jpg";
+                    CargarDdlCategoriaPersona();
+                    CargarPreciosCantidad();
+
                 }
-                else
-                {
-                    img_sala.ImageUrl = "../Sources/images/sala-cine-imax.jpg";
-                }
+                Cargar_butacas();
             }
-            if (!IsPostBack)
+            else
             {
-                CargarDdlCategoriaPersona();
-                CargarPreciosCantidad();
-                
+                Response.Redirect($"/ingresar");
             }
-            Cargar_butacas();
         }
 
         private string ConseguirClaseButaca(int index, clsButaca bt)
@@ -296,7 +303,7 @@ namespace prjFinalEricJose.Page
 
                 dt_ticket.id_ticket_Prop = nuevo_id;
                 dt_ticket.id_pelicula_Prop = id_pelicula;
-                dt_ticket.dni_persona_prop = dni_persona;
+                dt_ticket.dni_persona_prop = ((clsUsuario)Session["usuario_ingresado"]).dni_persona_Prop;
                 dt_ticket.id_sala_pelicula_prop = id_sala;
                 dt_ticket.id_horario_pelicula_prop = id_horario;
 

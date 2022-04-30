@@ -20,7 +20,6 @@ namespace prjFinalEricJose.Page
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["usuario_ingresado"] = blHelpers.UsuarioDefecto();//Borrar
             
             if(Session["usuario_ingresado"] != null)
             {
@@ -33,7 +32,6 @@ namespace prjFinalEricJose.Page
             {
                 Response.Redirect($"/ingresar");
             }
-            
         }
         /// <summary>
         /// Evento que se ejecuta al precionar el boton de guardar/actualizar una persona

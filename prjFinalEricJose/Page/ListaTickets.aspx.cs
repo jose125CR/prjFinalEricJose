@@ -14,7 +14,10 @@ namespace prjFinalEricJose.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            ConsultarListaTicket();
+            if (!IsPostBack)
+            {
+                ConsultarListaTicket();
+            }
         }
 
         private void ConsultarListaTicket()
@@ -31,6 +34,21 @@ namespace prjFinalEricJose.Page
                 grd_tickets.DataBind();
             }
 
+        }
+
+        protected void btn_buscar_ticket_Click(object sender, EventArgs e)
+        {
+            blListaTicket lg_lista_ticket = new blListaTicket();
+
+            string vError = null;
+
+            List<clsListaTicket> lista_tickets = lg_lista_ticket.CosultarListaTicketsPorDni(txt_buscar_ticket.Text, ref vError);
+
+            if (vError == null)
+            {
+                grd_tickets.DataSource = lista_tickets;
+                grd_tickets.DataBind();
+            }
         }
     }
 }

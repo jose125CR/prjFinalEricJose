@@ -14,7 +14,18 @@ namespace prjFinalEricJose.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CargarPerfilUsuario();
+
+            if (Session["usuario_ingresado"] != null)
+            {
+                if (IsPostBack == false)
+                {
+                    CargarPerfilUsuario();
+                }
+            }
+            else
+            {
+                Response.Redirect($"/ingresar");
+            }
         }
 
         public void CargarPerfilUsuario()
@@ -22,7 +33,9 @@ namespace prjFinalEricJose.Page
             blPerfil lg_perfil = new blPerfil();
             string vError = null;
 
-            clsPerfil perfil_usuario = lg_perfil.CosultarUsuarioPerfil("115960067", ref vError);
+            clsUsuario loggeado = (clsUsuario)Session["usuario_ingresado"];
+
+            clsPerfil perfil_usuario = lg_perfil.CosultarUsuarioPerfil(loggeado.dni_persona_Prop, ref vError);
 
             if (vError == null)
             {
@@ -34,6 +47,8 @@ namespace prjFinalEricJose.Page
                 lb_fecha_registro.Text = perfil_usuario.fecha_registro_Prop;
                 lb_puntos.Text = perfil_usuario.puntos_Prop;
                 lb_canjeos.Text = perfil_usuario.canjes_Prop;
+                lb_puntos_necesarios.Text = perfil_usuario.puntos_necesarios_Prop;
+                lb_canjes_necesarios.Text = perfil_usuario.canjes_necesarios_Prop;
             }
         }
     }

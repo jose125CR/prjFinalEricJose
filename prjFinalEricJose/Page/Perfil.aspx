@@ -81,12 +81,22 @@
                             </div>
                             <div class="row mt-4">
                                 <div class="col-md-6">
-                                    <label>Puntos:</label>
+                                    <label>Puntos actuales:</label>
                                     <asp:Label CssClass="label-general" runat="server" ID="lb_puntos" Text="" />
                                 </div>
                                 <div class="col-md-6">
-                                    <label>Canjeos:</label>
+                                    <label>Canjeos actuales:</label>
                                     <asp:Label CssClass="label-general" runat="server" ID="lb_canjeos" Text="" />
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <label>Puntos necesarios para el reclamo:</label>
+                                    <asp:Label CssClass="label-general" runat="server" ID="lb_puntos_necesarios" Text="" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Canjeos necesarios para el reclamo:</label>
+                                    <asp:Label CssClass="label-general" runat="server" ID="lb_canjes_necesarios" Text="" />
                                 </div>
                             </div>
                         </div>

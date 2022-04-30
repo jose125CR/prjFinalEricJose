@@ -70,6 +70,14 @@ namespace prjFinalEricJose.Logic
                     {
                         perfil_usuario.canjes_Prop = dr["canjeos"].ToString();
                     }
+                    if (!string.IsNullOrEmpty(dr["puntos_necesarios"].ToString()))
+                    {
+                        perfil_usuario.puntos_necesarios_Prop = dr["puntos_necesarios"].ToString();
+                    }
+                    if (!string.IsNullOrEmpty(dr["canjes_necesarios"].ToString()))
+                    {
+                        perfil_usuario.canjes_necesarios_Prop = dr["canjes_necesarios"].ToString();
+                    }
                 }
             }
             catch (Exception ex)

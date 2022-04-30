@@ -247,7 +247,6 @@ namespace prjFinalEricJose.Logic
             }
         }
 
-
         public void EliminarPelicula(int id_pelicula, ref string pError)
         {
             clsConnection conexion = new clsConnection();

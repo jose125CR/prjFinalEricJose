@@ -15,13 +15,13 @@ namespace prjFinalEricJose.Page
     {
 
         /// <summary>
-        /// Control formulario_persona.
+        /// Control pnl_precios_promociones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel formulario_persona;
+        protected global::System.Web.UI.WebControls.Panel pnl_precios_promociones;
 
         /// <summary>
         /// Control grd_promociones.
@@ -42,13 +42,13 @@ namespace prjFinalEricJose.Page
         protected global::System.Web.UI.WebControls.Button btn_actualizar_promociones;
 
         /// <summary>
-        /// Control Panel1.
+        /// Control pnl_precios_categorias.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
+        protected global::System.Web.UI.WebControls.Panel pnl_precios_categorias;
 
         /// <summary>
         /// Control grd_precios_categorias.
@@ -69,12 +69,39 @@ namespace prjFinalEricJose.Page
         protected global::System.Web.UI.WebControls.Button btn_actualizar_precios_categorias;
 
         /// <summary>
-        /// Control Panel2.
+        /// Control pnl_puntos_canjes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel2;
+        protected global::System.Web.UI.WebControls.Panel pnl_puntos_canjes;
+
+        /// <summary>
+        /// Control txt_puntos_minimos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_puntos_minimos;
+
+        /// <summary>
+        /// Control txt_canjes_minimos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_canjes_minimos;
+
+        /// <summary>
+        /// Control btn_actualizar_puntos_canjes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_actualizar_puntos_canjes;
     }
 }

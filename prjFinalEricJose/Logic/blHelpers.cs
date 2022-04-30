@@ -21,10 +21,9 @@ namespace prjFinalEricJose.Logic
         /******************MODULOS************************************************************************************/
         public static readonly int USUARIOS = 1;
         public static readonly int PELICULAS = 2;
-        public static readonly int PROMOCIONES = 3;
+        public static readonly int PRECIOS = 3;
         public static readonly int PERMISOS = 4;
-        public static readonly int PRECIOS = 5;
-        public static readonly int FACTURADO = 6;
+        public static readonly int FACTURADO = 5;
 
 
         /******************PERMISOS************************************************************************************/
@@ -37,8 +36,8 @@ namespace prjFinalEricJose.Logic
 
         private static readonly String BASE_URI = "https://free.currconv.com";
         private static readonly String API_VERSION = "v7";
-        private static readonly String API_KEY = "97e0aba6803c65e407b8"; //Cuenta Jose
-        //private static readonly String API_KEY = "bd2cf09fb67c7be336ac"; //Cuenta Eric
+        //private static readonly String API_KEY = "97e0aba6803c65e407b8"; //Cuenta Jose
+        private static readonly String API_KEY = "bd2cf09fb67c7be336ac"; //Cuenta Eric
         /********************************************************************/
 
         public static float TipoCambio()
@@ -52,9 +51,8 @@ namespace prjFinalEricJose.Logic
                 var json_object = JObject.Parse(jsonString);
 
                 tipo_cambio_string = (float)json_object["USD_CRC"].ToObject<float>();
-
             }
-            catch(Exception e)
+            catch
             {
 
             }
@@ -93,34 +91,13 @@ namespace prjFinalEricJose.Logic
             try
             {
                 resultado_decimal = Convert.ToDecimal(resultado);
-            }catch(Exception e)
+            }
+            catch
             {
 
             }
 
             return Math.Round(resultado_decimal, 2);
-        }
-
-        public static clsUsuario UsuarioDefecto()
-        {
-            clsUsuario defecto = new clsUsuario();
-
-            defecto.dni_persona_Prop = "602800141";
-            defecto.id_rol_Prop = 1;
-            defecto.nombre1_Prop = "Eric";
-            defecto.nombre2_Prop = "Gerardo";
-            defecto.apellido1_Prop = "Bonilla";
-            defecto.apellido2_Prop = "Vargas";
-            defecto.correo_Prop = "ebonillavargas@gmail.com";
-            defecto.fecha_nac_Prop = DateTime.Now;
-            defecto.telefono_Prop = "88887778";
-            defecto.usuario_Prop = "ebonillav";
-            defecto.contrasena_Prop = "1234";
-            defecto.puntos_Prop = 2;
-            defecto.canjeos_Prop = 0;
-            defecto.fecha_creacion_Prop = DateTime.Now;
-
-            return defecto;
         }
     }
 }

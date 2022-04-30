@@ -70,7 +70,6 @@ namespace prjFinalEricJose.Page
         /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session["usuario_ingresado"] = blHelpers.UsuarioDefecto();//Borrar
 
             if (Session["usuario_ingresado"] != null)
             {

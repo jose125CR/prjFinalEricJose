@@ -18,7 +18,7 @@
 	</div>
 </div>
 <div class="page-single">
-	<asp:Panel runat="server" ID="formulario_persona" class="container">
+	<asp:Panel runat="server" Visible="false" ID="pnl_precios_promociones" class="container">
 		<div class="row ipad-width">
 			<div class="col-md-12 col-sm-12 col-xs-12">
 				<div class="form-style-1 user-pro" action="#">
@@ -40,37 +40,37 @@
 										<asp:BoundField DataField="nombre_sala_prop" HeaderText="Tipo Sala" />
 										<asp:TemplateField HeaderText="Domingo">
 											<ItemTemplate>
-												<asp:TextBox ID="txt_domingo" runat="server" Text='<%# Eval("dia_domingo_prop") %>' />
+												<asp:TextBox Enabled="false" ID="txt_domingo" runat="server" Text='<%# Eval("dia_domingo_prop") %>' />
 											</ItemTemplate>
 										</asp:TemplateField>
 										<asp:TemplateField HeaderText="Lunes">
 											<ItemTemplate>
-												<asp:TextBox ID="txt_lunes" runat="server" Text='<%# Eval("dia_lunes_prop") %>' />
+												<asp:TextBox Enabled="false" ID="txt_lunes" runat="server" Text='<%# Eval("dia_lunes_prop") %>' />
 											</ItemTemplate>
 										</asp:TemplateField>
 										<asp:TemplateField HeaderText="Martes">
 											<ItemTemplate>
-												<asp:TextBox ID="txt_martes" runat="server" Text='<%# Eval("dia_martes_prop") %>' />
+												<asp:TextBox Enabled="false" ID="txt_martes" runat="server" Text='<%# Eval("dia_martes_prop") %>' />
 											</ItemTemplate>
 										</asp:TemplateField>
 										<asp:TemplateField HeaderText="Miercoles">
 											<ItemTemplate>
-												<asp:TextBox ID="txt_miercoles" runat="server" Text='<%# Eval("dia_miercoles_prop") %>' />
+												<asp:TextBox Enabled="false" ID="txt_miercoles" runat="server" Text='<%# Eval("dia_miercoles_prop") %>' />
 											</ItemTemplate>
 										</asp:TemplateField>
 										<asp:TemplateField HeaderText="Jueves">
 											<ItemTemplate>
-												<asp:TextBox ID="txt_jueves" runat="server" Text='<%# Eval("dia_jueves_prop") %>' />
+												<asp:TextBox Enabled="false" ID="txt_jueves" runat="server" Text='<%# Eval("dia_jueves_prop") %>' />
 											</ItemTemplate>
 										</asp:TemplateField>
 										<asp:TemplateField HeaderText="Viernes">
 											<ItemTemplate>
-												<asp:TextBox ID="txt_viernes" runat="server" Text='<%# Eval("dia_viernes_prop") %>' />
+												<asp:TextBox Enabled="false" ID="txt_viernes" runat="server" Text='<%# Eval("dia_viernes_prop") %>' />
 											</ItemTemplate>
 										</asp:TemplateField>
 										<asp:TemplateField HeaderText="Sabado">
 											<ItemTemplate>
-												<asp:TextBox ID="txt_sabado" runat="server" Text='<%# Eval("dia_sabado_prop") %>' />
+												<asp:TextBox Enabled="false" ID="txt_sabado" runat="server" Text='<%# Eval("dia_sabado_prop") %>' />
 											</ItemTemplate>
 										</asp:TemplateField>				
 									</Columns>
@@ -79,7 +79,7 @@
 						</div>
 						<div class="row">
 							<div class="col-md-3">
-								<asp:Button  CssClass="btn-red" ID="btn_actualizar_promociones" runat="server" Text="Actualizar" OnClick="btn_actualizar_promociones_Click" />
+								<asp:Button Visible="false" CssClass="btn-red" ID="btn_actualizar_promociones" runat="server" Text="Actualizar" OnClick="btn_actualizar_promociones_Click" />
 							</div>
 						</div>	
 					</div>
@@ -87,7 +87,7 @@
 			</div>
 		</div>
 	</asp:Panel>
-	<asp:Panel runat="server" ID="Panel1" class="container">
+	<asp:Panel runat="server" ID="pnl_precios_categorias" Visible="false" class="container">
 		<div class="row ipad-width">
 			<div class="col-md-12 col-sm-12 col-xs-12">
 				<div class="form-style-1 user-pro" action="#">
@@ -109,17 +109,17 @@
 										<asp:BoundField DataField="nombre_sala_prop" HeaderText="Tipo Sala" />
 										<asp:TemplateField HeaderText="Entrada General">
 											<ItemTemplate>
-												<asp:TextBox ID="txt_general" runat="server" Text='<%# Eval("precio_general_prop") %>' />
+												<asp:TextBox Enabled="false" ID="txt_general" runat="server" Text='<%# Eval("precio_general_prop") %>' />
 											</ItemTemplate>
 										</asp:TemplateField>
 										<asp:TemplateField HeaderText="Entrada Niños">
 											<ItemTemplate>
-												<asp:TextBox ID="txt_nino" runat="server" Text='<%# Eval("precio_nino_prop") %>' />
+												<asp:TextBox Enabled="false" ID="txt_nino" runat="server" Text='<%# Eval("precio_nino_prop") %>' />
 											</ItemTemplate>
 										</asp:TemplateField>
 										<asp:TemplateField HeaderText="Entrada Adulto Mayor">
 											<ItemTemplate>
-												<asp:TextBox ID="txt_adulto" runat="server" Text='<%# Eval("precio_adulto_prop") %>' />
+												<asp:TextBox Enabled="false" ID="txt_adulto" runat="server" Text='<%# Eval("precio_adulto_prop") %>' />
 											</ItemTemplate>
 										</asp:TemplateField>
 									</Columns>
@@ -128,7 +128,7 @@
 						</div>
 						<div class="row">
 							<div class="col-md-3">
-								<asp:Button  CssClass="btn-red" ID="btn_actualizar_precios_categorias" runat="server" Text="Actualizar" OnClick="btn_actualizar_precios_categorias_Click" />
+								<asp:Button Visible="false" CssClass="btn-red" ID="btn_actualizar_precios_categorias" runat="server" Text="Actualizar" OnClick="btn_actualizar_precios_categorias_Click" />
 							</div>
 						</div>	
 					</div>
@@ -136,7 +136,7 @@
 			</div>
 		</div>
 	</asp:Panel>
-	<asp:Panel runat="server" ID="Panel2" class="container">
+	<asp:Panel runat="server" ID="pnl_puntos_canjes" Visible="false" class="container">
 		<div class="row ipad-width">
 			<div class="col-md-12 col-sm-12 col-xs-12">
 				<div class="form-style-1 user-pro" action="#">
@@ -153,7 +153,7 @@
 										<label>Puntos necesarios para 2D</label>
 									</div>
 									<div class="col-md-2">
-										<asp:TextBox MaxLength="2" TextMode="Number" runat="server" Text="0" />
+										<asp:TextBox Enabled="false" ID="txt_puntos_minimos" MaxLength="2" TextMode="Number" runat="server" Text="0" />
 									</div>
 								</div>
 								<div class="row mt-3">
@@ -161,14 +161,14 @@
 										<label>Canjeos necesarios para IMAX</label>
 									</div>
 									<div class="col-md-2">
-										<asp:TextBox MaxLength="2" TextMode="Number" runat="server" Text="0" />
+										<asp:TextBox Enabled="false" ID="txt_canjes_minimos" MaxLength="2" TextMode="Number" runat="server" Text="0" />
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-3">
-								<asp:Button  CssClass="btn-red" runat="server" Text="Actualizar"/>
+								<asp:Button Visible="false" ID="btn_actualizar_puntos_canjes" CssClass="btn-red" runat="server" Text="Actualizar" OnClick="btn_actualizar_puntos_canjes_Click" />
 							</div>
 						</div>	
 					</div>

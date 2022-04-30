@@ -50,12 +50,12 @@
 								<div class="col-md-8 editar-roles">
 									<div class="row">
 										<div class="col-md-9 form-it">
-											<h4>Modificar los Rols</h4>
+											<h4>Modificar los Rol</h4>
 										</div>
 									</div>
 									<div class="row  d-flex justify-content-around mt-5">
 										<div class="col-md-3 form-it">
-											<label>Nombre del Role</label>
+											<label>Nombre del Rol</label>
 											<asp:DropDownList ID="ddl_roles" runat="server" AutoPostBack="true" CausesValidation="false" OnSelectedIndexChanged="ddl_roles_SelectedIndexChanged"  />
 										</div>
 										<div class="col-md-3 form-it">

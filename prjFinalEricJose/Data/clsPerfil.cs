@@ -72,5 +72,22 @@ namespace prjFinalEricJose.Data
             get { return canjes; }
             set { canjes = value; }
         }
+
+        private string puntos_necesarios;
+
+        public string puntos_necesarios_Prop
+        {
+            get { return puntos_necesarios; }
+            set { puntos_necesarios = value; }
+        }
+
+
+        private string canjes_necesarios;
+
+        public string canjes_necesarios_Prop
+        {
+            get { return canjes_necesarios; }
+            set { canjes_necesarios = value; }
+        }
     }
 }

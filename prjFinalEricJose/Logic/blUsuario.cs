@@ -32,11 +32,8 @@ namespace prjFinalEricJose.Logic
                 conn.Open();
 
                 dr = cmd.ExecuteReader();
-                //System.Diagnostics.Debug.WriteLine(conexion.ObtenerCadenaConexion(), "Qry");
-                //System.Diagnostics.Debug.WriteLine(dr.Read(), "Registro");
                 while (dr.Read())
                 {
-                    //System.Diagnostics.Debug.WriteLine("Hola5");
                     clsUsuario vUsuario = new clsUsuario();
 
                     if (!string.IsNullOrEmpty(dr["dni_persona"].ToString()))
@@ -46,6 +43,10 @@ namespace prjFinalEricJose.Logic
                     if (!string.IsNullOrEmpty(dr["id_rol"].ToString()))
                     {
                         vUsuario.id_rol_Prop = Convert.ToInt32(dr["id_rol"].ToString());
+                    }
+                    if (!string.IsNullOrEmpty(dr["rol"].ToString()))
+                    {
+                        vUsuario.rol_Prop = dr["rol"].ToString();
                     }
                     if (!string.IsNullOrEmpty(dr["nombre1"].ToString()))
                     {

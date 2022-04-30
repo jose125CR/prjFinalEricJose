@@ -33,13 +33,13 @@ namespace prjFinalEricJose.Page
         protected global::System.Web.UI.WebControls.TextBox txt_buscar_ticket;
 
         /// <summary>
-        /// Control btn_guardar_persona.
+        /// Control btn_buscar_ticket.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_guardar_persona;
+        protected global::System.Web.UI.WebControls.Button btn_buscar_ticket;
 
         /// <summary>
         /// Control grd_tickets.
