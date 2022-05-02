@@ -13,5 +13,14 @@ namespace prjFinalEricJose.Page
 
     public partial class CreacionPdf
     {
+
+        /// <summary>
+        /// Control lb_mensaje_final.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lb_mensaje_final;
     }
 }

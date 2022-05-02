@@ -262,3 +262,8 @@ td {
     font-weight: 700;
     color: white;
 }
+
+.mensaje-pdf{
+    font-size: 25px;
+    font-weight: 700;
+}

@@ -139,7 +139,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12 d-flex justify-content-end">
-                                    <asp:Button runat="server" Text="Imprimir" CssClass="btn-red" ID="btn_guardar_pdf" OnClick="btn_guardar_pdf_Click" />
+                                    <asp:Button runat="server" Text="Guardar PDF" CssClass="btn-red" ID="btn_guardar_pdf" OnClick="btn_guardar_pdf_Click" />
                                 </div>
                             </div>
                         </div>
