@@ -23,6 +23,14 @@ namespace prjFinalEricJose.Data
             set { id_rol = value; }
         }
 
+        private string rol;
+
+        public string rol_Prop
+        {
+            get { return rol; }
+            set { rol = value; }
+        }
+
         private string nombre1;
 
         public string nombre1_Prop

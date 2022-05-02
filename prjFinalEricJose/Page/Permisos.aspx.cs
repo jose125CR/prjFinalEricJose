@@ -14,20 +14,28 @@ namespace prjFinalEricJose.Page
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+
+            if (Session["usuario_ingresado"] != null)
             {
-                List<clsPermiso> lista_permisos = new List<clsPermiso>();
-                blPermiso lg_permiso = new blPermiso();
-                string vError = null;
+                if (IsPostBack == false)
+                {
+                    List<clsPermiso> lista_permisos = new List<clsPermiso>();
+                    blPermiso lg_permiso = new blPermiso();
+                    string vError = null;
 
-                clsPermiso permiso = lg_permiso.CosultarPemisosPorRolModulo(1, 1, ref vError);
-                lista_permisos.Add(permiso);
+                    clsPermiso permiso = lg_permiso.CosultarPemisosPorRolModulo(1, 1, ref vError);
+                    lista_permisos.Add(permiso);
 
-                grd_permisos.DataSource = lista_permisos;
-                grd_permisos.DataBind();
+                    grd_permisos.DataSource = lista_permisos;
+                    grd_permisos.DataBind();
 
-                caragarListaRoles();
-                caragarListaModulos();
+                    caragarListaRoles();
+                    caragarListaModulos();
+                }
+            }
+            else
+            {
+                Response.Redirect($"/ingresar");
             }
         }
 

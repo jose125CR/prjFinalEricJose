@@ -7,119 +7,101 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace prjFinalEricJose.Masters
+namespace prjFinalEricJose.Page
 {
 
 
-    public partial class Menu
+    public partial class PreciosPromociones
     {
 
         /// <summary>
-        /// Control head.
+        /// Control pnl_precios_promociones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Panel pnl_precios_promociones;
 
         /// <summary>
-        /// Control header_master.
+        /// Control grd_promociones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel header_master;
+        protected global::System.Web.UI.WebControls.GridView grd_promociones;
 
         /// <summary>
-        /// Control link_peliculas.
+        /// Control btn_actualizar_promociones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink link_peliculas;
+        protected global::System.Web.UI.WebControls.Button btn_actualizar_promociones;
 
         /// <summary>
-        /// Control link_personas.
+        /// Control pnl_precios_categorias.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink link_personas;
+        protected global::System.Web.UI.WebControls.Panel pnl_precios_categorias;
 
         /// <summary>
-        /// Control link_drop.
+        /// Control grd_precios_categorias.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink link_drop;
+        protected global::System.Web.UI.WebControls.GridView grd_precios_categorias;
 
         /// <summary>
-        /// Control link_facturado.
+        /// Control btn_actualizar_precios_categorias.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink link_facturado;
+        protected global::System.Web.UI.WebControls.Button btn_actualizar_precios_categorias;
 
         /// <summary>
-        /// Control link_permisos.
+        /// Control pnl_puntos_canjes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink link_permisos;
+        protected global::System.Web.UI.WebControls.Panel pnl_puntos_canjes;
 
         /// <summary>
-        /// Control link_precios.
+        /// Control txt_puntos_minimos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink link_precios;
+        protected global::System.Web.UI.WebControls.TextBox txt_puntos_minimos;
 
         /// <summary>
-        /// Control lb_tipo_cambio.
+        /// Control txt_canjes_minimos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_tipo_cambio;
+        protected global::System.Web.UI.WebControls.TextBox txt_canjes_minimos;
 
         /// <summary>
-        /// Control lb_user_logged.
+        /// Control btn_actualizar_puntos_canjes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_user_logged;
-
-        /// <summary>
-        /// Control form1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
-        /// <summary>
-        /// Control ContentPlaceHolder1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Button btn_actualizar_puntos_canjes;
     }
 }

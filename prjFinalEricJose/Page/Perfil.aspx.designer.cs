@@ -7,119 +7,101 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace prjFinalEricJose.Masters
+namespace prjFinalEricJose.Page
 {
 
 
-    public partial class Menu
+    public partial class Perfil
     {
 
         /// <summary>
-        /// Control head.
+        /// Control lb_nombre_completo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.Label lb_nombre_completo;
 
         /// <summary>
-        /// Control header_master.
+        /// Control lb_rol.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel header_master;
+        protected global::System.Web.UI.WebControls.Label lb_rol;
 
         /// <summary>
-        /// Control link_peliculas.
+        /// Control lb_correo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink link_peliculas;
+        protected global::System.Web.UI.WebControls.Label lb_correo;
 
         /// <summary>
-        /// Control link_personas.
+        /// Control lb_fecha_nac.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink link_personas;
+        protected global::System.Web.UI.WebControls.Label lb_fecha_nac;
 
         /// <summary>
-        /// Control link_drop.
+        /// Control lb_telefono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink link_drop;
+        protected global::System.Web.UI.WebControls.Label lb_telefono;
 
         /// <summary>
-        /// Control link_facturado.
+        /// Control lb_fecha_registro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink link_facturado;
+        protected global::System.Web.UI.WebControls.Label lb_fecha_registro;
 
         /// <summary>
-        /// Control link_permisos.
+        /// Control lb_puntos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink link_permisos;
+        protected global::System.Web.UI.WebControls.Label lb_puntos;
 
         /// <summary>
-        /// Control link_precios.
+        /// Control lb_canjeos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink link_precios;
+        protected global::System.Web.UI.WebControls.Label lb_canjeos;
 
         /// <summary>
-        /// Control lb_tipo_cambio.
+        /// Control lb_puntos_necesarios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_tipo_cambio;
+        protected global::System.Web.UI.WebControls.Label lb_puntos_necesarios;
 
         /// <summary>
-        /// Control lb_user_logged.
+        /// Control lb_canjes_necesarios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_user_logged;
-
-        /// <summary>
-        /// Control form1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
-        /// <summary>
-        /// Control ContentPlaceHolder1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.Label lb_canjes_necesarios;
     }
 }

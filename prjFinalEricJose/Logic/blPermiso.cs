@@ -11,62 +11,62 @@ namespace prjFinalEricJose.Logic
 {
     public class blPermiso
     {
-        public static Boolean CosultarPermisoPagina(int id_pagina, int id_permiso, ref string pError)
-        {
-            clsConnection conexion = new clsConnection();
+        //public static Boolean CosultarPermisoPagina(int id_pagina, int id_permiso, ref string pError)
+        //{
+        //    clsConnection conexion = new clsConnection();
 
-            SqlConnection conn = new SqlConnection(conexion.ObtenerCadenaConexion());
+        //    SqlConnection conn = new SqlConnection(conexion.ObtenerCadenaConexion());
 
-            SqlCommand cmd = new SqlCommand();
+        //    SqlCommand cmd = new SqlCommand();
 
-            string dni = "115960067";
+        //    string dni = ((clsUsuario)Session["usuario_ingresado"]).dni_persona_Prop;
 
-            Boolean tiene_permiso = false;
+        //    Boolean tiene_permiso = false;
 
-            try
-            {
-                SqlDataReader dr;
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.CommandText = "pa_consultar_permiso_pagina";
+        //    try
+        //    {
+        //        SqlDataReader dr;
+        //        cmd.CommandType = CommandType.StoredProcedure;
+        //        cmd.CommandText = "pa_consultar_permiso_pagina";
 
-                cmd.Parameters.Add("@ppaDni_persona", SqlDbType.VarChar);
-                cmd.Parameters["@ppaDni_persona"].Value = dni;
+        //        cmd.Parameters.Add("@ppaDni_persona", SqlDbType.VarChar);
+        //        cmd.Parameters["@ppaDni_persona"].Value = dni;
 
-                cmd.Parameters.Add("@ppaId_pagina", SqlDbType.Int);
-                cmd.Parameters["@ppaId_pagina"].Value = id_pagina;
+        //        cmd.Parameters.Add("@ppaId_pagina", SqlDbType.Int);
+        //        cmd.Parameters["@ppaId_pagina"].Value = id_pagina;
 
-                cmd.Parameters.Add("@ppaId_permiso", SqlDbType.Int);
-                cmd.Parameters["@ppaId_permiso"].Value = id_permiso;
+        //        cmd.Parameters.Add("@ppaId_permiso", SqlDbType.Int);
+        //        cmd.Parameters["@ppaId_permiso"].Value = id_permiso;
 
-                cmd.Connection = conn;
+        //        cmd.Connection = conn;
 
-                conn.Open();
+        //        conn.Open();
 
-                dr = cmd.ExecuteReader();
-                while (dr.Read())
-                {
+        //        dr = cmd.ExecuteReader();
+        //        while (dr.Read())
+        //        {
 
-                    if (!string.IsNullOrEmpty(dr["id_permiso_pagina"].ToString()))
-                    {
-                        tiene_permiso = true;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                pError = "Error general en la funcion CosultarPermisoPagina. Detalles: " + ex.Message;
-            }
-            finally
-            {
-                conn.Close();
-                cmd.Parameters.Clear();
-                cmd.Dispose();
-                conn.Dispose();
-                conn = null;
-            }
+        //            if (!string.IsNullOrEmpty(dr["id_permiso_pagina"].ToString()))
+        //            {
+        //                tiene_permiso = true;
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        pError = "Error general en la funcion CosultarPermisoPagina. Detalles: " + ex.Message;
+        //    }
+        //    finally
+        //    {
+        //        conn.Close();
+        //        cmd.Parameters.Clear();
+        //        cmd.Dispose();
+        //        conn.Dispose();
+        //        conn = null;
+        //    }
 
-            return tiene_permiso;
-        }
+        //    return tiene_permiso;
+        //}
 
         public clsPermiso CosultarPemisosPorRolModulo(int id_rol, int id_modulo, ref string pError)
         {
@@ -181,5 +181,55 @@ namespace prjFinalEricJose.Logic
                 conn = null;
             }
         }
+
+        public Boolean CosultarPermisoDropAdministracion(int id_rol, ref string pError)
+        {
+            clsConnection conexion = new clsConnection();
+
+            SqlConnection conn = new SqlConnection(conexion.ObtenerCadenaConexion());
+
+            SqlCommand cmd = new SqlCommand();
+
+            Boolean tiene_permiso = false;
+
+            try
+            {
+                SqlDataReader dr;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "pa_consultar_permiso_administracion";
+
+                cmd.Parameters.Add("@id_rol", SqlDbType.Int);
+                cmd.Parameters["@id_rol"].Value = id_rol;
+
+                cmd.Connection = conn;
+
+                conn.Open();
+
+                dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+
+                    if (!string.IsNullOrEmpty(dr["tiene_permiso"].ToString()))
+                    {
+                        tiene_permiso = Convert.ToBoolean(dr["tiene_permiso"].ToString()); ;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                pError = "Error general en la funcion CosultarPermisoDropAdministracion. Detalles: " + ex.Message;
+            }
+            finally
+            {
+                conn.Close();
+                cmd.Parameters.Clear();
+                cmd.Dispose();
+                conn.Dispose();
+                conn = null;
+            }
+
+            return tiene_permiso;
+        }
+
     }
 }

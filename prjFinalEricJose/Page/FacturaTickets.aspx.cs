@@ -25,14 +25,33 @@ namespace prjFinalEricJose.Page
             txt_categoria_pelicula.Text = dt_factura_final.categoria_edad_Prop;
             txt_dni_cliente.Text = dt_factura_final.dni_persona_Prop;
             txt_nombre_completo_cliente.Text = dt_factura_final.nombre_completo_persona_Prop;
-            txt_butacas_general.Text = dt_factura_final.contador_butacas_general_Prop;
-            txt_butacas_nino.Text = dt_factura_final.contador_butacas_ninos_Prop;
-            txt_butacas_adulto.Text = dt_factura_final.contador_butacas_adultos_Prop;
+            txt_butacas_general.Text = NumeroONinguna(dt_factura_final.contador_butacas_general_Prop);
+            txt_butacas_nino.Text = NumeroONinguna(dt_factura_final.contador_butacas_ninos_Prop);
+            txt_butacas_adulto.Text = NumeroONinguna(dt_factura_final.contador_butacas_adultos_Prop);
             txt_lista_butacas.Text = dt_factura_final.butacas_ordenadas_Prop;
             txt_sala.Text = dt_factura_final.sala_Prop;
             txt_hora_pelicula.Text = dt_factura_final.hora_pelicula_Prop;
-            txt_total_pagado_colones.Text = "₡" + dt_factura_final.monto_total_Prop.ToString();
-            txt_total_pagado_dolares.Text = "$" + blHelpers.ConseguirValorDolares(dt_factura_final.monto_total_Prop).ToString();
+            txt_puntos_ganados.Text = dt_factura_final.puntos_acumulados_Prop;
+            
+            if(dt_factura_final.monto_total_Prop == 0)
+            {
+                var num = dt_factura_final.sala_Prop.Split(' ');
+                if (num[1] == "1" || num[1] == "4")
+                {
+                    txt_total_pagado_colones.Text = "Promocion 2D";
+                    txt_total_pagado_dolares.Text = "Promocion 2D";
+                }
+                else
+                {
+                    txt_total_pagado_colones.Text = "Promocion IMAX";
+                    txt_total_pagado_dolares.Text = "Promocion IMAX";
+                }
+            }
+            else
+            {
+                txt_total_pagado_colones.Text = "₡" + dt_factura_final.monto_total_Prop.ToString();
+                txt_total_pagado_dolares.Text = "$" + blHelpers.ConseguirValorDolares(dt_factura_final.monto_total_Prop).ToString();
+            }
 
         }
 
@@ -40,6 +59,20 @@ namespace prjFinalEricJose.Page
         {
             id_ticket = Convert.ToInt32(Page.RouteData.Values["id_ticket"]);
             CargarLabelsFactura();
+        }
+
+        private string NumeroONinguna(string numero_butacas)
+        {
+            if (numero_butacas != null)
+            {
+                return numero_butacas;
+            }
+            return "Ninguna";
+        }
+
+        protected void btn_guardar_pdf_Click(object sender, EventArgs e)
+        {
+            Response.Redirect($"/imprimir/{id_ticket}");
         }
     }
 }

@@ -19,7 +19,11 @@ namespace prjFinalEricJose.Logic
     public class blHelpers
     {
         /******************MODULOS************************************************************************************/
+        public static readonly int USUARIOS = 1;
         public static readonly int PELICULAS = 2;
+        public static readonly int PRECIOS = 3;
+        public static readonly int PERMISOS = 4;
+        public static readonly int FACTURADO = 5;
 
 
         /******************PERMISOS************************************************************************************/
@@ -32,19 +36,26 @@ namespace prjFinalEricJose.Logic
 
         private static readonly String BASE_URI = "https://free.currconv.com";
         private static readonly String API_VERSION = "v7";
-        private static readonly String API_KEY = "97e0aba6803c65e407b8";
+        //private static readonly String API_KEY = "97e0aba6803c65e407b8"; //Cuenta Jose
+        private static readonly String API_KEY = "bd2cf09fb67c7be336ac"; //Cuenta Eric
         /********************************************************************/
 
         public static float TipoCambio()
         {
+            float tipo_cambio_string = 0;
 
             string url = $"{BASE_URI}/api/{API_VERSION}/convert?q=USD_CRC&compact=ultra&apiKey={API_KEY}";
-            var jsonString = GetResponse(url);
-            var json_object = JObject.Parse(jsonString);
+            try
+            {
+                var jsonString = GetResponse(url);
+                var json_object = JObject.Parse(jsonString);
 
+                tipo_cambio_string = (float)json_object["USD_CRC"].ToObject<float>();
+            }
+            catch
+            {
 
-
-            float tipo_cambio_string = (float)json_object["USD_CRC"].ToObject<float>();
+            }
 
             return tipo_cambio_string;
         }
@@ -75,8 +86,16 @@ namespace prjFinalEricJose.Logic
         public static decimal ConseguirValorDolares(float colones)
         {
             float resultado = colones / TipoCambio();
+            decimal resultado_decimal = 0;
 
-            decimal resultado_decimal = Convert.ToDecimal(resultado);
+            try
+            {
+                resultado_decimal = Convert.ToDecimal(resultado);
+            }
+            catch
+            {
+
+            }
 
             return Math.Round(resultado_decimal, 2);
         }

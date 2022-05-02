@@ -23,7 +23,6 @@ namespace prjFinalEricJose.Page
         int id_sala = 0;
         int id_dia_seleccionado = 0;
         const int id_categoria_persona = 1;
-        const string dni_persona = "115960067";
 
         public void Mensaje(string pMensaje)
         {
@@ -117,23 +116,47 @@ namespace prjFinalEricJose.Page
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Page.RouteData.Values["id_pelicula"] != null &&
+
+            if (Session["usuario_ingresado"] != null)
+            {
+                if (Page.RouteData.Values["id_pelicula"] != null &&
                 Page.RouteData.Values["id_horario"] != null &&
                 Page.RouteData.Values["id_sala"] != null &&
                 Page.RouteData.Values["id_dia"] != null
             )
-            {
-                id_pelicula = Convert.ToInt32(Page.RouteData.Values["id_pelicula"]);
-                id_horario = Convert.ToInt32(Page.RouteData.Values["id_horario"]);
-                id_sala = Convert.ToInt32(Page.RouteData.Values["id_sala"]);
-                id_dia_seleccionado = Convert.ToInt32(Page.RouteData.Values["id_dia"]);
+                {
+                    id_pelicula = Convert.ToInt32(Page.RouteData.Values["id_pelicula"]);
+                    id_horario = Convert.ToInt32(Page.RouteData.Values["id_horario"]);
+                    id_sala = Convert.ToInt32(Page.RouteData.Values["id_sala"]);
+                    id_dia_seleccionado = Convert.ToInt32(Page.RouteData.Values["id_dia"]);
+
+                    EncontarPelicula(id_pelicula);
+
+                    if (id_sala == 1 || id_sala == 4)
+                    {
+                        img_sala.ImageUrl = "../Sources/images/sala-cine-2d.jpg";
+                    }
+                    else if (id_sala == 2 || id_sala == 5)
+                    {
+                        img_sala.ImageUrl = "../Sources/images/sala-cine-3d.jpg";
+                    }
+                    else
+                    {
+                        img_sala.ImageUrl = "../Sources/images/sala-cine-imax.jpg";
+                    }
+                }
+                if (!IsPostBack)
+                {
+                    CargarDdlCategoriaPersona();
+                    CargarPreciosCantidad();
+
+                }
+                Cargar_butacas();
             }
-            if (!IsPostBack)
+            else
             {
-                CargarDdlCategoriaPersona();
-                CargarPreciosCantidad();
+                Response.Redirect($"/ingresar");
             }
-            Cargar_butacas();
         }
 
         private string ConseguirClaseButaca(int index, clsButaca bt)
@@ -214,7 +237,6 @@ namespace prjFinalEricJose.Page
             else
             {
                 CargarPreciosCantidad();
-                ddl_seleccionar_persona.Items[0].Attributes.Add("disabled", "disabled");
             }
         }
 
@@ -266,12 +288,13 @@ namespace prjFinalEricJose.Page
         {
             blButaca lg_butaca = new blButaca();
             blTicket lg_ticket = new blTicket();
+            blUsuario lg_usuario = new blUsuario();
             blButacaTicket lg_butaca_ticket = new blButacaTicket();
             clsTicket dt_ticket = new clsTicket();
             string vError = null;
 
             List<clsButaca> butacas_seleccionadas = lg_butaca.ConsultarButacasHorarioSalaPeliculaSeleccionadas(id_pelicula, id_horario, id_sala, ref vError);
-
+            
             int nuevo_id = -1;
             if (vError == null)
             {
@@ -279,7 +302,7 @@ namespace prjFinalEricJose.Page
 
                 dt_ticket.id_ticket_Prop = nuevo_id;
                 dt_ticket.id_pelicula_Prop = id_pelicula;
-                dt_ticket.dni_persona_prop = dni_persona;
+                dt_ticket.dni_persona_prop = ((clsUsuario)Session["usuario_ingresado"]).dni_persona_Prop;
                 dt_ticket.id_sala_pelicula_prop = id_sala;
                 dt_ticket.id_horario_pelicula_prop = id_horario;
 
@@ -301,12 +324,53 @@ namespace prjFinalEricJose.Page
                             }
                         }
                     }
+
+                    if (vError == null && butacas_seleccionadas.Count >= 2)
+                    {
+                        lg_usuario.SumarPuntos(((clsUsuario)Session["usuario_ingresado"]).dni_persona_Prop, butacas_seleccionadas.Count, ref vError);
+                    }
                 }
             }
 
             if (vError == null)
             {
                 Response.Redirect($"/factura/{nuevo_id}");
+            }
+        }
+
+        public void EncontarPelicula(int id_pelicula)
+        {
+            blPelicula lg_pelicula = new blPelicula();
+            string vError = null;
+
+            List<clsPelicula> lista_peliculas = lg_pelicula.CosultarPeliculas(ref vError);
+
+            if (vError == null)
+            {
+                clsPelicula pelicula = lista_peliculas.Find(peli => peli.id_pelicula_Prop == id_pelicula);
+
+                lb_nombre_pelicula.Text = pelicula.nombre_pelicula_Prop;
+                img_pelicula.ImageUrl = $"../Sources/images/uploads/{pelicula.direccion_img_prop}";
+            }
+            else
+            {
+                Mensaje(vError);
+            }
+        }
+
+        protected void btn_cancelar_compra_Click(object sender, EventArgs e)
+        {
+            blButaca lg_butaca = new blButaca();
+            string vError = null;
+            lg_butaca.CancelarCompraButacas(id_pelicula, id_horario, id_sala, ref vError);
+
+            if(vError != null)
+            {
+                Mensaje("Ha ocurrido un error al intentar cancelar la compra");
+            }
+            else
+            {
+                Response.Redirect("/peliculas");
             }
         }
     }

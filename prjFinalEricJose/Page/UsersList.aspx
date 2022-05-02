@@ -7,10 +7,10 @@
 		<div class="row">
 			<div class="col-md-12">
                 <div class="row">
-                        <h1>Módulo de Usuarios</h1>
+                        <h1>Módulo de Ingresos de Usuarios</h1>
                     <ul class="row d-flex justify-content-center breadcumb">
                         <li class="active"><a href="../Page/index.aspx">Inicio</a></li>
-                        <li><span class="ion-ios-arrow-right"></span>Módulo de Usuarios</li>
+                        <li><span class="ion-ios-arrow-right"></span>Módulo de Ingresos de Usuarios</li>
                     </ul>
                 </div>
             </div>
@@ -18,10 +18,16 @@
 	</div>
 </div>
 <div class="page-single">
-	<asp:Panel runat="server" ID="formulario_persona" class="container">
+	<div class="container">
 		<div class="row ipad-width">
 			<div class="col-md-12 col-sm-12 col-xs-12">
-				<div class="form-style-1 user-pro" action="#">
+				<div class="row">
+					<asp:Button CssClass="primary-btn" runat="server" Visible="false" ID="btn_abrir_panel_nuevo_usuario" Text="Agregar Nuevo Usuario" OnClick="btn_abrir_panel_nuevo_usuario_Click" />
+				</div>
+				<div class="row d-flex justify-content-center">
+					<asp:Label Visible="false" ID="lb_mensaje" CssClass="green-text" runat="server" Text="La operación se ha completado con exito" />
+				</div>
+				<asp:Panel Visible="false" runat="server" ID="formulario_persona" class="form-style-1 user-pro" action="#">
 					<div action="#" class="user">
 						<div class="row">
 							<div class="col-md-9 form-it">
@@ -30,17 +36,12 @@
 							<div class="col-md-3 form-it">
 								<label>Rol del Usuario</label>
 								<asp:DropDownList ID="ddl_roles" runat="server"  />
-								<%--<select>
-									<option value="" selected disabled hidden>Seleccione Rol</option>
-										<option value="1">Administrador</option>
-										<option value="2">Cliente</option>
-								</select>--%>
 							</div>
 						</div>
 						<div class="row mt-5">
 							<div class="col-md-3 form-it">
 								<label>Numero de Cédula</label>
-								<asp:TextBox runat="server" ID="txt_dni" type="text" placeholder="Numero de Cédula"></asp:TextBox>
+								<asp:TextBox runat="server" AutoCompleteType="Disabled" ID="txt_dni" type="text" placeholder="Numero de Cédula" TextMode="Number" onKeyDown="if(this.value.length>=9 && event.keyCode!=8 || event.keyCode==109 || event.keyCode==189 || event.keyCode==107 || event.keyCode==187) return false;"></asp:TextBox>
 							</div>
 							<div class="col-md-3 form-it">
 								<label>Nombre de Usuario</label>
@@ -76,7 +77,7 @@
 						<div class="row">
 							<div class="col-md-3 form-it">
 								<label>Correo Electrónico</label>
-								<asp:TextBox runat="server" ID="txt_correo" type="email" placeholder="Correo Electrónico"></asp:TextBox>
+								<asp:TextBox runat="server" ID="txt_correo" type="email" placeholder="Correo Electrónico" TextMode="Email"></asp:TextBox>
 							</div>
 							<div class="col-md-3 form-it">
 								<label>Fecha de Nacimiento</label>
@@ -84,31 +85,32 @@
 							</div>
 							<div class="col-md-3 form-it">
 								<label>Número de Teléfono</label>
-								<asp:TextBox runat="server" ID="txt_telefono" type="text" placeholder="Número Teléfonico"></asp:TextBox>
+								<asp:TextBox runat="server" ID="txt_telefono" type="text" placeholder="Número Teléfonico" TextMode="Phone"></asp:TextBox>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-3">
-								<asp:Button  CssClass="btn-red" ID="btn_guardar_persona" runat="server" Text="Agregar Usuario" OnClick="btn_guardar_persona_Click" />
+							<div class="col-md-6" >
+								<asp:Button  CssClass="primary-btn" ID="btn_guardar_persona" runat="server" Text="Agregar Usuario" OnClick="btn_guardar_persona_Click" />
+								<asp:Button  CssClass="primary-btn ms-3" ID="btn_cancelar_formulario" runat="server" Text="Cancelar" OnClick="btn_cancelar_formulario_Click" />
 							</div>
 						</div>	
 					</div>
-				</div>
+				</asp:Panel>
 			</div>
 		</div>
-	</asp:Panel>
+	</div>
 	<div class="page-single pt-0">
 		<div class="container">
 			<div class="row ipad-width2">
 				<div class="col-md-12 col-sm-12 col-xs-12">
 					<div class="row">
 						<div class="col-md-12">	
-							<asp:GridView 
+							<asp:GridView
 								OnRowDeleting="grdUsuarios_RowDeleting"
 								OnRowUpdating="grdUsuarios_RowUpdating"
-								ID="grdUsuarios" 
-								runat="server" 
-								AutoGenerateColumns="false" 
+								ID="grdUsuarios"
+								runat="server"
+								AutoGenerateColumns="false"
 								PageSize="20"
 								CssClass="col-md-12 mt-4">
 								<Columns>
@@ -119,14 +121,17 @@
 										</ItemTemplate>
 									</asp:TemplateField>
 									<asp:BoundField DataField="fecha_creacion_Prop" HeaderText="Fecha de Registro" />
-									<asp:TemplateField HeaderText="" ItemStyle-HorizontalAlign="center">
+									<asp:BoundField DataField="rol_Prop" HeaderText="Rol Asignado" />
+									<asp:TemplateField HeaderText="Editar">
 										<ItemTemplate>
-											<%# ((int)Eval("id_rol_Prop") == 1) ? "Administrador" : "Cliente" %>
+											<asp:ImageButton Visible ="false" ID="btn_editar" runat="server" Width="25" Height="25" ImageUrl="../Sources/newIcons/icons8-edit-64.png" CommandName="update"/>
 										</ItemTemplate>
 									</asp:TemplateField>
-									<asp:ButtonField  CommandName="update" ButtonType="Image" ControlStyle-Width="25" ControlStyle-Height="25" ImageUrl="../Sources/newIcons/icons8-edit-64.png"  />
-									<asp:ButtonField  CommandName="delete" ButtonType="Image" ControlStyle-Width="25" ControlStyle-Height="25" ImageUrl="../Sources/newIcons/icons8-remove-48.png" />
-									<%--<asp:CommandField ShowSelectButton="true" ButtonType="Image" DeleteImageUrl="~/Sources/images/logo1.png" HeaderStyle-Width="60px" ControlStyle-ForeColor="White" />--%>
+									<asp:TemplateField HeaderText="Borrar">
+										<ItemTemplate>
+											<asp:ImageButton Visible ="false" ID="btn_borrar" runat="server" Width="25" Height="25" ImageUrl="../Sources/newIcons/icons8-remove-48.png" CommandName="delete"/>
+										</ItemTemplate>
+									</asp:TemplateField>
 								</Columns>
 							</asp:GridView>
 						</div>

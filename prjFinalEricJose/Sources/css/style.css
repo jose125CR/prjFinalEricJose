@@ -7544,7 +7544,9 @@ ul {
     }
 
     .form-style-1 input:not(input[type="submit"]):not(input[type="checkbox"]),
-    .form-style-1 select {
+    .form-style-1 select,
+    .tabla-precios input
+    {
         font-family: 'Nunito', sans-serif;
         font-size: 12px;
         color: #abb7c4;

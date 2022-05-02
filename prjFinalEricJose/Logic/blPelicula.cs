@@ -189,7 +189,6 @@ namespace prjFinalEricJose.Logic
             catch (Exception ex)
             {
                 pError = "Error general en la funcion GuardarPelicula. Detalles: " + ex.Message;
-                System.Diagnostics.Debug.WriteLine(ex.Message, "GuardarPelicula");
             }
             finally
             {
@@ -202,6 +201,49 @@ namespace prjFinalEricJose.Logic
                 {
                     lg_horario_pelicula.RegistrarHorariosPorIdPelicula(dt_pelicula.horarios_Prop, dt_pelicula.salas_Prop, new_id, ref pError);
                 }
+            }
+        }
+
+        public void ActualizarPelicula(clsPelicula dt_pelicula, ref string pError)
+        {
+            clsConnection conexion = new clsConnection();
+            SqlConnection conn = new SqlConnection(conexion.ObtenerCadenaConexion());
+            SqlCommand cmd = new SqlCommand();
+
+            int vRespuesta;
+
+            try
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "pa_actualizar_pelicula";
+
+                cmd.Parameters.Add("@ppaId_pelicula", SqlDbType.Int);
+                cmd.Parameters["@ppaId_pelicula"].Value = dt_pelicula.id_pelicula_Prop;
+
+                cmd.Parameters.Add("@ppaId_categoria_edad_pelicula", SqlDbType.Int);
+                cmd.Parameters["@ppaId_categoria_edad_pelicula"].Value = dt_pelicula.id_categoria_edad_pelicula_Prop;
+
+                cmd.Parameters.Add("@ppaNombre", SqlDbType.VarChar);
+                cmd.Parameters["@ppaNombre"].Value = dt_pelicula.nombre_pelicula_Prop;
+
+                cmd.Parameters.Add("@ppaSipnosis", SqlDbType.VarChar);
+                cmd.Parameters["@ppaSipnosis"].Value = dt_pelicula.sinopsis_Prop;
+
+                cmd.Connection = conn;
+                conn.Open();
+                vRespuesta = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                pError = "Error general en la funcion ActualizarPelicula. Detalles: " + ex.Message;
+            }
+            finally
+            {
+                conn.Close();
+                cmd.Parameters.Clear();
+                cmd.Dispose();
+                conn.Dispose();
+                conn = null;
             }
         }
 

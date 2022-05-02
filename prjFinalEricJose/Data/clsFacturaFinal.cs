@@ -111,6 +111,14 @@ namespace prjFinalEricJose.Data
             set { cantidad_total_butacas = value; }
         }
 
+        private string puntos_acumulados;
+
+        public string puntos_acumulados_Prop
+        {
+            get { return puntos_acumulados; }
+            set { puntos_acumulados = value; }
+        }
+
         private float monto_total;
 
         public float monto_total_Prop

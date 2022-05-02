@@ -14,11 +14,15 @@
     color: lightgreen;
 }
 
-.red-text {
-    color: #abb7c4;
+.yellow-text {
+    color: #e3c800;
 }
 
-.label-factura-final-resultado {
+.red-text {
+    color: #F95A41;
+}
+
+.label-general {
     font-size: 14px;
     color: #abb7c4;
     font-weight: 500;
@@ -243,4 +247,32 @@ td {
     /* Firefox */
     background: url('../images/uploads/drop-icon.png') no-repeat right 20px center;
     background-color: #233a50;
+}
+
+.tabla-precios input {
+    text-align: center;
+}
+
+.canjeos-puntos input {
+    text-align: center;
+}
+
+.titulo-pelicula-ticket {
+    font-size: 21px;
+    font-weight: 700;
+    color: white;
+}
+
+.mensaje-pdf{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.cuadro-aviso-butacas {
+    border: 2px solid white;
+}
+
+.cuadro-aviso-butacas span {
+    font-size: 15px;
+    color: white;
 }

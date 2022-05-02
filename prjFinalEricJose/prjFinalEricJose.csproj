@@ -43,9 +43,88 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.barcodes, Version=7.2.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.2\lib\net461\itext.barcodes.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.commons, Version=7.2.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.commons.7.2.2\lib\net461\itext.commons.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.forms, Version=7.2.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.2\lib\net461\itext.forms.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.io, Version=7.2.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.2\lib\net461\itext.io.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.kernel, Version=7.2.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.2\lib\net461\itext.kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.layout, Version=7.2.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.2\lib\net461\itext.layout.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfa, Version=7.2.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.2\lib\net461\itext.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.sign, Version=7.2.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.2\lib\net461\itext.sign.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.styledxmlparser, Version=7.2.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.2\lib\net461\itext.styledxmlparser.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.svg, Version=7.2.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.2.2\lib\net461\itext.svg.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.5.0.0\lib\net461\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.5.0.0\lib\net461\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.5.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -71,11 +150,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="Page\CreacionPdf.aspx" />
     <Content Include="Page\FacturaTickets.aspx" />
     <Content Include="Page\Index.aspx" />
+    <Content Include="Page\ListaTickets.aspx" />
     <Content Include="Page\Login.aspx" />
     <Content Include="Page\MoviesList.aspx" />
+    <Content Include="Page\Perfil.aspx" />
     <Content Include="Page\Permisos.aspx" />
+    <Content Include="Page\PreciosPromociones.aspx" />
+    <Content Include="Page\Salir.aspx" />
     <Content Include="Page\SelectTicket.aspx" />
     <Content Include="Page\UsersList.aspx" />
     <Content Include="Sources\css\ajax-loader.html" />
@@ -105,7 +189,10 @@
     <Content Include="Sources\images\nivo\next.png" />
     <Content Include="Sources\images\nivo\prev%402x.png" />
     <Content Include="Sources\images\nivo\prev.png" />
+    <Content Include="Sources\images\profile-user.png" />
+    <Content Include="Sources\images\sala-cine-2d.jpg" />
     <Content Include="Sources\images\sala-cine-3d.jpg" />
+    <Content Include="Sources\images\sala-cine-imax.jpg" />
     <Content Include="Sources\images\uploads\ads1.png" />
     <Content Include="Sources\images\uploads\ads2.png" />
     <Content Include="Sources\images\uploads\author.png" />
@@ -307,12 +394,17 @@
     <Compile Include="Data\clsDiaSemana.cs" />
     <Compile Include="Data\clsFacturaFinal.cs" />
     <Compile Include="Data\clsHorario.cs" />
+    <Compile Include="Data\clsListaTicket.cs" />
     <Compile Include="Data\clsModulo.cs" />
     <Compile Include="Data\clsPelicula.cs" />
+    <Compile Include="Data\clsPerfil.cs" />
     <Compile Include="Data\clsPermiso.cs" />
+    <Compile Include="Data\clsPreciosCategorias.cs" />
     <Compile Include="Data\clsPreciosEntradasSalaDia.cs" />
+    <Compile Include="Data\clsPuntosCanjesMinimos.cs" />
     <Compile Include="Data\clsRol.cs" />
     <Compile Include="Data\clsSalaPelicula.cs" />
+    <Compile Include="Data\clsSemanaPromicion.cs" />
     <Compile Include="Data\clsTicket.cs" />
     <Compile Include="Data\clsUsuario.cs" />
     <Compile Include="Global.asax.cs">
@@ -326,12 +418,17 @@
     <Compile Include="Logic\blFacturaFinal.cs" />
     <Compile Include="Logic\blHelpers.cs" />
     <Compile Include="Logic\blHorario.cs" />
+    <Compile Include="Logic\blListaTicket.cs" />
     <Compile Include="Logic\blModulo.cs" />
     <Compile Include="Logic\blPelicula.cs" />
+    <Compile Include="Logic\blPerfil.cs" />
     <Compile Include="Logic\blPermiso.cs" />
+    <Compile Include="Logic\blPreciosCategorias.cs" />
     <Compile Include="Logic\blPreciosEntradasSalaDia.cs" />
+    <Compile Include="Logic\blPuntosCanjesMinimos.cs" />
     <Compile Include="Logic\blRol.cs" />
     <Compile Include="Logic\blSalaPelicula.cs" />
+    <Compile Include="Logic\blSemanaPromocion.cs" />
     <Compile Include="Logic\blTicket.cs" />
     <Compile Include="Logic\blUsuario.cs" />
     <Compile Include="Masters\Login.Master.cs">
@@ -348,6 +445,13 @@
     <Compile Include="Masters\Menu.Master.designer.cs">
       <DependentUpon>Menu.Master</DependentUpon>
     </Compile>
+    <Compile Include="Page\CreacionPdf.aspx.cs">
+      <DependentUpon>CreacionPdf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\CreacionPdf.aspx.designer.cs">
+      <DependentUpon>CreacionPdf.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Page\FacturaTickets.aspx.cs">
       <DependentUpon>FacturaTickets.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -361,6 +465,13 @@
     </Compile>
     <Compile Include="Page\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\ListaTickets.aspx.cs">
+      <DependentUpon>ListaTickets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\ListaTickets.aspx.designer.cs">
+      <DependentUpon>ListaTickets.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -376,12 +487,33 @@
     <Compile Include="Page\MoviesList.aspx.designer.cs">
       <DependentUpon>MoviesList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Page\Perfil.aspx.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\Perfil.aspx.designer.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Page\Permisos.aspx.cs">
       <DependentUpon>Permisos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Page\Permisos.aspx.designer.cs">
       <DependentUpon>Permisos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\PreciosPromociones.aspx.cs">
+      <DependentUpon>PreciosPromociones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\PreciosPromociones.aspx.designer.cs">
+      <DependentUpon>PreciosPromociones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Salir.aspx.cs">
+      <DependentUpon>Salir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\Salir.aspx.designer.cs">
+      <DependentUpon>Salir.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\SelectTicket.aspx.cs">
       <DependentUpon>SelectTicket.aspx</DependentUpon>
