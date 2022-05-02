@@ -19,7 +19,7 @@
 }
 
 .red-text {
-    color: #abb7c4;
+    color: #F95A41;
 }
 
 .label-general {
@@ -266,4 +266,13 @@ td {
 .mensaje-pdf{
     font-size: 25px;
     font-weight: 700;
+}
+
+.cuadro-aviso-butacas {
+    border: 2px solid white;
+}
+
+.cuadro-aviso-butacas span {
+    font-size: 15px;
+    color: white;
 }

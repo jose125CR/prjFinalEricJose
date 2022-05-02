@@ -419,5 +419,50 @@ namespace prjFinalEricJose.Logic
             }
             return precio;
         }
+
+        public void CancelarCompraButacas(int id_pelicula, int id_horario, int id_sala, ref string pError)
+        {
+            clsConnection conexion = new clsConnection();
+
+            SqlConnection conn = new SqlConnection(conexion.ObtenerCadenaConexion());
+
+            SqlCommand cmd = new SqlCommand();
+
+            int vRespuesta;
+
+            try
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "pa_cancelar_compra";
+
+                cmd.Parameters.Add("@id_pelicula", SqlDbType.Int);
+                cmd.Parameters["@id_pelicula"].Value = id_pelicula;
+
+                cmd.Parameters.Add("@id_horario", SqlDbType.Int);
+                cmd.Parameters["@id_horario"].Value = id_horario;
+
+                cmd.Parameters.Add("@id_sala", SqlDbType.Int);
+                cmd.Parameters["@id_sala"].Value = id_sala;
+
+                cmd.Connection = conn;
+
+                conn.Open();
+
+                vRespuesta = cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                pError = "Error general en la funcion CancelarCompraButacas. Detalles: " + ex.Message;
+            }
+            finally
+            {
+                conn.Close();
+                cmd.Parameters.Clear();
+                cmd.Dispose();
+                conn.Dispose();
+                conn = null;
+            }
+        }
+
     }
 }

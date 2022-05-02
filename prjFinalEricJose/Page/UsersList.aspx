@@ -7,10 +7,10 @@
 		<div class="row">
 			<div class="col-md-12">
                 <div class="row">
-                        <h1>Módulo de Usuarios</h1>
+                        <h1>Módulo de Ingresos de Usuarios</h1>
                     <ul class="row d-flex justify-content-center breadcumb">
                         <li class="active"><a href="../Page/index.aspx">Inicio</a></li>
-                        <li><span class="ion-ios-arrow-right"></span>Módulo de Usuarios</li>
+                        <li><span class="ion-ios-arrow-right"></span>Módulo de Ingresos de Usuarios</li>
                     </ul>
                 </div>
             </div>

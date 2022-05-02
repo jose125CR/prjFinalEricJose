@@ -150,13 +150,13 @@ namespace prjFinalEricJose.Page
         protected global::System.Web.UI.WebControls.Label txt_total_pagar_dolares;
 
         /// <summary>
-        /// Control btn_registar_persona.
+        /// Control btn_cancelar_compra.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_registar_persona;
+        protected global::System.Web.UI.WebControls.Button btn_cancelar_compra;
 
         /// <summary>
         /// Control btn_comprar.

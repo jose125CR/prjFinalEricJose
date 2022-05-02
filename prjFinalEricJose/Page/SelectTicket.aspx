@@ -100,6 +100,17 @@
                                                                 <asp:Label CssClass="label-venta-ticket" ID="txt_cantidad_adulto" runat="server" Text="0" />
                                                             </div>
                                                         </div>
+                                                        <div class="cuadro-aviso-butacas mt-4">
+                                                            <div class="row d-flex justify-content-center">
+                                                                <h5 class="red-text">Importante!!</h5>
+                                                            </div>
+                                                            <div class="row d-flex justify-content-center">
+                                                                <asp:Label runat="server" Text="Letra A-#: Todo Público" />
+                                                            </div>
+                                                            <div class="row d-flex justify-content-center">
+                                                                <asp:Label runat="server" Text="Letra D-#: Exclusivo Discapasitados" />
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <div class="col-md-4 seats-row">
                                                         <div>
@@ -149,7 +160,7 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-6 form-it d-flex justify-content-end">
-                                                <asp:Button  CssClass="blue-btn ms-3 me-3" ID="btn_registar_persona" runat="server" Text="Cancelar" />
+                                                <asp:Button  CssClass="blue-btn ms-3 me-3" ID="btn_cancelar_compra" runat="server" Text="Cancelar" OnClick="btn_cancelar_compra_Click" />
                                                 <asp:Button  CssClass="primary-btn me-3 ms-3" ID="btn_comprar" runat="server" Text="Comprar Seleccionados" OnClick="btn_comprar_Click"/>
                                             </div>
                                         </div>

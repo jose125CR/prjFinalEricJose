@@ -237,7 +237,6 @@ namespace prjFinalEricJose.Page
             else
             {
                 CargarPreciosCantidad();
-                ddl_seleccionar_persona.Items[0].Attributes.Add("disabled", "disabled");
             }
         }
 
@@ -328,7 +327,7 @@ namespace prjFinalEricJose.Page
 
                     if (vError == null && butacas_seleccionadas.Count >= 2)
                     {
-                        lg_usuario.SumarPuntos("115960067", butacas_seleccionadas.Count, ref vError);
+                        lg_usuario.SumarPuntos(((clsUsuario)Session["usuario_ingresado"]).dni_persona_Prop, butacas_seleccionadas.Count, ref vError);
                     }
                 }
             }
@@ -356,6 +355,22 @@ namespace prjFinalEricJose.Page
             else
             {
                 Mensaje(vError);
+            }
+        }
+
+        protected void btn_cancelar_compra_Click(object sender, EventArgs e)
+        {
+            blButaca lg_butaca = new blButaca();
+            string vError = null;
+            lg_butaca.CancelarCompraButacas(id_pelicula, id_horario, id_sala, ref vError);
+
+            if(vError != null)
+            {
+                Mensaje("Ha ocurrido un error al intentar cancelar la compra");
+            }
+            else
+            {
+                Response.Redirect("/peliculas");
             }
         }
     }
